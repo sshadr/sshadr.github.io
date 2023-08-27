@@ -2,20 +2,74 @@
 # title: "First"
 # date: 2023-08-27T00:45:42+02:00
 # draft: true
-headline: Neural Field Convolution Using Repeated Differentiation
+headline: Neural Field Convolutions by Repeated Differentiation
 #change title to headline
 # menu: "main"
 draft: "false"
 author: Adarsh Djeacoumar
 
 # Role/position/tagline
-description: Traditional approaches for learning 3D object categories have been predominantly trained and evaluated on synthetic datasets due to the unavailability of real 3D-annotated category-centric data. Our main goal is to facilitate advances in this field by collecting real-world data in a magnitude similar to the existing synthetic counterparts.
+description: Neural fields are evolving towards a general-purpose continuous represen- tation for visual computing. Yet, despite their numerous appealing proper- ties, they are hardly amenable to signal processing. As a remedy, we present a method to perform general continuous convolutions with general con- tinuous signals such as neural fields. Observing that piecewise polynomial kernels reduce to a sparse set of Dirac deltas after repeated differentiation, we leverage convolution identities and train a repeated integral field to effi- ciently execute large-scale convolutions. We demonstrate our approach on a variety of data modalities and spatially-varying kernels.
 
 # Paper authors and data:
 authors:
-  - name: John
+  - name: Ntumba Elie Nsampi
+    url: "https://people.mpi-inf.mpg.de/~nnsampi/"
+    affiliation: 1
+  - name: Adarsh Djeacoumar
     url: "https://www.mpi-inf.mpg.de/home"
-  - name: John Doe
-    url: "https://www.mpi-inf.mpg.de/home"
+    affiliation: 1
+  - name: Hans-Peter Seidel
+    url: "https://people.mpi-inf.mpg.de/~hpseidel/"
+    affiliation: 1
+  - name: Tobias Ritschel
+    url: "https://www.homepages.ucl.ac.uk/~ucactri/"
+    affiliation: 2
+  - name: Thomas Leimkühler
+    url: "https://people.mpi-inf.mpg.de/~tleimkue/"
+    affiliation: 1
+
+institutions:
+  1:
+    name: "Max Planck Institute for Informatics"
+    url: "https://www.mpi-inf.mpg.de/home/"
+  2:
+    name: "University College London"
+    url: "https://www.ucl.ac.uk"
+
+Paper:
+  - venue: ACM Transactions on Graphics (SIGGRAPH Asia 2023)
+    url: "https://asia.siggraph.org/2023/"
+
+buttons:
+  - name: PDF
+    url: "https://arxiv.org/pdf/2304.01834.pdf"
+    weight: 10
+  - name: Cite
+    url: "cite.bib"
+    weight: 20
+  - name: Code
+    url: "https://www.ucl.ac.uk"
+    weight: 30
+  # - name: Dataset
+  #   url: "https://www.ucl.ac.uk"
+  #   weight: 40
+  - name: Project
+    url: "https://www.ucl.ac.uk"
+    weight: 50
+
+teaser: "teaser.png"
+
+abstract:
+  - name: Abstract
+    content: Neural fields are evolving towards a general-purpose continuous represen- tation for visual computing. Yet, despite their numerous appealing proper- ties, they are hardly amenable to signal processing. As a remedy, we present a method to perform general continuous convolutions with general continuous signals such as neural fields. Observing that piecewise polynomial kernels reduce to a sparse set of Dirac deltas after repeated differentiation, we leverage convolution identities and train a repeated integral field to effi- ciently execute large-scale convolutions. We demonstrate our approach on a variety of data modalities and spatially-varying kernels.
+
+# video: "" #"video.mp4"
+
+tags:
+  - computer vision
+  - computer graphics
+  - machine learning
+  - rendering
 ---
 

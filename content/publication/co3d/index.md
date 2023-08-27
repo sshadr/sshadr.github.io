@@ -13,6 +13,12 @@ author: Adarsh Djeacoumar
 description: Traditional approaches for learning 3D object categories have been predominantly trained and evaluated on synthetic datasets due to the unavailability of real 3D-annotated category-centric data. Our main goal is to facilitate advances in this field by collecting real-world data in a magnitude similar to the existing synthetic counterparts.
 
 # Paper authors and data:
+primary_author:
+  name: Ntumba Elie Nsampi
+  url: "https://people.mpi-inf.mpg.de/~nnsampi/"
+
+
+
 authors:
   - name: John
     url: "https://www.mpi-inf.mpg.de/home"

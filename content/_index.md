@@ -21,7 +21,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-description: PhD Student
+description: Masters Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -86,6 +86,6 @@ highlight_name: true
 
 I am a Computer Science Masters student at Saarland University, advised by [Thomas Leimkühler]("https://people.mpi-inf.mpg.de/~tleimkue/"). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision. I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms for Image generation.
 
-My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system.
+<!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system.
 
-I currently work with the [IsMaeL group]("https://ismael.mpi-inf.mpg.de"), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python.
+I currently work with the [IsMaeL group]("https://ismael.mpi-inf.mpg.de"), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python. -->
