@@ -1,0 +1,316 @@
+{{ define "main" }}
+<html lang="{{ .Site.Data.languages.en.languageCode }}">
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Hugo">
+    <meta name="author" content="{{.Params.author | safeHTML}}">
+
+    <meta name="description" content="{{.Params.description | safeHTML}}">
+
+    <link rel="alternate" hreflang="{{ .Site.Data.languages.en.languageCode }}" href=https://henzler1.github.io />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="theme-color" content="#4285F4">
+
+    <script src="/js/mathjax-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css"
+        integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg=="
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+        integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css"
+        crossorigin="anonymous" title="hl-light">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css"
+        crossorigin="anonymous" title="hl-dark" disabled>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"
+        integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg=="
+        crossorigin="anonymous" async></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous"
+        async></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono%7CProduct+Sans:400,600,300&display=swap">
+
+    <link rel="stylesheet" href="/css/wowchemy.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151247604-1"></script>
+    <script src="/js/gtrack.js"></script>
+
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title={{.Params.first_name}}
+        {{.Params.last_name}}>
+
+    <link rel="manifest" href="/index.webmanifest">
+    <link rel="icon" type="image/png" href=/author/adarsh-djeacoumar/icon.png>
+    <link rel="apple-touch-icon" type="image/png" href=/author/adarsh-djeacoumar/icon.png>
+
+    <!-- The below lines are metadata content when my website is shared to social media -->
+    <link rel="canonical" href=https://henzler1.github.io />
+
+    <meta property="twitter:card" content="summary">
+
+    <meta property="og:site_name" content=Adarsh Djeacoumar>
+    <meta property="og:url" content=https://henzler1.github.io />
+    <meta property="og:title" content=Adarsh Djeacoumar>
+    <meta property="og:description" content=PhD Candidate>
+    <!-- <meta property="og:image"
+        content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png">
+    <meta property="twitter:image"
+        content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png"> -->
+    <meta property="og:locale" content="en-us">
+
+    <meta property="og:updated_time" content="2021-09-09T00:00:00&#43;00:00">
+    <script src="/js/structured_data.js"></script>
+
+    <title>Adarsh Djeacoumar</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
+
+    <script>
+        const isSiteThemeDark = false;
+    </script>
+
+    <script src="/js/load-theme.js"></script>
+
+    <aside class="search-results" id="search">
+        <div class="container">
+            <section class="search-header">
+
+                <div class="row no-gutters justify-content-between mb-3">
+                    <div class="col-6">
+                        <h1>Search</h1>
+                    </div>
+                    <div class="col-6 col-search-close">
+                        <a class="js-search" href="#">
+                            <i class="fas fa-times-circle text-muted" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-box">
+                </div>
+
+            </section>
+            <section class="section-search-results">
+
+                <div id="search-hits">
+                </div>
+
+            </section>
+        </div>
+    </aside>
+
+    <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+        <div class="container">
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+
+            <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+                <ul class="navbar-nav d-md-inline-flex">
+                    {{ range .Site.Data.menus.main }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ .url }}" data-target="{{ .url }}">
+                            <span>{{ .name }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link " href="/#about" data-target="#about">
+                            <span>About</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/#publications" data-target="#publications">
+                            <span>Publications</span>
+                        </a>
+                    </li> -->
+
+                </ul>
+            </div>
+
+            <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+            </ul>
+
+        </div>
+    </nav>
+
+    <span class="js-widget-page d-none"></span>
+
+    <section id="about" class="home-section wg-about   ">
+        <div class="container">
+            <div class="article-container pt-3">
+                <h1 align="center">{{.Params.headline | safeHTML}}</h1>
+                <div class="space-below"></div>
+                <div class="text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://en-gb.facebook.com/jeremy.reizenstein">Jeremy
+                                Reizenstein</a>
+                            <sup>1</sup>
+                        </li>
+                        <li class="list-inline-item"><a href="http://shapovalov.ro/">Roman Shapovalov</a>
+                            <sup>1</sup>
+                        </li>
+                        <li class="list-inline-item" class="author-highlighted"><a href="/">Philipp Henzler</a>
+                            <sup>2</sup>
+                        </li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/lucasbordone/">Luca
+                                Sbodorne</a>
+                            <sup>1</sup>
+                        </li>
+                        <li class="list-inline-item"><a href="https://fr.linkedin.com/in/patricklabatut/">Patrick
+                                Labatut</a>
+                            <sup>1</sup>
+                        </li>
+                        <li class="list-inline-item"><a href="https://d-novotny.github.io/">David Novotny</a>
+                            <sup>1</sup>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <sup>1</sup>
+                            <a href="https://www.ai.facebook.com/">Facebook AI Research</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <sup>2</sup>
+                            <a href="https://www.ucl.ac.uk/">University College London</a>
+                        </li>
+                    </ul>
+                    <a href="http://iccv2021.thecvf.com/home"> ICCV 2021 (Oral, Best Paper Honorable Mention) </a>
+                </div>
+                <div class="space-below"></div>
+
+                <div class="btn-links mb-3">
+                    <a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/2109.00512.pdf"
+                        target="_blank" rel="noopener">
+                        PDF
+                    </a>
+                    <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+                        data-filename="/publication/common_3d_objects/cite.bib">
+                        Cite
+                    </button>
+                    <a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/facebookresearch/co3d"
+                        target="_blank" rel="noopener">
+                        Code
+                    </a>
+                    <a class="btn btn-outline-primary my-1 mr-1" href="https://ai.facebook.com/datasets/co3d-downloads/"
+                        target="_blank" rel="noopener">
+                        Dataset
+                    </a>
+                    <a class="btn btn-outline-primary my-1 mr-1" href="https://ai.facebook.com/datasets/CO3D-dataset/"
+                        target="_blank" rel="noopener">
+                        Project
+                    </a>
+                </div>
+            </div>
+            <div class="article-header article-container featured-image-wrapper mt-4 mb-4"
+                style="max-width: 720px; max-height: 252px;">
+                <div style="position: relative">
+                    <img src="/publication/common_3d_objects/teaser_hu68c8e027ca76c0dccfea6b19c064f146_2027996_720x0_resize_q90_lanczos.jpg"
+                        alt="" class="featured-image">
+                </div>
+            </div>
+            <div class="article-container">
+                <h3>Abstract</h3>
+                <p class="pub-abstract">Traditional approaches for learning 3D object categories have been
+                    predominantly trained and evaluated on synthetic datasets due to the unavailability of real
+                    3D-annotated category-centric data. Our main goal is to facilitate advances in this field by
+                    collecting real-world data in a magnitude similar to the existing synthetic counterparts. The
+                    principal contribution of this work is thus a large-scale dataset, called Common Objects in 3D,
+                    with real multi-view images of object categories annotated with camera poses and ground truth 3D
+                    point clouds. The dataset contains a total of 1.5 million frames from nearly 19,000 videos
+                    capturing objects from 50 MS-COCO categories and, as such, it is significantly larger than
+                    alternatives both in terms of the number of categories and objects. We exploit this new dataset
+                    to conduct one of the first large-scale in-the-wild evaluations of several new-view-synthesis
+                    and category-centric 3D reconstruction methods. Finally, we contribute NerFormer - a novel
+                    neural rendering method that leverages the powerful Transformer to reconstruct an object given a
+                    small number of its views.</p>
+                <div class="space-below"></div>
+                <div class="article-style">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="article-tags">
+                    <a class="badge badge-light" href="/tag/computer-vision/">computer vision</a>
+                    <a class="badge badge-light" href="/tag/computer-graphics/">computer graphics</a>
+                    <a class="badge badge-light" href="/tag/machine-learning/">machine learning</a>
+                    <a class="badge badge-light" href="/tag/rendering/">rendering</a>
+                    <a class="badge badge-light" href="/tag/brdf/">brdf</a>
+                    <a class="badge badge-light" href="/tag/texture/">texture</a>
+                    <a class="badge badge-light" href="/tag/material/">material</a>
+                </div>
+                <div class="article-widget content-widget-hr">
+                    <h3>Related</h3>
+                    <ul>
+                        <li><a href="/publication/phd_thesis/">Self-Supervised Shape and Appearance Modeling via
+                                Neural Differentiable Graphics</a></li>
+
+                        <li><a href="/publication/neuralmaterial/">Generative Modelling of BRDF Textures from Flash
+                                Images</a></li>
+
+                        <li><a href="/publication/unsupervised_videos/">Unsupervised Learning of 3D Object
+                                Categories from Videos in the Wild</a></li>
+
+                        <li><a href="/publication/neuraltexture/">Learning a Neural 3D Texture Space from 2D
+                                Exemplars</a></li>
+
+                        <li><a href="/publication/platonicgan/">Escaping Plato&#39;s Cave: 3D Shape From Adversarial
+                                Rendering</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"
+            integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+            integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+            integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js"
+            integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ=="
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js"
+            integrity="sha512-ja+hSBi4JDtjSqc4LTBsSwuBT3tdZ3oKYKd07lTVYmCnTCor56AnRql00ssqnTOR9Ss4gOP/ROGB3SfcJnZkeg=="
+            crossorigin="anonymous" title="mermaid"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js"
+            integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw=="
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqsVOBqd2IxBBTGTg_HxUosgwW2lXqKe4"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"
+            integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+
+        <script>const code_highlighting = true;</script>
+
+</html>
+{{ end }}

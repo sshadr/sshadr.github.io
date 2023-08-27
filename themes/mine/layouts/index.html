@@ -1,0 +1,432 @@
+{{ define "main" }}
+<html lang="{{ .Site.Data.languages.en.languageCode }}">
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Hugo">
+    <meta name="author" content="{{.Params.author | safeHTML}}">
+
+    <meta name="description" content="{{.Params.description | safeHTML}}">
+
+    <link rel="alternate" hreflang="{{ .Site.Data.languages.en.languageCode }}"
+        href="{{.Params.author_url | safeHTML}}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta name="theme-color" content="#4285F4">
+
+    <script src="/js/mathjax-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css"
+        integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg=="
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+        integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css"
+        crossorigin="anonymous" title="hl-light">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css"
+        crossorigin="anonymous" title="hl-dark" disabled>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"
+        integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg=="
+        crossorigin="anonymous" async></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous"
+        async></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono%7CProduct+Sans:400,600,300&display=swap">
+
+    <link rel="stylesheet" href="/css/wowchemy.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151247604-1"></script>
+    <script src="/js/gtrack.js"></script>
+
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title={{.Params.first_name}}
+        {{.Params.last_name}}>
+
+    <link rel="manifest" href="/index.webmanifest">
+    <link rel="icon" type="image/png" href="{{.Params.author_icon}}">
+    <link rel="apple-touch-icon" type="image/png" href="{{.Params.author_apple_icon}}">
+
+    <!-- The below lines are metadata content when my website is shared to social media -->
+    <link rel="canonical" href="{{.Params.author_url | safeHTML}}" />
+
+    <meta property="twitter:card" content="summary">
+
+    <meta property="og:site_name" content="{{.Params.author | safeHTML}}">
+    <meta property="og:url" content="{{.Params.author_url | safeHTML}}" />
+    <meta property="og:title" content="{{.Params.author | safeHTML}}">
+    <meta property="og:description" content="{{.Params.description | safeHTML}}">
+    <!-- <meta property="og:image"
+        content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png">
+    <meta property="twitter:image"
+        content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png"> -->
+    <meta property="og:locale" content="{{ .Site.Data.languages.en.languageCode }}">
+
+    <meta property="og:updated_time" content="2023-09-23T00:00:00&#43;00:00">
+    <script src="/js/structured_data.js"></script>
+
+    <title>{{.Params.author | safeHTML}}</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
+
+    <script>
+        const isSiteThemeDark = false;
+    </script>
+
+    <script src="/js/load-theme.js"></script>
+
+    <aside class="search-results" id="search">
+        <div class="container">
+            <section class="search-header">
+
+                <div class="row no-gutters justify-content-between mb-3">
+                    <div class="col-6">
+                        <h1>Search</h1>
+                    </div>
+                    <div class="col-6 col-search-close">
+                        <a class="js-search" href="#">
+                            <i class="fas fa-times-circle text-muted" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-box">
+                </div>
+
+            </section>
+            <section class="section-search-results">
+
+                <div id="search-hits">
+                </div>
+
+            </section>
+        </div>
+    </aside>
+
+    <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+        <div class="container">
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+
+            <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+                <ul class="navbar-nav d-md-inline-flex">
+                    {{ range .Site.Data.menus.main }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ .url }}" data-target="{{ .url }}">
+                            <span>{{ .name }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+            </ul>
+
+        </div>
+    </nav>
+
+    <span class="js-widget-page d-none"></span>
+
+    <section id="about" class="home-section wg-about   ">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div id="profile">
+
+                        <img class="avatar avatar-circle" src={{.Params.author_picture}} alt="Avatar">
+
+                        <div class="portrait-title">
+                            <h2></h2>
+                            <h3>{{.Params.description}}</h3>
+
+                            {{ range .Params.organizations }}
+                            <h3>
+                                <a href="{{ .url }}" target="_blank" rel="noopener">
+                                    <span>{{ .name }}</span>
+                                </a>
+                            </h3>
+                            {{ end }}
+                        </div>
+
+                        <ul class="network-icon" aria-hidden="true">
+                            {{ range .Params.social }}
+                            <li>
+                                <a href="{{ .link }}" target="_blank" rel="noopener">
+                                    {{ if eq .icon_pack "fas" }}
+                                    <i class="fas fa-{{ .icon }} big-icon"></i>
+                                    {{ else if eq .icon_pack "ai" }}
+                                    <i class="ai ai-{{ .icon }} big-icon"></i>
+                                    {{ else if eq .icon_pack "fab" }}
+                                    <i class="fab fa-{{ .icon }} big-icon"></i>
+                                    {{ end }}
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-8" style="text-align: justify;">
+
+                    <h1>{{.Params.author | safeHTML}}</h1>
+                    {{.Content | safeHTML}}
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="home-section wg-pages   ">
+        <div class="container">
+
+            <div class="row ">
+
+                <div class="col-12 col-lg-4 section-heading">
+                    <h1>Publications</h1>
+
+                </div>
+
+                <div class="col-12 col-lg-8">
+
+                    <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+                        <div class="media-body">
+
+                            <h3 class="article-title mb-0 mt-0" itemprop="name">
+                                <a href="/publication/phd_thesis/" itemprop="url">Self-Supervised Shape and Appearance
+                                    Modeling via Neural Differentiable Graphics</a>
+                            </h3>
+
+                            <div class="stream-meta article-metadata">
+
+                                <div itemprop="author">
+
+                                    <span class="author-highlighted">
+                                        <a href="/">Philipp Henzler</a>
+                                    </span>
+                                </div>
+
+                                <div class="">
+                                    <strong>
+                                        <a href="https://discovery.ucl.ac.uk/id/eprint/10169117/"> University College
+                                            London (UCL), PhD thesis, 2023</a>
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="btn-links">
+
+                                <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                                    href="https://discovery.ucl.ac.uk/id/eprint/10169117/7/Henzler_10169117_Thesis_sig_removed.pdf"
+                                    target="_blank" rel="noopener">
+                                    PDF
+                                </a>
+
+                                <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                                    href="https://discovery.ucl.ac.uk/id/eprint/10169117/" target="_blank"
+                                    rel="noopener">
+                                    Project
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <div class="ml-3">
+
+                            <a href="/publication/phd_thesis/">
+                                <img src="/publication/phd_thesis/thumbnail_hu1d9750ab7508e6c15facaddfedb81fc3_17008_150x0_resize_q90_lanczos.jpg"
+                                    itemprop="image">
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+                        <div class="media-body">
+
+                            <h3 class="article-title mb-0 mt-0" itemprop="name">
+                                <a href="/publication/common_3d_objects/" itemprop="url">Common Objects in 3D:
+                                    Large-Scale Learning and Evaluation of Real-life 3D Category Reconstruction</a>
+                            </h3>
+
+                            <div class="stream-meta article-metadata">
+
+                                <div itemprop="author">
+
+                                    <span>
+                                        <a href="https://en-gb.facebook.com/jeremy.reizenstein">Jeremy Reizenstein</a>
+                                    </span>
+                                    ,
+                                    <span>
+                                        <a href="http://shapovalov.ro/">Roman Shapovalov</a>
+                                    </span>
+                                    ,
+                                    <span class="author-highlighted">
+                                        <a href="/">Philipp Henzler</a>
+                                    </span>
+                                    ,
+                                    <span>
+                                        <a href="https://www.linkedin.com/in/lucasbordone/">Luca Sbodorne</a>
+                                    </span>
+                                    ,
+                                    <span>
+                                        <a href="https://fr.linkedin.com/in/patricklabatut/">Patrick Labatut</a>
+                                    </span>
+                                    ,
+                                    <span>
+                                        <a href="https://d-novotny.github.io/">David Novotny</a>
+                                    </span>
+                                </div>
+
+                                <div class="">
+                                    <strong>
+                                        <a href="http://iccv2021.thecvf.com/home"> ICCV 2021 (Oral, Best Paper Honorable
+                                            Mention)</a>
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="btn-links">
+
+                                <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                                    href="https://arxiv.org/pdf/2109.00512.pdf" target="_blank" rel="noopener">
+                                    PDF
+                                </a>
+
+                                <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+                                    data-filename="/publication/common_3d_objects/cite.bib">
+                                    Cite
+                                </button>
+
+                                <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                                    href="https://github.com/facebookresearch/co3d" target="_blank" rel="noopener">
+                                    Code
+                                </a>
+
+                                <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                                    href="https://ai.facebook.com/datasets/co3d-downloads/" target="_blank"
+                                    rel="noopener">
+                                    Dataset
+                                </a>
+
+                                <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
+                                    href="https://ai.facebook.com/datasets/CO3D-dataset/" target="_blank"
+                                    rel="noopener">
+                                    Project
+                                </a>
+
+                            </div>
+
+                        </div>
+                        <div class="ml-3">
+
+                            <a href="/publication/common_3d_objects/">
+                                <img src="/publication/common_3d_objects/thumbnail_hu71e817dee8c7aea31e74f8524046c2b9_90688_150x0_resize_q90_lanczos.jpg"
+                                    itemprop="image">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"
+        integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+        integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+        integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js"
+        integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ=="
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js"
+        integrity="sha512-ja+hSBi4JDtjSqc4LTBsSwuBT3tdZ3oKYKd07lTVYmCnTCor56AnRql00ssqnTOR9Ss4gOP/ROGB3SfcJnZkeg=="
+        crossorigin="anonymous" title="mermaid"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js"
+        integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqsVOBqd2IxBBTGTg_HxUosgwW2lXqKe4"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"
+        integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+
+    <script>const code_highlighting = true;</script>
+
+    <script src="/js/wowchemy.min.e9934e4586590fe76d4de7e3c7f48deb.js"></script>
+
+    <div class="container">
+        <footer class="site-footer">
+
+
+            <p class="powered-by">
+                Copyright © {{.Params.author | safeHTML}} {{.Params.year | safeHTML}}
+
+
+                <span class="float-right" aria-hidden="true">
+                    <a href="#" id="back_to_top">
+                        <span class="button_icon">
+                            <i class="fas fa-chevron-up fa-2x"></i>
+                        </span>
+                    </a>
+                </span>
+
+            </p>
+        </footer>
+
+    </div>
+
+    <div id="modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cite</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre><code class="tex hljs"></code></pre>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+                        <i class="fas fa-copy"></i> Copy
+                    </a>
+                    <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <div id="modal-error"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{{ end }}
