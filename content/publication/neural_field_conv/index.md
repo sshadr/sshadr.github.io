@@ -2,14 +2,14 @@
 # title: "First"
 # date: 2023-08-27T00:45:42+02:00
 # draft: true
-headline: Neural Field Convolutions by Repeated Differentiation
+title: Neural Field Convolutions by Repeated Differentiation
 #change title to headline
 # menu: "main"
 draft: "false"
 author: Adarsh Djeacoumar
 
 # Role/position/tagline
-description: Neural fields are evolving towards a general-purpose continuous represen- tation for visual computing. Yet, despite their numerous appealing proper- ties, they are hardly amenable to signal processing. As a remedy, we present a method to perform general continuous convolutions with general con- tinuous signals such as neural fields. Observing that piecewise polynomial kernels reduce to a sparse set of Dirac deltas after repeated differentiation, we leverage convolution identities and train a repeated integral field to effi- ciently execute large-scale convolutions. We demonstrate our approach on a variety of data modalities and spatially-varying kernels.
+description: Neural fields are evolving towards a general-purpose continuous representation for visual computing. Yet, despite their numerous appealing properties, they are hardly amenable to signal processing. As a remedy, we present a method to perform general continuous convolutions with general continuous signals such as neural fields. Observing that piecewise polynomial kernels reduce to a sparse set of Dirac deltas after repeated differentiation, we leverage convolution identities and train a repeated integral field to efficiently execute large-scale convolutions. We demonstrate our approach on a variety of data modalities and spatially-varying kernels.
 
 # Paper authors and data:
 authors:

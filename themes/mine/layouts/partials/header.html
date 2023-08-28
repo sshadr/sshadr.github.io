@@ -1,0 +1,62 @@
+<script>
+    const isSiteThemeDark = false;
+</script>
+
+<script src="/js/load-theme.js"></script>
+
+<aside class="search-results" id="search">
+    <div class="container">
+        <section class="search-header">
+
+            <div class="row no-gutters justify-content-between mb-3">
+                <div class="col-6">
+                    <h1>Search</h1>
+                </div>
+                <div class="col-6 col-search-close">
+                    <a class="js-search" href="#">
+                        <i class="fas fa-times-circle text-muted" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="search-box">
+            </div>
+
+        </section>
+        <section class="section-search-results">
+
+            <div id="search-hits">
+            </div>
+
+        </section>
+    </div>
+</aside>
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container">
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span>
+                <i class="fas fa-bars"></i>
+            </span>
+        </button>
+
+        <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+            <ul class="navbar-nav d-md-inline-flex">
+                {{ range .Site.Data.menus.main }}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ .url }}" data-target="{{ .url }}">
+                        <span>{{ .name }}</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+        </ul>
+
+    </div>
+</nav>

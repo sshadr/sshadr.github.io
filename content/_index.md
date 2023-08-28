@@ -1,24 +1,9 @@
 ---
-# Display name
-# title: Adarsh Djeacoumar
-
 # Full name (for SEO)
-author: Adarsh Djeacoumar
-author_picture: "/author/adarsh-djeacoumar/avatar.png"
+title: Adarsh Djeacoumar
 
-# Font: Zen Kurenadai (google font)
-author_icon: "/images/android-chrome-512x512_lgreen.png" 
-author_apple_icon: "/images/apple-touch-icon_lgreen.png"
-author_url: "https://adarshdjeacoumar.github.io"
 # menu: "main"
 draft: "false"
-year: "2023"
-# Status emoji
-status:
-  icon: ☕️
-
-# Is this the primary user of the site?
-superuser: true
 
 # Role/position/tagline
 description: Masters Student

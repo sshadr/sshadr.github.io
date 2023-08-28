@@ -34,7 +34,8 @@
 
 
         <p class="powered-by">
-            Copyright © {{.Params.author | safeHTML}} {{.Params.year | safeHTML}}
+            Copyright © {{ .Site.Data.admin.author.name | safeHTML}} {{ .Site.Data.admin.author.year_modified |
+            safeHTML}}
 
 
             <span class="float-right" aria-hidden="true">

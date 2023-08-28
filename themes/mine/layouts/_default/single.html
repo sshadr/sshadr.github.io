@@ -79,7 +79,7 @@
             "@type": "WebPage",
             "@id": "https://henzler.github.io/publication/common_3d_objects/"
           },
-          "headline": "{{ .Params.headline }}",
+          "headline": "{{ .Params.title }}",
           
           "datePublished": "2021-09-09T00:00:00Z",
           "dateModified": "2022-09-16T16:15:01+01:00",
@@ -175,7 +175,7 @@
     <section id="about" class="home-section wg-about   ">
         <div class="container">
             <div class="article-container pt-3">
-                <h1 align="center">{{.Params.headline | safeHTML}}</h1>
+                <h1 align="center">{{.Params.title | safeHTML}}</h1>
                 <div class="space-below"></div>
                 <div class="text-center">
                     <ul class="list-inline">
@@ -222,7 +222,7 @@
                     <img src="{{ .Params.teaser }}" alt="" class="featured-image">
                 </div>
             </div>
-            <div class="article-container">
+            <div class="article-container" style="text-align: justify;">
                 {{ range .Params.abstract }}
                 <h3>{{ .name }}</h3>
                 <p class="pub-abstract">{{ .content }}</p>

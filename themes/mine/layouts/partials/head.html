@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Hugo">
-    <meta name="author" content="{{.Params.author | safeHTML}}">
+    <meta name="author" content="{{ .Site.Data.admin.author.name | safeHTML}}">
 
     <meta name="description" content="{{.Params.description | safeHTML}}">
 
     <link rel="alternate" hreflang="{{ .Site.Data.languages.en.languageCode }}"
-        href="{{.Params.author_url | safeHTML}}" />
+        href="{{ .Site.Data.admin.author.url | safeHTML}}" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -47,22 +47,22 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151247604-1"></script>
     <script src="/js/gtrack.js"></script>
 
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title={{.Params.first_name}}
-        {{.Params.last_name}}>
+    <link rel="alternate" href="/index.xml" type="application/rss+xml"
+        title="{{.Site.Data.admin.author.name | safeHTML}}">
 
     <link rel="manifest" href="/index.webmanifest">
-    <link rel="icon" type="image/png" href="{{.Params.author_icon}}">
-    <link rel="apple-touch-icon" type="image/png" href="{{.Params.author_apple_icon}}">
+    <link rel="icon" type="image/png" href="{{ .Site.Data.admin.author.icon }}">
+    <link rel="apple-touch-icon" type="image/png" href="{{ .Site.Data.admin.author.apple_icon }}">
 
     <!-- The below lines are metadata content when my website is shared to social media -->
-    <link rel="canonical" href="{{.Params.author_url | safeHTML}}" />
+    <link rel="canonical" href="{{ .Site.Data.admin.author.url | safeHTML}}" />
 
     <meta property="twitter:card" content="summary">
 
-    <meta property="og:site_name" content="{{.Params.author | safeHTML}}">
-    <meta property="og:url" content="{{.Params.author_url | safeHTML}}" />
-    <meta property="og:title" content="{{.Params.author | safeHTML}}">
-    <meta property="og:description" content="{{.Params.description | safeHTML}}">
+    <meta property="og:site_name" content="{{ .Site.Data.admin.author.name | safeHTML}}">
+    <meta property="og:url" content="{{ .Site.Data.admin.author.url | safeHTML}}" />
+    <meta property="og:title" content="{{ .Site.Data.admin.author.name | safeHTML}}">
+    <meta property="og:description" content="{{ .Params.description | safeHTML}}">
     <!-- <meta property="og:image"
         content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png">
     <meta property="twitter:image"
@@ -72,6 +72,6 @@
     <meta property="og:updated_time" content="2023-09-23T00:00:00&#43;00:00">
     <script src="/js/structured_data.js"></script>
 
-    <title>{{.Params.author | safeHTML}}</title>
+    <title>{{ .Params.title | safeHTML }} | {{ .Site.Data.admin.author.name | safeHTML}}</title>
 
 </head>
