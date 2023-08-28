@@ -63,57 +63,77 @@
             </div>
 
             <div class="col-12 col-lg-8">
+                {{/* {{ range $index, $dir := .Site.Data.pubs.dirs }} */}}
+                {{ $page := printf "publication/%s" (index .Site.Data.pubs.dirs 0) }}
+                Page: "{{ $page }}"
+                {{ .}}
 
+                {{/* {{ with .Site.GetPage "publication/neural_field_conv" }} */}}
+                {{ with .Site.GetPage $page }}
+                {{/* What the .Site should give: {{(index .Site.Data.pubs.dirs 0)}} */}}
                 <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
                     <div class="media-body">
-
                         <h3 class="article-title mb-0 mt-0" itemprop="name">
-                            <a href="/publication/phd_thesis/" itemprop="url">Self-Supervised Shape and Appearance
-                                Modeling via Neural Differentiable Graphics</a>
+                            <a href="{{ $page }}" itemprop="url">{{ .Params.title }} </a>
                         </h3>
 
                         <div class="stream-meta article-metadata">
 
                             <div itemprop="author">
+                                {{ $AuthorLength := len .Params.authors }}
+                                {{ $lastAuthorIndex := 1 | sub $AuthorLength}}
 
+                                {{ range $index, $author := .Params.authors }}
+                                {{ if eq $author.name $.Site.Data.admin.author.name }}
                                 <span class="author-highlighted">
-                                    <a href="/">Philipp Henzler</a>
+                                    <a href="/">{{ $.Site.Data.admin.author.name }}</a>{{ if ne $index $lastAuthorIndex
+                                    }},{{ end }}
                                 </span>
+                                {{ $index := $index | add 1 }}
+                                {{ else }}
+                                <span>
+                                    <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne $index $lastAuthorIndex
+                                    }},{{ end }}
+                                </span>
+                                {{ end }}
+                                {{ end }}
                             </div>
 
                             <div class="">
+                                {{ range $index, $paper := .Params.Paper }}
                                 <strong>
-                                    <a href="https://discovery.ucl.ac.uk/id/eprint/10169117/"> University College
-                                        London (UCL), PhD thesis, 2023</a>
+                                    <a href="{{ $paper.url}}"> {{ $paper.venue }}</a>
                                 </strong>
+                                {{ end }}
                             </div>
                         </div>
 
                         <div class="btn-links">
-
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-                                href="https://discovery.ucl.ac.uk/id/eprint/10169117/7/Henzler_10169117_Thesis_sig_removed.pdf"
-                                target="_blank" rel="noopener">
-                                PDF
+                            {{ range .Params.buttons }}
+                            {{ if eq .name "Cite" }}
+                            <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+                                data-filename={{"/publication/neural_field_conv/cite.bib"}}>
+                                {{ .name }}
+                            </button>
+                            {{ else }}
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ .url }}" target="_blank"
+                                rel="noopener">
+                                {{ .name }}
                             </a>
-
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-                                href="https://discovery.ucl.ac.uk/id/eprint/10169117/" target="_blank" rel="noopener">
-                                Project
-                            </a>
-
+                            {{ end }}
+                            {{ end }}
                         </div>
 
                     </div>
                     <div class="ml-3">
-
-                        <a href="/publication/phd_thesis/">
-                            <img src="/publication/phd_thesis/thumbnail_hu1d9750ab7508e6c15facaddfedb81fc3_17008_150x0_resize_q90_lanczos.jpg"
-                                itemprop="image">
+                        <a href="/publication/neural_field_conv/">
+                            <img src="/publication/neural_field_conv/{{ .Params.teaser }}" itemprop="image">
                         </a>
 
                     </div>
                 </div>
+                {{ end }}
+                {{/* {{ end }} */}}
 
                 <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
                     <div class="media-body">
@@ -126,8 +146,24 @@
                         <div class="stream-meta article-metadata">
 
                             <div itemprop="author">
-
+                                {{ with .Site.GetPage "section" "publication/neural_field_conv" }}
+                                {{ $lastAuthorIndex := len .Params.authors | sub 1 }}
+                                {{ range $index, $author := .Params.authors }}
+                                {{ if eq $author.name $.Site.Data.admin.author.name }}
+                                <span class="author-highlighted">
+                                    <a href="/">{{ $.Site.Data.admin.author.name }}</a>
+                                </span>
+                                {{ else }}
                                 <span>
+                                    <a href="{{ $author.url }}">{{ $author.name }}</a>
+                                </span>
+                                {{ if ne $index $lastAuthorIndex }},{{ end }}
+                                {{ end }}
+                                {{ end }}
+                                {{ end }}
+
+
+                                {{/* <span>
                                     <a href="https://en-gb.facebook.com/jeremy.reizenstein">Jeremy Reizenstein</a>
                                 </span>
                                 ,
@@ -149,7 +185,7 @@
                                 ,
                                 <span>
                                     <a href="https://d-novotny.github.io/">David Novotny</a>
-                                </span>
+                                </span> */}}
                             </div>
 
                             <div class="">
@@ -190,14 +226,14 @@
                         </div>
 
                     </div>
-                    <div class="ml-3">
+                    {{/* <div class="ml-3">
 
                         <a href="/publication/common_3d_objects/">
                             <img src="/publication/common_3d_objects/thumbnail_hu71e817dee8c7aea31e74f8524046c2b9_90688_150x0_resize_q90_lanczos.jpg"
                                 itemprop="image">
                         </a>
 
-                    </div>
+                    </div> */}}
                 </div>
             </div>
         </div>

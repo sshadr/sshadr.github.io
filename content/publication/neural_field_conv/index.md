@@ -16,18 +16,23 @@ authors:
   - name: Ntumba Elie Nsampi
     url: "https://people.mpi-inf.mpg.de/~nnsampi/"
     affiliation: 1
+    weight: 10
   - name: Adarsh Djeacoumar
     url: "https://www.mpi-inf.mpg.de/home"
     affiliation: 1
+    weight: 20
   - name: Hans-Peter Seidel
     url: "https://people.mpi-inf.mpg.de/~hpseidel/"
     affiliation: 1
+    weight: 30
   - name: Tobias Ritschel
     url: "https://www.homepages.ucl.ac.uk/~ucactri/"
     affiliation: 2
+    weight: 40
   - name: Thomas Leimkühler
     url: "https://people.mpi-inf.mpg.de/~tleimkue/"
     affiliation: 1
+    weight: 50
 
 institutions:
   1:
