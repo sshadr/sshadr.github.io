@@ -51,7 +51,7 @@ buttons:
     url: "https://arxiv.org/pdf/2304.01834.pdf"
     weight: 10
   - name: Cite
-    url: "cite.bib"
+    url: "/publication/neural_field_conv/cite.bib"
     weight: 20
   - name: Code
     url: "https://www.ucl.ac.uk"

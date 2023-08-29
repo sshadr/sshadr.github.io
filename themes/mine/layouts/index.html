@@ -63,36 +63,38 @@
             </div>
 
             <div class="col-12 col-lg-8">
-                {{/* {{ range $index, $dir := .Site.Data.pubs.dirs }} */}}
-                {{ $page := printf "publication/%s" (index .Site.Data.pubs.dirs 0) }}
-                Page: "{{ $page }}"
-                {{ .}}
+                {{ range .Pages }}
+                {{ range .Pages }}
 
-                {{/* {{ with .Site.GetPage "publication/neural_field_conv" }} */}}
-                {{ with .Site.GetPage $page }}
-                {{/* What the .Site should give: {{(index .Site.Data.pubs.dirs 0)}} */}}
                 <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+
                     <div class="media-body">
+
                         <h3 class="article-title mb-0 mt-0" itemprop="name">
-                            <a href="{{ $page }}" itemprop="url">{{ .Params.title }} </a>
+                            <a href="{{ .RelPermalink }}" itemprop="url">{{ .Params.title }} </a>
                         </h3>
 
                         <div class="stream-meta article-metadata">
 
                             <div itemprop="author">
-                                {{ $AuthorLength := len .Params.authors }}
-                                {{ $lastAuthorIndex := 1 | sub $AuthorLength}}
+                                {{ $maxWeight := -1 }}
+                                {{ range .Params.authors }}
+                                {{ if gt .weight $maxWeight }}
+                                {{ $maxWeight = .weight }}
+                                {{ end }}
+                                {{ end }}
 
                                 {{ range $index, $author := .Params.authors }}
-                                {{ if eq $author.name $.Site.Data.admin.author.name }}
+                                {{/* Author : {{ $maxWeight }} */}}
+                                {{ if eq .name $.Site.Data.admin.author.name }}
                                 <span class="author-highlighted">
-                                    <a href="/">{{ $.Site.Data.admin.author.name }}</a>{{ if ne $index $lastAuthorIndex
+                                    <a href="/">{{ $.Site.Data.admin.author.name }}</a>{{ if ne .weight $maxWeight
                                     }},{{ end }}
                                 </span>
                                 {{ $index := $index | add 1 }}
                                 {{ else }}
                                 <span>
-                                    <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne $index $lastAuthorIndex
+                                    <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne .weight $maxWeight
                                     }},{{ end }}
                                 </span>
                                 {{ end }}
@@ -112,7 +114,7 @@
                             {{ range .Params.buttons }}
                             {{ if eq .name "Cite" }}
                             <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-                                data-filename={{"/publication/neural_field_conv/cite.bib"}}>
+                                data-filename="{{ .url }}">
                                 {{ .name }}
                             </button>
                             {{ else }}
@@ -124,117 +126,19 @@
                             {{ end }}
                         </div>
 
+
                     </div>
                     <div class="ml-3">
-                        <a href="/publication/neural_field_conv/">
-                            <img src="/publication/neural_field_conv/{{ .Params.teaser }}" itemprop="image">
+                        <a href="{{ .RelPermalink }}">
+                            <img src="{{ .RelPermalink }}{{ .Params.teaser }}" itemprop="image">
                         </a>
 
                     </div>
                 </div>
                 {{ end }}
-                {{/* {{ end }} */}}
-
-                <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-                    <div class="media-body">
-
-                        <h3 class="article-title mb-0 mt-0" itemprop="name">
-                            <a href="/publication/common_3d_objects/" itemprop="url">Common Objects in 3D:
-                                Large-Scale Learning and Evaluation of Real-life 3D Category Reconstruction</a>
-                        </h3>
-
-                        <div class="stream-meta article-metadata">
-
-                            <div itemprop="author">
-                                {{ with .Site.GetPage "section" "publication/neural_field_conv" }}
-                                {{ $lastAuthorIndex := len .Params.authors | sub 1 }}
-                                {{ range $index, $author := .Params.authors }}
-                                {{ if eq $author.name $.Site.Data.admin.author.name }}
-                                <span class="author-highlighted">
-                                    <a href="/">{{ $.Site.Data.admin.author.name }}</a>
-                                </span>
-                                {{ else }}
-                                <span>
-                                    <a href="{{ $author.url }}">{{ $author.name }}</a>
-                                </span>
-                                {{ if ne $index $lastAuthorIndex }},{{ end }}
-                                {{ end }}
-                                {{ end }}
-                                {{ end }}
+                {{ end }}
 
 
-                                {{/* <span>
-                                    <a href="https://en-gb.facebook.com/jeremy.reizenstein">Jeremy Reizenstein</a>
-                                </span>
-                                ,
-                                <span>
-                                    <a href="http://shapovalov.ro/">Roman Shapovalov</a>
-                                </span>
-                                ,
-                                <span class="author-highlighted">
-                                    <a href="/">Philipp Henzler</a>
-                                </span>
-                                ,
-                                <span>
-                                    <a href="https://www.linkedin.com/in/lucasbordone/">Luca Sbodorne</a>
-                                </span>
-                                ,
-                                <span>
-                                    <a href="https://fr.linkedin.com/in/patricklabatut/">Patrick Labatut</a>
-                                </span>
-                                ,
-                                <span>
-                                    <a href="https://d-novotny.github.io/">David Novotny</a>
-                                </span> */}}
-                            </div>
-
-                            <div class="">
-                                <strong>
-                                    <a href="http://iccv2021.thecvf.com/home"> ICCV 2021 (Oral, Best Paper Honorable
-                                        Mention)</a>
-                                </strong>
-                            </div>
-                        </div>
-
-                        <div class="btn-links">
-
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-                                href="https://arxiv.org/pdf/2109.00512.pdf" target="_blank" rel="noopener">
-                                PDF
-                            </a>
-
-                            <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-                                data-filename="/publication/common_3d_objects/cite.bib">
-                                Cite
-                            </button>
-
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-                                href="https://github.com/facebookresearch/co3d" target="_blank" rel="noopener">
-                                Code
-                            </a>
-
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-                                href="https://ai.facebook.com/datasets/co3d-downloads/" target="_blank" rel="noopener">
-                                Dataset
-                            </a>
-
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-                                href="https://ai.facebook.com/datasets/CO3D-dataset/" target="_blank" rel="noopener">
-                                Project
-                            </a>
-
-                        </div>
-
-                    </div>
-                    {{/* <div class="ml-3">
-
-                        <a href="/publication/common_3d_objects/">
-                            <img src="/publication/common_3d_objects/thumbnail_hu71e817dee8c7aea31e74f8524046c2b9_90688_150x0_resize_q90_lanczos.jpg"
-                                itemprop="image">
-                        </a>
-
-                    </div> */}}
-                </div>
             </div>
         </div>
     </div>
