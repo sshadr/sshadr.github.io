@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <div id="profile">
+
+                <img class="avatar avatar-circle" src="{{ .Site.Data.admin.author.picture }}" alt="Avatar">
+
+                <div class="portrait-title">
+                    <h2></h2>
+                    <h3>{{.Params.description}}</h3>
+
+                    {{ range .Params.organizations }}
+                    <h3>
+                        <a href="{{ .url }}" target="_blank" rel="noopener">
+                            <span>{{ .name }}</span>
+                        </a>
+                    </h3>
+                    {{ end }}
+                </div>
+
+                <ul class="network-icon" aria-hidden="true">
+                    {{ range .Params.social }}
+                    <li>
+                        <a href="{{ .link }}" target="_blank" rel="noopener">
+                            {{ if eq .icon_pack "fas" }}
+                            <i class="fas fa-{{ .icon }} big-icon"></i>
+                            {{ else if eq .icon_pack "ai" }}
+                            <i class="ai ai-{{ .icon }} big-icon"></i>
+                            {{ else if eq .icon_pack "fab" }}
+                            <i class="fab fa-{{ .icon }} big-icon"></i>
+                            {{ end }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-8" style="text-align: justify;">
+
+            <h1>{{.Params.title | safeHTML}}</h1>
+            {{.Content | safeHTML}}
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>

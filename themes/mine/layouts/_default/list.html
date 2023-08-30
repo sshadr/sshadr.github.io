@@ -1,10 +1,29 @@
 {{ define "main" }}
-{{ .Content }}
+{{/* {{ .Content }}
 {{ range .RegularPages }}
 <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 <p>{{ .Summary }}</p>
 {{ if .Truncated }}
 <p><a href="{{ .RelPermalink }}">Continue reading...</a></p>
 {{ end }}
-{{ end }}
+{{ end }} */}}
+
+<div class="universal-wrapper pt-3">
+    <h1>{{ .Params.tag }}</h1>
+</div>
+<div class="universal-wrapper">
+    {{ range .Site.RegularPages }}
+    {{ if in .Params.tags "computer-graphics" }}
+    <div>
+        <h2>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="article-style">
+            {{ .Params.description }}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+
 {{ end }}

@@ -73,7 +73,7 @@ abstract:
 
 tags:
   - computer vision
-  - computer graphics
+  - computer-graphics
   - machine learning
   - rendering
 ---

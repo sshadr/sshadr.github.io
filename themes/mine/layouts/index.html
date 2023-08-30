@@ -2,147 +2,15 @@
 <span class="js-widget-page d-none"></span>
 
 <section id="about" class="home-section wg-about   ">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <div id="profile">
-
-                    <img class="avatar avatar-circle" src="{{ .Site.Data.admin.author.picture }}" alt="Avatar">
-
-                    <div class="portrait-title">
-                        <h2></h2>
-                        <h3>{{.Params.description}}</h3>
-
-                        {{ range .Params.organizations }}
-                        <h3>
-                            <a href="{{ .url }}" target="_blank" rel="noopener">
-                                <span>{{ .name }}</span>
-                            </a>
-                        </h3>
-                        {{ end }}
-                    </div>
-
-                    <ul class="network-icon" aria-hidden="true">
-                        {{ range .Params.social }}
-                        <li>
-                            <a href="{{ .link }}" target="_blank" rel="noopener">
-                                {{ if eq .icon_pack "fas" }}
-                                <i class="fas fa-{{ .icon }} big-icon"></i>
-                                {{ else if eq .icon_pack "ai" }}
-                                <i class="ai ai-{{ .icon }} big-icon"></i>
-                                {{ else if eq .icon_pack "fab" }}
-                                <i class="fab fa-{{ .icon }} big-icon"></i>
-                                {{ end }}
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-8" style="text-align: justify;">
-
-                <h1>{{.Params.title | safeHTML}}</h1>
-                {{.Content | safeHTML}}
-                <div class="row">
-                </div>
-            </div>
-        </div>
-    </div>
+    {{ partial "about.html" . }}
 </section>
 
 <section id="publications" class="home-section wg-pages   ">
-    <div class="container">
-
-        <div class="row ">
-
-            <div class="col-12 col-lg-4 section-heading">
-                <h1>Publications</h1>
-
-            </div>
-
-            <div class="col-12 col-lg-8">
-                {{ range .Pages }}
-                {{ range .Pages }}
-
-                <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-
-                    <div class="media-body">
-
-                        <h3 class="article-title mb-0 mt-0" itemprop="name">
-                            <a href="{{ .RelPermalink }}" itemprop="url">{{ .Params.title }} </a>
-                        </h3>
-
-                        <div class="stream-meta article-metadata">
-
-                            <div itemprop="author">
-                                {{ $maxWeight := -1 }}
-                                {{ range .Params.authors }}
-                                {{ if gt .weight $maxWeight }}
-                                {{ $maxWeight = .weight }}
-                                {{ end }}
-                                {{ end }}
-
-                                {{ range $index, $author := .Params.authors }}
-                                {{/* Author : {{ $maxWeight }} */}}
-                                {{ if eq .name $.Site.Data.admin.author.name }}
-                                <span class="author-highlighted">
-                                    <a href="/">{{ $.Site.Data.admin.author.name }}</a>{{ if ne .weight $maxWeight
-                                    }},{{ end }}
-                                </span>
-                                {{ $index := $index | add 1 }}
-                                {{ else }}
-                                <span>
-                                    <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne .weight $maxWeight
-                                    }},{{ end }}
-                                </span>
-                                {{ end }}
-                                {{ end }}
-                            </div>
-
-                            <div class="">
-                                {{ range $index, $paper := .Params.Paper }}
-                                <strong>
-                                    <a href="{{ $paper.url}}"> {{ $paper.venue }}</a>
-                                </strong>
-                                {{ end }}
-                            </div>
-                        </div>
-
-                        <div class="btn-links">
-                            {{ range .Params.buttons }}
-                            {{ if eq .name "Cite" }}
-                            <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-                                data-filename="{{ .url }}">
-                                {{ .name }}
-                            </button>
-                            {{ else }}
-                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ .url }}" target="_blank"
-                                rel="noopener">
-                                {{ .name }}
-                            </a>
-                            {{ end }}
-                            {{ end }}
-                        </div>
-
-
-                    </div>
-                    <div class="ml-3">
-                        <a href="{{ .RelPermalink }}">
-                            <img src="{{ .RelPermalink }}{{ .Params.teaser }}" itemprop="image">
-                        </a>
-
-                    </div>
-                </div>
-                {{ end }}
-                {{ end }}
-
-
-            </div>
-        </div>
-    </div>
+    {{ partial "pubs.html" . }}
 </section>
 
+<section id="projects" class="home-section wg-pages   ">
+    {{ partial "projects.html" . }}
+</section>
 
 {{ end }}
