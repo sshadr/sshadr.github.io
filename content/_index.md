@@ -45,7 +45,7 @@ social:
     link: "mailto:adjeacou@mpi-inf.mpg.de"
   - icon: github
     icon_pack: fab
-    link: https://github.com/Adarshd19
+    link: https://github.com/sshadr
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/adarsh-djeacoumar/
@@ -71,8 +71,8 @@ highlight_name: true
 # publications should just create a publications.yaml file in data and use it everywhere
 ---
 
-I am a Computer Science Masters student at Saarland University, advised by [Thomas Leimkühler]("https://people.mpi-inf.mpg.de/~tleimkue/"). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision. I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms for Image generation.
+I am a Computer Science Masters student at Saarland University, advised by [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision. I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms for Image generation.
 
-<!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system.
+I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python.
 
-I currently work with the [IsMaeL group]("https://ismael.mpi-inf.mpg.de"), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python. -->
+<!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system. -->
