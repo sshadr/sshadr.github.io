@@ -2,7 +2,7 @@
 # title: "First"
 # date: 2023-08-27T00:45:42+02:00
 # draft: true
-title: A Warm Night - Ray Tracing
+title: Rays to Pixels - A Warm Night
 #change title to headline
 # menu: "main"
 draft: "false"
