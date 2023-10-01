@@ -48,7 +48,7 @@ Paper:
 
 buttons:
   - name: PDF
-    url: "https://arxiv.org/pdf/2304.01834.pdf"
+    url: "https://neural-fields-conv.mpi-inf.mpg.de/static/paper/compressed/neural_field_convolutions.pdf"
     weight: 10
   - name: Cite
     url: "/publication/neural_field_conv/cite.bib"
