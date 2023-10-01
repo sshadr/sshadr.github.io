@@ -2,12 +2,20 @@
 <html>
 {{- partial "head.html" . -}}
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="">
     {{- partial "header.html" . -}}
     <div id="content">
         {{- block "main" . }}{{- end }}
     </div>
+
+    <script>
+        const isSiteThemeDark = true;
+    </script>
+
+    <script src="/js/load-theme.js"></script>
+    <script src="/js/components.js"></script>
     {{- partial "footer.html" . -}}
+
 </body>
 
 </html>

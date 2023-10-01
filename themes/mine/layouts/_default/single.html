@@ -108,7 +108,7 @@
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
 
     <script>
-        const isSiteThemeDark = false;
+        const isSiteThemeDark = true;
     </script>
 
     <script src="/js/load-theme.js"></script>
@@ -181,7 +181,7 @@
                     <ul class="list-inline">
                         {{/* {{ $institutions := .Params.institutions }} */}}
                         {{ range $author := .Params.authors }}
-                        <li class="list-inline-item"><a href="{{ .url }}">{{ .name }}></a>
+                        <li class="list-inline-item"><a href="{{ .url }}">{{ .name }}</a>
                             <sup>{{ .affiliation }}</sup>
                         </li>
                         {{ end }}
@@ -216,16 +216,23 @@
                     {{ end }}
                 </div>
             </div>
-            <div class="article-header article-container featured-image-wrapper mt-4 mb-4"
-                style="max-width: 720px; max-height: 252px;">
+            {{ range .Params.method }}
+            <div class="article-header article-container featured-image-wrapper mt-4 mb-4">
+                {{/* style="max-width: 720px; max-height: 252px;"> */}}
                 <div style="position: relative">
-                    <img src="{{ .Params.teaser }}" alt="" class="featured-image">
+                    <img loading="lazy" src="{{ .fig }}" alt="" class="featured-image">
                 </div>
+                <figcaption style="text-align: {{ .align }};"> {{ .content }} </figcaption>
+
             </div>
+
+
+            {{ end }}
+
             <div class="article-container" style="text-align: justify;">
                 {{ range .Params.abstract }}
                 <h3>{{ .name }}</h3>
-                <p class="pub-abstract">{{ .content }}</p>
+                <p class="pub-abstract">{{ .content | markdownify }}</p>
                 {{ end }}
                 <div class="space-below"></div>
 

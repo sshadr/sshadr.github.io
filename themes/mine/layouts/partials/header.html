@@ -1,8 +1,4 @@
-<script>
-    const isSiteThemeDark = false;
-</script>
-
-<script src="/js/load-theme.js"></script>
+{{/* <marquee>This text will scroll from right to left</marquee> */}}
 
 <aside class="search-results" id="search">
     <div class="container">
@@ -32,9 +28,9 @@
     </div>
 </aside>
 
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
     <div class="container">
-
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span>
@@ -58,5 +54,29 @@
         <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
         </ul>
 
+        <!-- News scroll -->
+        <div class="news-scroll">
+            <div class="button_news"> <i> NEWS : </i>
+                {{/* <a class="button_news">
+                    <i class=""></i>
+                    News
+                </a> */}}
+
+                <ul id="marquee" class="marquee">
+
+                    <marquee>
+                        <li> This website is still being updated. And I assume it might take me a few months to complete
+                            it to my satisfaction :)
+                        </li>
+                        <li>
+
+                        </li>
+
+                    </marquee>
+                </ul>
+            </div>
+        </div>
+        <!-- End News scroll -->
     </div>
+
 </nav>
