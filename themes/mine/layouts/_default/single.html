@@ -230,6 +230,8 @@
                 {{ end }}
                 <div class="space-below"></div>
 
+                {{.Content | safeHTML}}
+
                 {{ with .Params.video }}
                 <div class="article-style">
                     <video controls>
