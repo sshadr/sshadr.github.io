@@ -1,10 +1,10 @@
 ---
-title: Neural Denoising in a shader
+title: Neural Denoising in a Shader
 draft: "false"
 author: Adarsh Djeacoumar
 
 # Role/position/tagline
-description: Neural Denoising in a shader
+description: Neural Denoising in a Shader
 
 # Paper authors and data:
 authors:
@@ -39,7 +39,7 @@ tags:
 This very cool idea was conceived by Aaron Beis and tackled as a team. We imposed severe constraints on the pipeline in the sense that we wanted maximum results while limiting model size so that we could fit it inside a fragment shader. Also FPS!
 
 ## Design
-We designed a filter called WAMNet, short for 'Wait a Minute Network.' We coined this name because it took about a minute to learn for a single scene. This filter denoises the input from inside an OpenGL fragment shader. We generated chunks of data with [RGB, normals] as input, and trained a Multi-Layer Perceptron (MLP) with sine activations. The inclusion of normals enforced geometric consistency within the scene and helped preserve high frequencies. After training, we used the model weights to generate the shader code and predict the output color.
+We designed a filter called WAMNet, short for 'Wait a Minute Network.' We coined this name because it took about a minute to learn the filter for a single scene. This filter denoises the input from inside an OpenGL fragment shader. We generated chunks of data with [RGB, normals] as input, and trained a Multi-Layer Perceptron (MLP) with sine activations. The inclusion of normals enforced geometric consistency within the scene and helped preserve high frequencies. After training, we used the model weights to generate the shader code and predict the output color. Here is the [report](/projects/wamnet/report.pdf) that offers more details.
 
 ![Results](/projects/wamnet/video.mp4)
 :--: 
