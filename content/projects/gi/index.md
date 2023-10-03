@@ -43,7 +43,7 @@ tags:
   - rendering
 ---
 
-As a part of the course, Realistic Image Synthesis, we explored different Global Illumination algorithms. Here I show the results of 2 algorithms, Path Tracing and Progressive Photon Mapping on a Cornell Box scene with slightly complex materials (diffuse is standard ...). 
+As a part of the course, Realistic Image Synthesis, we explored different Global Illumination algorithms. Here I show the results of 2 algorithms that we implemented, Path Tracing and Progressive Photon Mapping, on a Cornell Box scene with slightly complex materials (diffuse is standard ^^). 
 
 <figure align='center'>
     <img src='/projects/gi/teaser.png' alt=''>
