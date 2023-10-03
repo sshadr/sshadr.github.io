@@ -216,6 +216,7 @@
                 <div style="position: relative">
                     <img loading="lazy" src="{{ .fig }}" alt="" class="featured-image">
                 </div>
+
                 <figcaption style="text-align: {{ .align }};"> {{ .content }} </figcaption>
 
             </div>
@@ -230,7 +231,7 @@
                 {{ end }}
                 <div class="space-below"></div>
 
-                {{.Content | safeHTML}}
+                {{.Content}}
 
                 {{ with .Params.video }}
                 <div class="article-style">
