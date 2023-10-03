@@ -18,7 +18,7 @@ authors:
     affiliation: 1
     weight: 10
   - name: Adarsh Djeacoumar
-    url: "https://www.mpi-inf.mpg.de/home"
+    url: "https://sshadr.github.io"
     affiliation: 1
     weight: 20
   - name: Hans-Peter Seidel

@@ -14,7 +14,7 @@ description: Ray tracing engine with some cool features developed as a part of t
 # Paper authors and data:
 authors:
   - name: Adarsh Djeacoumar
-    # url: "https://www.mpi-inf.mpg.de/home"
+    url: "https://sshadr.github.io"
     # affiliation: 1
     weight: 10
   - name: Anh Tuan Tran

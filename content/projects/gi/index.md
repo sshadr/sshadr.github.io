@@ -47,7 +47,7 @@ As a part of the course, Realistic Image Synthesis, we explored different Global
 
 <figure align='center'>
     <img src='/projects/gi/teaser.png' alt=''>
-    <figcaption>Cornell Box (Glossy) - Path traced</figcaption>
+    <figcaption>Cornell Box (Glossy) - Path traced with Next Event Estimation</figcaption>
 </figure>
 
 <figure align='center'>

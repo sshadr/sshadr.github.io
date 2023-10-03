@@ -12,6 +12,7 @@ authors:
     url: "https://slerpy.xyz"
     weight: 10
   - name: Adarsh Djeacoumar
+    url: "https://sshadr.github.io"
     weight: 20
   - name: Shailesh Mishra
     url: "https://shailesh-mishra.com"
