@@ -46,4 +46,4 @@ We designed a filter called WAMNet, short for 'Wait a Minute Network.' We coined
 | Here you see a video of the shader denoising in real-time! |
 
 #### Credits
-At a time with almost no graphics experience, this project served as the spark for all my subsequent decisions in my Masters. These 2 guys, Aaron and Shailesh, have continued to be a constant source of inspiration and still motivate me to explore the depths of the Graphics world. Thanks to them, forward rendering will always hold a dear place in my life! 
+This project served as the spark for all my subsequent decisions in my Masters. These 2 guys, Aaron and Shailesh, have continued to be a constant source of inspiration and still motivate me to explore the depths of the Graphics world. Thanks to them, forward rendering will always hold a dear place in my life! 
