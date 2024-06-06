@@ -48,13 +48,13 @@ Paper:
 
 buttons:
   - name: PDF
-    url: "https://neural-fields-conv.mpi-inf.mpg.de/static/paper/compressed/neural_field_convolutions.pdf"
+    url: "https://neural-fields-conv.mpi-inf.mpg.de/static/paper/compressed/nfc_v2.pdf"
     weight: 10
   - name: Cite
     url: "/publication/neural_field_conv/cite.bib"
     weight: 20
   - name: Code
-    url: "https://neural-fields-conv.mpi-inf.mpg.de"
+    url: "https://github.com/elientumba2019/Neural-Field-Convolutions-by-Repeated-Differentiation/"
     weight: 30
   # - name: Dataset
   #   url: "https://www.ucl.ac.uk"

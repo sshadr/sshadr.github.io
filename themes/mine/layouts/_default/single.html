@@ -1,6 +1,8 @@
 {{ define "main" }}
 <html lang="{{ .Site.Data.languages.en.languageCode }}">
 
+{{/*
+
 <head>
     <meta charset=" utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,46 +66,13 @@
     <meta property="og:url" content="{{.Params.author_url | safeHTML}}" />
     <meta property="og:title" content="{{.Params.author | safeHTML}}">
     <meta property="og:description" content="{{.Params.description | safeHTML}}">
-    <!-- <meta property="og:image"
-        content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png">
-    <meta property="twitter:image"
-        content="https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_512x512_fill_lanczos_center_3.png"> -->
     <meta property="og:locale" content="{{ .Site.Data.languages.en.languageCode }}">
 
     <meta property="og:updated_time" content="2023-09-23T00:00:00&#43;00:00">
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://henzler.github.io/publication/common_3d_objects/"
-          },
-          "headline": "{{ .Params.title }}",
-          
-          "datePublished": "2021-09-09T00:00:00Z",
-          "dateModified": "2022-09-16T16:15:01+01:00",
-          
-          "author": {
-            "@type": "Person",
-            "name": "{{ (index .Params.authors 0).name }}"
-          },
-          
-          "publisher": {
-            "@type": "Organization",
-            "name": "{{ .Params.author }}",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://henzler.github.io/images/icon_hu31ea8db3f1a483e86ad1eddbb0b66013_11319_192x192_fill_lanczos_center_3.png"
-            }
-          },
-          "description": "{{ .Params.description }}"
-        }
-        </script>
 
     <title>{{.Params.author | safeHTML}}</title>
 
-</head>
+</head> */}}
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
 

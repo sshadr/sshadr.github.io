@@ -71,7 +71,8 @@ highlight_name: true
 # publications should just create a publications.yaml file in data and use it everywhere
 ---
 
-I am a Computer Science Masters student at Saarland University, advised by [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision. I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms for Image generation.
+I am a Computer Science Masters student at Saarland University, advised by [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
+<!-- I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms. -->
 
 I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python.
 
