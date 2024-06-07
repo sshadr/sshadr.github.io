@@ -1,0 +1,21 @@
+{
+    "name": "Adarsh's Website",
+    "short_name": "AD",
+    "description": "Adarsh's Hugo-powered website",
+    "icons": [
+        {
+            "src": "/images/apple-touch-icon_lgreen.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/android-chrome-512x512_lgreen.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+}

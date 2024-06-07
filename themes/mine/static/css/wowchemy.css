@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  /* 007bff -- original */
 */:root {
+    --icon_hover: #08313e;
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -19,7 +20,7 @@
     --white: #fff;
     --gray: #6c757d;
     --gray-dark: #343a40;
-    --primary: #4285F4;
+    --primary: #5d344f;
     --secondary: #6c757d;
     --success: #28a745;
     --info: #17a2b8;
@@ -166,7 +167,7 @@ sup {
 }
 
 a {
-    color: #4285F4;
+    color: #5d344f;
     text-decoration: none;
     background-color: transparent
 }
@@ -2673,8 +2674,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4
+    background-color: #5d344f;
+    border-color: #5d344f
 }
 
 .btn-primary:hover {
@@ -2694,8 +2695,8 @@ fieldset:disabled a.btn {
 .btn-primary.disabled,
 .btn-primary:disabled {
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4
+    background-color: #5d344f;
+    border-color: #5d344f
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -3000,14 +3001,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-    color: #4285F4;
-    border-color: #4285F4
+    color: #1d3a59;
+    border-color: #000000
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4
+    background-color: #5d344f;
+    border-color: #000000
 }
 
 .btn-outline-primary:focus,
@@ -3017,7 +3018,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-    color: #4285F4;
+    color: #5d344f;
     background-color: transparent
 }
 
@@ -3025,8 +3026,8 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show>.btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4
+    background-color: #5d344f;
+    border-color: #5d344f
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
@@ -3289,7 +3290,7 @@ fieldset:disabled a.btn {
 
 .btn-link {
     font-weight: 400;
-    color: #4285F4;
+    color: #f44263;
     text-decoration: none
 }
 
@@ -3601,7 +3602,7 @@ input[type="button"].btn-block {
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #4285F4
+    background-color: #5d344f
 }
 
 .dropdown-item.disabled,
@@ -3962,8 +3963,8 @@ input[type="button"].btn-block {
 
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
-    border-color: #4285F4;
-    background-color: #4285F4
+    border-color: #5d344f;
+    background-color: #5d344f
 }
 
 .custom-control-input:focus~.custom-control-label::before {
@@ -4029,8 +4030,8 @@ input[type="button"].btn-block {
 }
 
 .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before {
-    border-color: #4285F4;
-    background-color: #4285F4
+    border-color: #5d344f;
+    background-color: #5d344f
 }
 
 .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::after {
@@ -4257,7 +4258,7 @@ input[type="button"].btn-block {
     width: 1rem;
     height: 1rem;
     margin-top: -.25rem;
-    background-color: #4285F4;
+    background-color: #5d344f;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4287,7 +4288,7 @@ input[type="button"].btn-block {
 .custom-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #4285F4;
+    background-color: #5d344f;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4320,7 +4321,7 @@ input[type="button"].btn-block {
     margin-top: 0;
     margin-right: .2rem;
     margin-left: .2rem;
-    background-color: #4285F4;
+    background-color: #5d344f;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -4462,7 +4463,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #4285F4
+    background-color: #5d344f
 }
 
 .nav-fill .nav-item {
@@ -4899,7 +4900,7 @@ ul.marquee li {
 
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-    color: #4285F4
+    color: #5d344f
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -4919,7 +4920,7 @@ ul.marquee li {
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-    color: #4285F4
+    color: #5d344f
 }
 
 .navbar-light .navbar-toggler {
@@ -4936,12 +4937,12 @@ ul.marquee li {
 }
 
 .navbar-light .navbar-text a {
-    color: #4285F4
+    color: #5d344f
 }
 
 .navbar-light .navbar-text a:hover,
 .navbar-light .navbar-text a:focus {
-    color: #4285F4
+    color: #5d344f
 }
 
 .navbar-dark .navbar-brand {
@@ -5269,7 +5270,7 @@ ul.marquee li {
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #4285F4;
+    color: #5d344f;
     background-color: #fff;
     border: 1px solid #dee2e6
 }
@@ -5302,8 +5303,8 @@ ul.marquee li {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4
+    background-color: #5d344f;
+    border-color: #5d344f
 }
 
 .page-item.disabled .page-link {
@@ -5387,7 +5388,7 @@ a.badge:focus {
 
 .badge-primary {
     color: #fff;
-    background-color: #4285F4
+    background-color: #5d344f
 }
 
 a.badge-primary:hover,
@@ -5708,7 +5709,7 @@ a.badge-dark.focus {
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #4285F4;
+    background-color: #5d344f;
     transition: width 0.6s ease
 }
 
@@ -5796,8 +5797,8 @@ a.badge-dark.focus {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4
+    background-color: #5d344f;
+    border-color: #5d344f
 }
 
 .list-group-item+.list-group-item {
@@ -6962,7 +6963,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #4285F4 !important
+    background-color: #5d344f !important
 }
 
 a.bg-primary:hover,
@@ -7098,7 +7099,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-    border-color: #4285F4 !important
+    border-color: #5d344f !important
 }
 
 .border-secondary {
@@ -10673,7 +10674,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-    color: #4285F4 !important
+    color: #5d344f !important
 }
 
 a.text-primary:hover,
@@ -11011,26 +11012,27 @@ h6 {
     font-size: 1rem
 }
 
+/* This h3 affects the colors of the texts/hover */
 a,
 h3.article-title a:hover {
-    color: #4285F4;
+    color: peru;
     text-decoration: none;
     transition: color 0.6s ease
 }
 
 a:hover,
 a:focus {
-    color: #4285F4
+    color: sienna
 }
 
 .dark a,
 .dark h3.article-title a:hover {
-    color: #4285F4
+    color: #5d344f
 }
 
 .dark a:not(.btn):hover,
 .dark a:not(.btn):focus {
-    color: #4285F4
+    color: #5d344f
 }
 
 img,
@@ -11557,7 +11559,7 @@ footer a.back-to-top i {
 
 .navbar .navbar-nav .nav-link.active {
     font-weight: bold !important;
-    color: #4285F4 !important
+    color: #5d344f !important
 }
 
 .navbar .dropdown-menu {
@@ -11567,7 +11569,7 @@ footer a.back-to-top i {
 .navbar .dropdown-item.active,
 .navbar .dropdown-item-active {
     font-weight: bold;
-    color: #4285F4 !important
+    color: #5d344f !important
 }
 
 .dark .navbar {
@@ -11981,7 +11983,7 @@ a.summary-link {
 }
 
 .form-control:focus {
-    border-color: #4285F4;
+    border-color: #5d344f;
     box-shadow: 0 0 0 0.2rem #72a4f7
 }
 
@@ -12100,7 +12102,7 @@ article .article-metadata {
 }
 
 .article-metadata a:hover {
-    color: #4285F4
+    color: #5d344f
 }
 
 .article-metadata .author-notes {
@@ -12589,7 +12591,7 @@ a.hero-cta-alt:hover {
 .featurette-icon {
     display: block;
     width: 100%;
-    color: #4285F4;
+    color: #5d344f;
     font-size: 3rem;
     text-align: center
 }
@@ -12663,7 +12665,14 @@ ul.network-icon {
 }
 
 .big-icon {
-    font-size: 2rem
+    font-size: 2rem;
+    color: teal;
+}
+
+/* Change color on hover */
+.network-icon li:hover .big-icon {
+    color: #08313e;
+    /* Icon color on hover */
 }
 
 ul.ul-interests li {
@@ -12727,11 +12736,11 @@ ul.ul-edu li .description p.institution {
 
 .experience .m-2 .border,
 .experience .col.border-right {
-    border-color: #4285F4 !important
+    border-color: #5d344f !important
 }
 
 .experience .m-2 .border.exp-fill {
-    background-color: #4285F4 !important
+    background-color: #5d344f !important
 }
 
 .talk-metadata {
@@ -12922,7 +12931,7 @@ ul.ul-edu li .description p.institution {
 }
 
 .docs-search .form-control:focus {
-    border-color: #4285F4;
+    border-color: #5d344f;
     box-shadow: 0 0 0 3px #72a4f7
 }
 
@@ -12993,14 +13002,14 @@ ul.ul-edu li .description p.institution {
 .docs-sidebar .nav>.active:hover>a,
 .docs-sidebar .nav>.active>a {
     font-weight: bold;
-    color: #4285F4;
+    color: #5d344f;
     background-color: transparent
 }
 
 .docs-toggle {
     line-height: 1;
     font-size: 1.2rem;
-    color: #4285F4;
+    color: #5d344f;
     background-color: transparent
 }
 
@@ -13110,12 +13119,12 @@ ul.toc-top {
 
 #TableOfContents li a:hover,
 .toc-top li a:hover {
-    color: #4285F4;
+    color: #5d344f;
     text-decoration: none
 }
 
 #TableOfContents li a.active {
-    color: #4285F4;
+    color: #5d344f;
     font-weight: 700
 }
 
@@ -13126,7 +13135,7 @@ ul.toc-top {
 }
 
 .anchorjs-link:hover {
-    color: #4285F4;
+    color: #5d344f;
     text-decoration: none
 }
 
@@ -13147,7 +13156,7 @@ body.dark,
 
 .dark .form-control:focus {
     background-color: #44475a;
-    border-color: #4285F4;
+    border-color: #5d344f;
     box-shadow: 0 0 0 0.2rem #1266f1
 }
 
@@ -13227,7 +13236,7 @@ body.dark,
 }
 
 .dark .card h4 a {
-    color: #4285F4;
+    color: #5d344f;
     border-bottom: solid 1px transparent
 }
 
@@ -13284,7 +13293,7 @@ html[dir="rtl"] body {
 }
 
 .g-blue {
-    color: #4285F4
+    color: #5d344f
 }
 
 .o-red {

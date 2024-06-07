@@ -15,7 +15,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta name="theme-color" content="#343a40">
+    {{/*
+    <meta name="theme-color" content="#343a40"> */}}
+    <meta name="theme-color" content="#8b6675">
 
     <script src="/js/mathjax-config.js"></script>
 
@@ -51,6 +53,7 @@
     <link rel="alternate" href="/index.xml" type="application/rss+xml"
         title="{{.Site.Data.admin.author.name | safeHTML}}">
 
+
     <link rel="manifest" href="/index.webmanifest">
     <link rel="icon" type="image/png" href="{{ .Site.Data.admin.author.icon }}">
     <link rel="apple-touch-icon" type="image/png" href="{{ .Site.Data.admin.author.apple_icon }}">
@@ -67,7 +70,7 @@
     <meta property="og:locale" content="{{ .Site.Data.languages.en.languageCode }}">
 
     <meta property="og:updated_time" content="2024-06-07T00:00:00&#43;00:00">
-    <script src="/js/structured_data.js"></script>
+    {{ partial "structured_data.html" . }}
 
     <title>{{ .Params.title | safeHTML }} | {{ .Site.Data.admin.author.name | safeHTML}}</title>
 

@@ -66,7 +66,7 @@ institutions:
 
 Paper:
   - venue: ACM Transactions on Graphics (SIGGRAPH 2024)
-    url: "https://asia.siggraph.org/2023/"
+    url: "https://s2024.siggraph.org"
 
 buttons:
   - name: PDF
