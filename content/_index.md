@@ -6,7 +6,7 @@ title: Adarsh Djeacoumar
 draft: "false"
 
 # Role/position/tagline
-description: Masters Student
+description:
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -40,12 +40,18 @@ organizations:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
-  - icon: envelope
-    icon_pack: fas
-    link: "mailto:adjeacou@mpi-inf.mpg.de"
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/sshadr
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=3oeUgGEAAAAJ&hl=en
+  - icon: cv
+    icon_pack: ai
+    link: https://drive.google.com/file/d/134yD4j6DZGNJBU1pT2LursGET_lPxImb/view?usp=share_link
+  # - icon: envelope
+  #   icon_pack: fas
+  #   link: "mailto:adjeacou@mpi-inf.mpg.de"
+  # - icon: github
+  #   icon_pack: fab
+  #   link: https://github.com/sshadr
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/adarsh-djeacoumar/
@@ -68,12 +74,18 @@ email: ''
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 
+news:
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+
+
 # publications should just create a publications.yaml file in data and use it everywhere
 ---
 
-I am a Computer Science Masters student at Saarland University, advised by [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
+I am a graduate researcher working with [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
 <!-- I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms. -->
 
 I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python.
+
+** I am currently looking for PhD positions in Graphics. I would also love to chat in general, perhaps we could work on a project together :) 
 
 <!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system. -->

@@ -76,7 +76,7 @@ buttons:
     url: "/publication/scalespacegan/cite.bib"
     weight: 20
   - name: Code
-    url: ""
+    url: "https://github.com/Chuudy/scalespacegan"
     weight: 30
   # - name: Dataset
   #   url: "https://www.ucl.ac.uk"
