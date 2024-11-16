@@ -46,12 +46,12 @@ social:
   - icon: cv
     icon_pack: ai
     link: https://drive.google.com/file/d/134yD4j6DZGNJBU1pT2LursGET_lPxImb/view?usp=share_link
-  # - icon: envelope
-  #   icon_pack: fas
-  #   link: "mailto:adjeacou@mpi-inf.mpg.de"
-  # - icon: github
-  #   icon_pack: fab
-  #   link: https://github.com/sshadr
+  - icon: envelope
+    icon_pack: fas
+    link: "mailto:adjeacou@mpi-inf.mpg.de"
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/sshadr
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/adarsh-djeacoumar/
@@ -75,6 +75,12 @@ email: ''
 highlight_name: true
 
 news:
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
   - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
 
 
