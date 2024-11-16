@@ -76,12 +76,6 @@ highlight_name: true
 
 news:
   - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
 
 
 # publications should just create a publications.yaml file in data and use it everywhere
@@ -92,6 +86,6 @@ I am a graduate researcher working with [Thomas Leimkühler](https://people.mpi-
 
 I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python.
 
-** I am currently looking for PhD positions in Graphics. I would also love to chat in general, perhaps we could work on a project together :) 
+** I am currently looking for PhD positions. I would also love to chat in general, perhaps we could work on a project together :) 
 
 <!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system. -->
