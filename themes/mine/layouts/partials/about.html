@@ -44,6 +44,20 @@
 
             <!-- News Section -->
             <div class="news-highlights">
+                <h2></h2>
+                <div class="news-scroll">
+                    <ul class="news-simplelist">
+                        {{ range .Params.highlights }}
+                        <li class="news-item">
+                            {{ . }}
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- News Section -->
+            <div class="news-highlights">
                 <h2>News</h2>
                 <div class="news-scroll">
                     <ul class="news-list">

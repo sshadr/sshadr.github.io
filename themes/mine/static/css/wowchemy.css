@@ -6562,6 +6562,13 @@ a.close.disabled {
     /* Indentation for bullets */
 }
 
+.news-simplelist {
+    list-style: none;
+    /* Adds bullet points */
+    margin: 0;
+    padding-left: 20px;
+}
+
 .news-item {
     padding: 5px 0;
     /* Spacing between news items */
