@@ -8,7 +8,7 @@
 
         <div class="col-12 col-lg-8">
             {{ with .Site.GetPage "/projects" }}
-            {{ range .Pages }}
+            {{ range sort .Pages ".Params.weight" "desc" }}
 
             <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
 

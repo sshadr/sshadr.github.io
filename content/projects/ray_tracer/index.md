@@ -8,6 +8,7 @@ title: Rays to Pixels - A Warm Night
 draft: "false"
 author: Adarsh Djeacoumar
 
+weight: 2
 # Role/position/tagline
 description: Ray tracing engine with some cool features developed as a part of the Computer Graphics course. We won the Rendering competition for our scene "A Warm Night".
 

@@ -3,11 +3,12 @@
 # date: 2023-08-27T00:45:42+02:00
 # draft: true
 title: Learning Images Across Scales Using Adversarial Training
+projecturl: "https://scalespacegan.mpi-inf.mpg.de"
 #change title to headline
 # menu: "main"
 draft: "false"
 author: Adarsh Djeacoumar
-
+weight: 2
 # Role/position/tagline
 description: The real world exhibits rich structure and detail across many scales of observation. It is difficult, however, to capture and represent a broad spectrum of scales using ordinary images. We devise a novel paradigm for learning a representation that captures an orders-of-magnitude variety of scales from an unstructured collection of ordinary images. We treat this collection as a distribution of scale-space slices to be learned using adversarial training, and additionally enforce coherency across slices. Our approach relies on a multiscale generator with carefully injected procedural frequency content, which allows to interactively explore the emerging continuous scale space. Training across vastly different scales poses challenges regarding stability, which we tackle using a supervision scheme that involves careful sampling of scales. We show that our generator can be used as a multiscale generative model, and for reconstructions of scale spaces from unstructured patches. Significantly outperforming the state of the art, we demonstrate zoom-in factors of up to 256x at high quality and scale consistency.
 # Paper authors and data:

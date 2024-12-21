@@ -6,6 +6,7 @@ author: Adarsh Djeacoumar
 # Role/position/tagline
 description: Neural Denoising in a Shader
 
+weight: 3
 # Paper authors and data:
 authors:
   - name: Aaron Beis

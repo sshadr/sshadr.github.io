@@ -9,6 +9,7 @@ title: GI Techniques
 draft: "false"
 author: Adarsh Djeacoumar
 
+weight: 4
 # Role/position/tagline
 description: Common scenes rendered using GI techniques as a part of the Realistic Image Synthesis course.
 

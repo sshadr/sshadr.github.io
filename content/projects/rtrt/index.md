@@ -9,6 +9,7 @@ title: Algorithms for Real-time Ray tracing
 draft: "false"
 author: Adarsh Djeacoumar
 
+weight: 5
 # Role/position/tagline
 description: Implemented Spatiotemporal Variance-Guided Filtering
 
@@ -37,6 +38,8 @@ teaser: "teaser.png"
 tags:
   - computer-graphics
   - rendering
+
+
 ---
 <figure align='center'>
   <div style='display: flex; justify-content: center;'>

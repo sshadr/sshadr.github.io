@@ -15,7 +15,7 @@
                 <div class="media-body">
 
                     <h3 class="article-title mb-0 mt-0" itemprop="name">
-                        <a href="{{ .RelPermalink }}" itemprop="url">{{ .Params.title }} </a>
+                        <a href="{{ .Params.projecturl }}" itemprop="url">{{ .Params.title }}</a>
                     </h3>
 
                     <div class="stream-meta article-metadata">
@@ -73,7 +73,7 @@
 
                 </div>
                 <div class="ml-3">
-                    <a href="{{ .RelPermalink }}">
+                    <a href="{{ .Params.projecturl }}">
                         <img src="{{ .RelPermalink }}{{ .Params.teaser }}" itemprop="image">
                     </a>
 
