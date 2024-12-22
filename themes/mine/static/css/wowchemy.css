@@ -12440,7 +12440,7 @@ ul.share li:hover i {
 
 .home-section {
     position: relative;
-    background-color: #faf4e8;
+    background-color: #FDFAF4;
     /* white color -- changes the odd (majority) background color */
     padding: 110px 0 110px 0;
     animation: intro 0.3s both;
@@ -12492,7 +12492,7 @@ ul.share li:hover i {
 }
 
 .home-section:nth-of-type(even) {
-    background-color: #F2E8CF
+    background-color: #FAF4E8
         /* color -- changes the even background color */
         /* inspiration: ice flow  */
 }
