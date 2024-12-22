@@ -12725,12 +12725,13 @@ ul.network-icon {
 
 .big-icon {
     font-size: 2rem;
-    color: teal;
+    color: #d4c8c7;
+    /* colors of favicons */
 }
 
 /* Change color on hover */
 .network-icon li:hover .big-icon {
-    color: #08313e;
+    color: #412c32;
     /* Icon color on hover */
 }
 
