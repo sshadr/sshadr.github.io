@@ -20,7 +20,7 @@
     --white: #fff;
     --gray: #6c757d;
     --gray-dark: #343a40;
-    --primary: #5d344f;
+    --primary: #ffffff;
     --secondary: #6c757d;
     --success: #28a745;
     --info: #17a2b8;
@@ -11072,14 +11072,14 @@ h6 {
 /* This h3 affects the colors of the texts/hover ice flow -contrasting currently */
 a,
 h3.article-title a:hover {
-    color: #6a4650;
+    color: #7D9792;
     text-decoration: none;
     transition: color 0.6s ease
 }
 
 a:hover,
 a:focus {
-    color: #a71d2a
+    color: #284655
 }
 
 .dark a,
@@ -11568,7 +11568,8 @@ footer a.back-to-top i {
 
 .navbar {
     height: 70px;
-    background: #d2d2d2;
+    background: #536F74;
+    /* changes the navigation bar color d4c8c7 */
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.11);
     font-size: 13.86px;
     position: fixed;
@@ -11605,18 +11606,20 @@ footer a.back-to-top i {
 }
 
 .navbar .navbar-nav .nav-link {
-    color: rgba(45, 45, 45, 0.85)
+    /* color: rgba(45, 45, 45, 0.85) */
+    color: #e0a800
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-    color: #2d2d2d
+    color: #fff
 }
 
 .navbar .navbar-nav .nav-link.active {
     font-weight: bold !important;
-    color: #5d344f !important
+    color: #FAF4E8 !important
+        /* changes navigation bar text color only the active one */
 }
 
 .navbar .dropdown-menu {
@@ -11626,7 +11629,7 @@ footer a.back-to-top i {
 .navbar .dropdown-item.active,
 .navbar .dropdown-item-active {
     font-weight: bold;
-    color: #5d344f !important
+    color: #e0a800 !important
 }
 
 .dark .navbar {
@@ -12437,7 +12440,7 @@ ul.share li:hover i {
 
 .home-section {
     position: relative;
-    background-color: #fff;
+    background-color: #faf4e8;
     /* white color -- changes the odd (majority) background color */
     padding: 110px 0 110px 0;
     animation: intro 0.3s both;
@@ -12489,8 +12492,9 @@ ul.share li:hover i {
 }
 
 .home-section:nth-of-type(even) {
-    background-color: #c7d3d4ff
-        /* ice flow color -- changes the even background color */
+    background-color: #F2E8CF
+        /* color -- changes the even background color */
+        /* inspiration: ice flow  */
 }
 
 .dark .home-section {
@@ -12725,13 +12729,13 @@ ul.network-icon {
 
 .big-icon {
     font-size: 2rem;
-    color: #d4c8c7;
+    color: #7D9792;
     /* colors of favicons */
 }
 
 /* Change color on hover */
 .network-icon li:hover .big-icon {
-    color: #412c32;
+    color: #284655;
     /* Icon color on hover */
 }
 
