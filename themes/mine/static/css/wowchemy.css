@@ -11069,17 +11069,17 @@ h6 {
     font-size: 1rem
 }
 
-/* This h3 affects the colors of the texts/hover */
+/* This h3 affects the colors of the texts/hover ice flow -contrasting currently */
 a,
 h3.article-title a:hover {
-    color: peru;
+    color: #6a4650;
     text-decoration: none;
     transition: color 0.6s ease
 }
 
 a:hover,
 a:focus {
-    color: sienna
+    color: #a71d2a
 }
 
 .dark a,
@@ -12438,6 +12438,7 @@ ul.share li:hover i {
 .home-section {
     position: relative;
     background-color: #fff;
+    /* white color -- changes the odd (majority) background color */
     padding: 110px 0 110px 0;
     animation: intro 0.3s both;
     animation-delay: 0.15s
@@ -12488,7 +12489,8 @@ ul.share li:hover i {
 }
 
 .home-section:nth-of-type(even) {
-    background-color: #e6e6e6
+    background-color: #c7d3d4ff
+        /* ice flow color -- changes the even background color */
 }
 
 .dark .home-section {
