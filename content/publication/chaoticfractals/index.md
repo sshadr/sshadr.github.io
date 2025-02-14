@@ -56,7 +56,7 @@ buttons:
   - name: Project (soon)
     url: ""
     weight: 50
-  - name: Thesis
+  - name: Master Thesis
     url: "https://drive.google.com/file/d/1vudMiDbJDaSTR6OpXoWwP6XMhQ25NqPt/view?usp=share_link"
     weight: 50
 
