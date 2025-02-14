@@ -48,7 +48,7 @@ buttons:
     url: "/publication/chaoticfractals/cite.bib"
     weight: 20
   - name: Code (soon)
-    url: ""
+    url: "https://github.com/sshadr/chaotic-fractals"
     weight: 30
   # - name: Dataset
   #   url: "https://www.ucl.ac.uk"
