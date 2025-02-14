@@ -38,7 +38,7 @@ institutions:
 
 Paper:
   - venue: Computer Graphics Forum (Eurographics 2025)
-    url: ""
+    url: "https://eg25.cs.ucl.ac.uk/main/home.html"
 
 buttons:
   - name: PDF (soon)
