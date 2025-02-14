@@ -78,6 +78,7 @@ highlights:
   - I am seeking PhD positions for fall 2025. I would also love to chat in general, perhaps we could work on a project together :) 
 
 news:
+  - Full Paper accepted at Eurographics 2025. See you at London!
   - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
 
 

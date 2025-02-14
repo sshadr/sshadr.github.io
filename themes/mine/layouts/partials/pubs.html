@@ -8,14 +8,17 @@
 
         <div class="col-12 col-lg-8">
             {{ with .Site.GetPage "/publication" }}
-            {{ range .Pages }}
+            {{ range sort .Pages ".Params.weight" "desc" }}
 
             <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
 
                 <div class="media-body">
 
                     <h3 class="article-title mb-0 mt-0" itemprop="name">
-                        <a href="{{ .Params.projecturl }}" itemprop="url">{{ .Params.title }}</a>
+                        {{/* <a href="{{ .Params.projecturl }}" itemprop="url">{{ .Params.title }}</a> */}}
+                        <a href="{{ if .Params.projecturl }}{{ .Params.projecturl }}{{ else }}{{ .RelPermalink }}{{ end }}"
+                            itemprop="url">
+                            {{ .Params.title }}
                     </h3>
 
                     <div class="stream-meta article-metadata">

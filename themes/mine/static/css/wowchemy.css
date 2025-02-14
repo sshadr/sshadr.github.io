@@ -11351,6 +11351,10 @@ a.badge:hover {
     border-radius: .3rem
 }
 
+.btn-page-header {
+    margin: 8px 8px 8px 0
+}
+
 .btn-links .btn {
     padding: 5px .5rem 5px .5rem;
     line-height: 1
