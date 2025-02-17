@@ -24,27 +24,22 @@
                     <div class="stream-meta article-metadata">
 
                         <div itemprop="author">
-                            {{ $maxWeight := -1 }}
-                            {{ range .Params.authors }}
-                            {{ if gt .weight $maxWeight }}
-                            {{ $maxWeight = .weight }}
-                            {{ end }}
-                            {{ end }}
+                            {{ $sortedAuthors := sort .Params.authors "weight" "asc" }}
+                            {{ $adminName := $.Site.Data.admin.author.name }} <!-- Get the admin's name -->
 
-                            {{ range $index, $author := .Params.authors }}
-                            {{/* Author : {{ $maxWeight }} */}}
-                            {{ if eq .name $.Site.Data.admin.author.name }}
-                            <span class="author-highlighted">
-                                <a href="/">{{ $.Site.Data.admin.author.name }}</a>{{ if ne .weight $maxWeight
-                                }},{{ end }}
+                            {{ range $index, $author := $sortedAuthors }}
+                            {{ if eq $author.name $adminName }}
+                            <span>
+                                <a href="/"><strong>{{ $author.name }}</strong></a>
                             </span>
-                            {{ $index := $index | add 1 }}
+
                             {{ else }}
                             <span>
-                                <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne .weight $maxWeight
-                                }},{{ end }}
+                                <a href="{{ $author.url }}">{{ $author.name }}</a>
                             </span>
                             {{ end }}
+
+                            {{ if ne (add $index 1) (len $sortedAuthors) }},{{ end }}
                             {{ end }}
                         </div>
 
