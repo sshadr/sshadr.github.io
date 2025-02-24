@@ -41,20 +41,20 @@ Paper:
     url: "https://eg25.cs.ucl.ac.uk/main/home.html"
 
 buttons:
-  - name: PDF (soon)
-    url: ""
+  - name: PDF
+    url: "https://chaotic-fractals.mpi-inf.mpg.de/Chaotic_Fractals.pdf"
     weight: 10
   - name: Cite
     url: "/publication/chaoticfractals/cite.bib"
     weight: 20
-  - name: Code (soon)
+  - name: Code
     url: "https://github.com/sshadr/chaotic-fractals"
     weight: 30
   # - name: Dataset
   #   url: "https://www.ucl.ac.uk"
   #   weight: 40
-  - name: Project (soon)
-    url: ""
+  - name: Project
+    url: "https://chaotic-fractals.mpi-inf.mpg.de"
     weight: 50
   - name: Master Thesis
     url: "https://drive.google.com/file/d/1vudMiDbJDaSTR6OpXoWwP6XMhQ25NqPt/view?usp=share_link"
