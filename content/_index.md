@@ -45,7 +45,7 @@ social:
     link: https://scholar.google.com/citations?user=3oeUgGEAAAAJ&hl=en
   - icon: cv
     icon_pack: ai
-    link: https://drive.google.com/file/d/134yD4j6DZGNJBU1pT2LursGET_lPxImb/view?usp=share_link
+    link: https://drive.google.com/file/d/1-rU8WgMfH7ug7dARmB4DlZ2MjLRLeDqO/view?usp=share_link
   - icon: envelope
     icon_pack: fas
     link: "mailto:adjeacou@mpi-inf.mpg.de"
@@ -74,8 +74,8 @@ email: ''
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 
-highlights:
-  - I am seeking PhD positions for fall 2025. I would also love to chat in general, perhaps we could work on a project together :) 
+# highlights:
+#   - I am seeking PhD positions for fall 2025. I would also love to chat in general, perhaps we could work on a project together :) 
 
 news:
   - Full Paper accepted at Eurographics 2025. See you at London!
@@ -85,9 +85,9 @@ news:
 # publications should just create a publications.yaml file in data and use it everywhere
 ---
 
-I am a graduate researcher working with [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
+I am a researcher working with [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
 <!-- I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms. -->
 
-I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, Cuda, Python.
+I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, CUDA, Python.
 
 <!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system. -->
