@@ -88,6 +88,6 @@ news:
 I am a researcher working with [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
 <!-- I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms. -->
 
-I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, as a Research Assistant, helping in the construction of a unifying library for usage within the group employing OpenGL, C++, CUDA, Python.
+I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, conostructing a unifying library for usage within the group employing OpenGL, C++, CUDA, Python.
 
 <!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system. -->
