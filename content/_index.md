@@ -45,10 +45,10 @@ social:
     link: https://scholar.google.com/citations?user=3oeUgGEAAAAJ&hl=en
   - icon: cv
     icon_pack: ai
-    link: https://drive.google.com/file/d/1-rU8WgMfH7ug7dARmB4DlZ2MjLRLeDqO/view?usp=share_link
+    link: https://drive.google.com/file/d/1vJotgtuKNAQqTaSO0-RgOzH-peDeDZuG/view?usp=sharing
   - icon: envelope
     icon_pack: fas
-    link: "mailto:adjeacou@mpi-inf.mpg.de"
+    link: "mailto:adarshdjeacoumar98@gmail.com"
   - icon: github
     icon_pack: fab
     link: https://github.com/sshadr
@@ -57,7 +57,7 @@ social:
     link: https://www.linkedin.com/in/adarsh-djeacoumar/
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/Adarsh_d_
+    link: https://twitter.com/ssh_adr_
     # label: Follow me on Twitter
     # display:
     #   header: false
@@ -90,4 +90,3 @@ I am a researcher working with [Thomas Leimkühler](https://people.mpi-inf.mpg.d
 
 I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, constructing a unifying library for usage within the group employing OpenGL, C++, CUDA, Python.
 
-<!-- My current research involved modelling images (natural or artificial) and hence can be encoded by repeated primitives. To this end, I use Differentiable rendering to design a ML Style Optimization system. -->
