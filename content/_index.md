@@ -45,7 +45,7 @@ social:
     link: https://scholar.google.com/citations?user=3oeUgGEAAAAJ&hl=en
   - icon: cv
     icon_pack: ai
-    link: https://drive.google.com/file/d/1vJotgtuKNAQqTaSO0-RgOzH-peDeDZuG/view?usp=sharing
+    link: https://drive.google.com/file/d/1cYLELAoEmechdOWLht1xlK_4kI3RtTX_/view?usp=sharing
   - icon: envelope
     icon_pack: fas
     link: "mailto:adarshdjeacoumar98@gmail.com"
