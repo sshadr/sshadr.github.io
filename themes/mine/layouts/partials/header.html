@@ -25,8 +25,14 @@
             <div class="news-label">NEWS</div>
             <div class="news-ticker">
                 <div class="news-content">
+                    {{ if .Site.Home.Params.ticker_text }}
+                    {{ range split .Site.Home.Params.ticker_text "|" }}
+                    <span class="news-item"> &bull;&nbsp; {{ . | safeHTML }}</span>
+                    {{ end }}
+                    {{ else }}
                     {{ range first 1 .Site.Home.Params.news }}
                     <span class="news-item"> &bull; {{ . | safeHTML }}</span>
+                    {{ end }}
                     {{ end }}
                 </div>
             </div>

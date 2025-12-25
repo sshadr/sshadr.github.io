@@ -83,6 +83,9 @@ highlight_name: true
 # highlights:
 #   - I am open to Collaborations, and Internships (from late 2027)!
 
+# Custom field to override the news ticker. If set, this text is shown instead of the top news item.
+ticker_text: "Revamped website + Shader playground! | Open to collaborate on challenging projects!"
+
 news:
   - Had a fantastic time meeting inspiring researchers at EGSR 2025 in Copenhagen!
   - '<span class="paper-abbrev"><a href="https://chaotic-fractals.mpi-inf.mpg.de/">ChaoticFractals</a></span> accepted at <span class="venue-red"><em>Eurographics ''25 (CGF)</em></span>. See you in London!'
