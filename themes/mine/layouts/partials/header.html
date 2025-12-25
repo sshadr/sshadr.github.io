@@ -41,3 +41,13 @@
     </div>
 
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggler = document.querySelector('.navbar-toggler');
+        const collapse = document.querySelector('#navbar-content');
+        if (toggler && collapse) {
+            toggler.addEventListener('click', () => collapse.classList.toggle('show'));
+        }
+    });
+</script>
