@@ -3,15 +3,14 @@
 {{- partial "head.html" . -}}
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="">
+    <canvas id="gl"></canvas>
     {{- partial "header.html" . -}}
     <div id="content">
         {{- block "main" . }}{{- end }}
     </div>
-
     <script>
         const isSiteThemeDark = false;
     </script>
-
     <script src="/js/load-theme.js"></script>
     {{- partial "footer.html" . -}}
 

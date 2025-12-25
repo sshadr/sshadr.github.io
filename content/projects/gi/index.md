@@ -6,7 +6,7 @@ content_type: markdown
 title: GI Techniques
 #change title to headline
 # menu: "main"
-draft: "false"
+draft: false
 author: Adarsh Djeacoumar
 
 weight: 4
@@ -18,10 +18,12 @@ authors:
   - name: Adarsh Djeacoumar
     # url: "https://www.mpi-inf.mpg.de/home"
     # affiliation: 1
+    url: "https://www.mpi-inf.mpg.de/home"
     weight: 10
   - name: Anh Tuan Tran
     # url: "https://people.mpi-inf.mpg.de/~hpseidel/"
     # affiliation: 1
+    url: "https://people.mpi-inf.mpg.de/~hpseidel/"
     weight: 20
 
 Paper:
@@ -44,25 +46,19 @@ tags:
   - rendering
 ---
 
-As a part of the course, Realistic Image Synthesis, we explored different Global Illumination algorithms. Here I show the results of 2 algorithms that we implemented, Path Tracing and Progressive Photon Mapping, on a Cornell Box scene with slightly complex materials (diffuse is standard ^^). 
+As a part of the course, Realistic Image Synthesis, we explored different Global Illumination algorithms. Here I show the results of 2 algorithms that we implemented, Path Tracing and Progressive Photon Mapping, on a Cornell Box scene with slightly complex materials. 
 
-<figure align='center'>
+<figure>
     <img src='/projects/gi/teaser.png' alt=''>
     <figcaption>Cornell Box (Glossy) - Path traced with Next Event Estimation</figcaption>
 </figure>
 
-<figure align='center'>
+<figure>
     <img src='/projects/gi/water.png' alt=''>
     <figcaption>Cornell Box (S-D-S path) - Progessive Photon Mapping</figcaption>
 </figure>
 
-<figure align='center'>
+<figure>
     <img src='/projects/gi/specular.png' alt=''>
     <figcaption>Cornell Box (Glossy) - Progessive Photon Mapping</figcaption>
 </figure>
-
-
-
-
-
-

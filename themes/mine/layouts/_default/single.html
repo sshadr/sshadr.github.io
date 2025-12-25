@@ -1,231 +1,92 @@
 {{ define "main" }}
-<html lang="{{ .Site.Data.languages.en.languageCode }}">
 
-{{/*
-
-<head>
-    <meta charset=" utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="Hugo">
-    <meta name="author" content="{{.Params.author | safeHTML}}">
-
-    <meta name="description" content="{{.Params.description | safeHTML}}">
-
-    <link rel="alternate" hreflang="{{ .Site.Data.languages.en.languageCode }}"
-        href="{{.Params.author_url | safeHTML}}" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <meta name="theme-color" content="#fd7e14">
-
-    <script src="/js/mathjax-config.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css"
-        integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg=="
-        crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
-        integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css"
-        crossorigin="anonymous" title="hl-light">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css"
-        crossorigin="anonymous" title="hl-dark" disabled>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js"
-        integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg=="
-        crossorigin="anonymous" async></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous"
-        async></script>
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono%7CProduct+Sans:400,600,300&display=swap">
-
-    <link rel="stylesheet" href="/css/wowchemy.css">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151247604-1"></script>
-    <script src="/js/gtrack.js"></script>
-
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title={{.Params.first_name}}
-        {{.Params.last_name}}>
-
-    <link rel="manifest" href="/index.webmanifest">
-    <link rel="icon" type="image/png" href="{{.Params.author_icon}}">
-    <link rel="apple-touch-icon" type="image/png" href="{{.Params.author_apple_icon}}">
-
-    <!-- The below lines are metadata content when my website is shared to social media -->
-    <link rel="canonical" href="{{.Params.author_url | safeHTML}}" />
-
-    <meta property="twitter:card" content="summary">
-
-    <meta property="og:site_name" content="{{.Params.author | safeHTML}}">
-    <meta property="og:url" content="{{.Params.author_url | safeHTML}}" />
-    <meta property="og:title" content="{{.Params.author | safeHTML}}">
-    <meta property="og:description" content="{{.Params.description | safeHTML}}">
-    <meta property="og:locale" content="{{ .Site.Data.languages.en.languageCode }}">
-
-    <meta property="og:updated_time" content="2023-09-23T00:00:00&#43;00:00">
-
-    <title>{{.Params.author | safeHTML}}</title>
-
-</head> */}}
-
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class=" ">
-
-    <aside class="search-results" id="search">
-        <div class="container">
-            <section class="search-header">
-
-                <div class="row no-gutters justify-content-between mb-3">
-                    <div class="col-6">
-                        <h1>Search</h1>
-                    </div>
-                    <div class="col-6 col-search-close">
-                        <a class="js-search" href="#">
-                            <i class="fas fa-times-circle text-muted" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div id="search-box">
-                </div>
-
-            </section>
-            <section class="section-search-results">
-
-                <div id="search-hits">
-                </div>
-
-            </section>
-        </div>
-    </aside>
-
-    <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-        <div class="container">
-
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
-                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span>
-                    <i class="fas fa-bars"></i>
-                </span>
-            </button>
-
-            <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
-
-                <ul class="navbar-nav d-md-inline-flex">
-                    {{ range .Site.Data.menus.main }}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ relURL .url }}" data-target="{{ relURL .url }}">
-                            <span>{{ .name }}</span>
-                        </a>
+<section id="about" class="home-section wg-about   ">
+    <div class="container">
+        <div class="article-container pt-3">
+            <h1 align="center">{{.Params.title | safeHTML}}</h1>
+            <div class="space-below"></div>
+            <div class="text-center">
+                <ul class="list-inline">
+                    {{/* {{ $institutions := .Params.institutions }} */}}
+                    {{ range $author := .Params.authors }}
+                    <li class="list-inline-item"><a href="{{ .url }}" class="author-link">{{ .name }}</a>
+                        <sup>{{ .affiliation }}</sup>
                     </li>
                     {{ end }}
                 </ul>
+
+                <ul class="list-inline">
+                    {{ range $number, $info := .Params.institutions }}
+                    <li class="list-inline-item">
+                        <sup>{{ $number }}</sup>
+                        <a href="{{ $info.url }}">{{ $info.name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ range .Params.Paper }}
+                <a href="{{ .url }}" class="venue-link"> {{ .venue }} </a>
+                {{ end }}
             </div>
+            <div class="space-below"></div>
 
-            <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-            </ul>
-
+            <div class="btn-links mb-3">
+                {{ range .Params.buttons }}
+                <a class="btn btn-outline-primary my-1 mr-1 {{ if eq .name " Cite" }}js-cite-modal{{ end }}"
+                    href="{{ .url }}" {{ if ne .name "Cite" }}target="_blank" rel="noopener" {{ end }}>
+                    {{ .name }}
+                </a>
+                {{ end }}
+            </div>
         </div>
-    </nav>
+        {{ range .Params.method }}
+        <div class="article-container featured-image-wrapper mt-4 mb-4">
+            <img loading="lazy" src="{{ .fig }}" alt="" class="featured-image">
+            <figcaption class="text-center text-muted mt-2"> {{ .content }} </figcaption>
+        </div>
+        {{ end }}
 
-    <span class="js-widget-page d-none"></span>
+        <div class="article-container" style="text-align: justify;">
+            {{ range .Params.abstract }}
+            <h3>{{ .name }}</h3>
+            <p class="pub-abstract">{{ .content | markdownify }}</p>
+            {{ end }}
+            <div class="space-below"></div>
 
-    <section id="about" class="home-section wg-about   ">
-        <div class="container">
-            <div class="article-container pt-3">
-                <h1 align="center">{{.Params.title | safeHTML}}</h1>
-                <div class="space-below"></div>
-                <div class="text-center">
-                    <ul class="list-inline">
-                        {{/* {{ $institutions := .Params.institutions }} */}}
-                        {{ range $author := .Params.authors }}
-                        <li class="list-inline-item"><a href="{{ .url }}">{{ .name }}</a>
-                            <sup>{{ .affiliation }}</sup>
-                        </li>
-                        {{ end }}
-                    </ul>
-
-                    <ul class="list-inline">
-                        {{ range $number, $info := .Params.institutions }}
-                        <li class="list-inline-item">
-                            <sup>{{ $number }}</sup>
-                            <a href="{{ $info.url }}">{{ $info.name }}</a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ range .Params.Paper }}
-                    <a href="{{ .url }}"> {{ .venue }} </a>
-                    {{ end }}
-                </div>
-                <div class="space-below"></div>
-
-                <div class="btn-links mb-3">
-                    {{ range .Params.buttons }}
-                    {{ if eq .name "Cite" }}
-                    <button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-                        data-filename="cite.bib">
-                        Cite
-                    </button>
-                    {{ else }}
-                    <a class="btn btn-outline-primary my-1 mr-1" href="{{ .url }}" target="_blank" rel="noopener">
-                        {{ .name }}
-                    </a>
-                    {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-            {{ range .Params.method }}
-            <div class="article-header article-container featured-image-wrapper mt-4 mb-4">
-                {{/* style="max-width: 720px; max-height: 252px;"> */}}
-                <div style="position: relative">
-                    <img loading="lazy" src="{{ .fig }}" alt="" class="featured-image">
-                </div>
-
-                <figcaption style="text-align: {{ .align }};"> {{ .content }} </figcaption>
-
+            <div class="article-style">
+                {{.Content}}
             </div>
 
-
+            {{ with .Params.video }}
+            <div class="article-style">
+                <video controls>
+                    <source src="{{ . }}" type="video/mp4">
+                </video>
+            </div>
             {{ end }}
 
-            <div class="article-container" style="text-align: justify;">
-                {{ range .Params.abstract }}
-                <h3>{{ .name }}</h3>
-                <p class="pub-abstract">{{ .content | markdownify }}</p>
+            <div class="article-tags">
+                {{ range .Params.tags }}
+                <a class="badge badge-light" href="/tag/computer-graphics">{{ . }}</a>
                 {{ end }}
-                <div class="space-below"></div>
-
-                {{.Content}}
-
-                {{ with .Params.video }}
-                <div class="article-style">
-                    <video controls>
-                        <source src="{{ . }}" type="video/mp4">
-                    </video>
-                </div>
-                {{ end }}
-
-                <div class="article-tags">
-                    {{ range .Params.tags }}
-                    <a class="badge badge-light" href="/tag/computer-graphics">{{ . }}</a>
-                    {{ end }}
-                    {{/* <a class="badge badge-light" href="/tag/computer-vision/">computer vision</a>
-                    <a class="badge badge-light" href="/tag/computer-graphics/">computer graphics</a>
-                    <a class="badge badge-light" href="/tag/machine-learning/">machine learning</a>
-                    <a class="badge badge-light" href="/tag/rendering/">rendering</a>
-                    <a class="badge badge-light" href="/tag/brdf/">brdf</a>
-                    <a class="badge badge-light" href="/tag/texture/">texture</a>
-                    <a class="badge badge-light" href="/tag/material/">material</a> */}}
-                </div>
+                {{/* <a class="badge badge-light" href="/tag/computer-vision/">computer vision</a>
+                <a class="badge badge-light" href="/tag/computer-graphics/">computer graphics</a>
+                <a class="badge badge-light" href="/tag/machine-learning/">machine learning</a>
+                <a class="badge badge-light" href="/tag/rendering/">rendering</a>
+                <a class="badge badge-light" href="/tag/brdf/">brdf</a>
+                <a class="badge badge-light" href="/tag/texture/">texture</a>
+                <a class="badge badge-light" href="/tag/material/">material</a> */}}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-</body>
-
+<!-- Simple Citation Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <pre><code></code></pre>
+        </div>
+    </div>
+</div>
 {{ end }}

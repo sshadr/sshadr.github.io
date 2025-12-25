@@ -10,12 +10,14 @@
             {{ with .Site.GetPage "/projects" }}
             {{ range sort .Pages ".Params.weight" "desc" }}
 
-            <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+            <div class="media stream-item" itemscope itemtype="http://schema.org/CreativeWork">
 
                 <div class="media-body">
 
                     <h3 class="article-title mb-0 mt-0" itemprop="name">
-                        <a href="{{ .RelPermalink }}" itemprop="url">{{ .Params.title }} </a>
+                        <a href="{{ .RelPermalink }}" itemprop="url">
+                            {{ .Params.title }}
+                        </a>
                     </h3>
 
                     <div class="stream-meta article-metadata">
@@ -27,28 +29,30 @@
                             {{ $maxWeight = .weight }}
                             {{ end }}
                             {{ end }}
-
-                            {{ range $index, $author := .Params.authors }}
-                            {{/* Author : {{ $maxWeight }} */}}
+                            {{ $sortedAuthors := sort .Params.authors "weight" "asc" }}
+                            {{ range $index, $author := $sortedAuthors }}
                             {{ if eq .name $.Site.Data.admin.author.name }}
-                            <span class="author-highlighted">
-                                <a href="/">{{ $.Site.Data.admin.author.name }}</a>{{ if ne .weight $maxWeight
+                            <span>
+                                <a href="/" class="author-link"><strong>{{ $author.name }}</strong></a>{{ if ne .weight
+                                $maxWeight
                                 }},{{ end }}
                             </span>
                             {{ $index := $index | add 1 }}
                             {{ else }}
                             <span>
-                                <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne .weight $maxWeight
+                                <a href="{{ $author.url }}" class="author-link">{{ $author.name }}</a>{{ if ne .weight
+                                $maxWeight
                                 }},{{ end }}
                             </span>
                             {{ end }}
                             {{ end }}
                         </div>
 
+
                         <div class="">
                             {{ range $index, $paper := .Params.Paper }}
                             <strong>
-                                <a href="{{ $paper.url}}"> {{ $paper.venue }}</a>
+                                <a href="{{ $paper.url}}" class="venue-link"> {{ $paper.venue }}</a>
                             </strong>
                             {{ end }}
                         </div>
@@ -56,33 +60,22 @@
 
                     <div class="btn-links">
                         {{ range .Params.buttons }}
-                        {{ if eq .name "Cite" }}
-                        <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-                            data-filename="{{ .url }}">
-                            {{ .name }}
-                        </button>
-                        {{ else }}
-                        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ .url }}" target="_blank"
-                            rel="noopener">
+                        <a class="btn btn-outline-primary my-1 mr-1 btn-sm {{ if eq .name " Cite" }}js-cite-modal{{ end
+                            }}" href="{{ .url }}" {{ if ne .name "Cite" }}target="_blank" rel="noopener" {{ end }}>
                             {{ .name }}
                         </a>
                         {{ end }}
-                        {{ end }}
                     </div>
-
 
                 </div>
                 <div class="ml-3">
                     <a href="{{ .RelPermalink }}">
                         <img src="{{ .RelPermalink }}{{ .Params.teaser }}" itemprop="image">
                     </a>
-
                 </div>
             </div>
             {{ end }}
             {{ end }}
-
-
         </div>
     </div>
 </div>

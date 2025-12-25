@@ -34,8 +34,20 @@
                     </li>
                     {{ end }}
                 </ul>
+
+                <!-- Logos -->
+                <ul class="organization-logos">
+                    {{ range .Params.logos }}
+                    <li>
+                        <a href="{{ .url }}" target="_blank" rel="noopener">
+                            <img src="{{ .image }}" alt="{{ .name }}" class="logo-icon">
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
             </div>
         </div>
+
 
         <div class="col-12 col-lg-8" style="text-align: justify;">
 
@@ -49,7 +61,7 @@
                     <ul class="news-simplelist">
                         {{ range .Params.highlights }}
                         <li class="news-item">
-                            {{ . }}
+                            {{ . | safeHTML}}
                         </li>
                         {{ end }}
                     </ul>
@@ -63,7 +75,7 @@
                     <ul class="news-list">
                         {{ range .Params.news }}
                         <li class="news-item">
-                            {{ . }}
+                            {{ . | safeHTML }}
                         </li>
                         {{ end }}
                     </ul>

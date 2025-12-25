@@ -1,6 +1,6 @@
 ---
 title: Affine Snakes in Vector fields
-draft: "false"
+draft: false
 author: Adarsh Djeacoumar
 
 # Role/position/tagline
@@ -30,50 +30,35 @@ tags:
   - computer-graphics
 ---
 
----
+## Computed Vector Fields
+<figure>
+    <img src="grads.png" alt="Computed Vector Fields">
+    <figcaption><strong>Left:</strong> GVF (Gradient Vector Field) | <strong>Right:</strong> EPGVF (Edge-Preserving GVF)</figcaption>
+</figure>
 
-#### Computed Vector Fields
-<div style="margin-bottom: 20px;">
-    <img src="grads.png" alt="Computed Vector Fields" style="width:100%;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-        <figcaption style="flex: 1; text-align: center; font-style: italic;">
-            <strong>GVF (Gradient Vector Field)</strong>
-        </figcaption>
-        <figcaption style="flex: 1; text-align: center; font-style: italic;">
-            <strong>EPGVF (Edge-Preserving GVF)</strong>
-        </figcaption>
-    </div>
-</div>
-
----
-
-#### Algorithm Comparison
-<div style="margin-bottom: 20px;">
-    <img src="img1.png" alt="Algorithm Comparison" style="width:100">
-    <figcaption style="text-align: center; font-style: italic;">
+## Algorithm Comparison
+<figure>
+    <img src="img1.png" alt="Algorithm Comparison">
+    <figcaption>
         Fig. shows the difference between our algorithm working on two different vector fields 
         &mdash; <strong>GVF</strong> and <strong>EPGVF</strong>.
     </figcaption>
-</div>
+</figure>
 
----
-
-#### Multiple Regions of Interest
-<div style="margin-bottom: 20px;">
-    <img src="img2.png" alt="Multiple Regions of Interest" style="width:100%">
-    <figcaption style="text-align: center; font-style: italic;">
+## Multiple Regions of Interest
+<figure>
+    <img src="img2.png" alt="Multiple Regions of Interest">
+    <figcaption>
         Our algorithm working on multiple regions of interest.
     </figcaption>
-</div>
+</figure>
 
----
-
-### Video
-<div style="margin-bottom: 20px;">
-    <video controls style="width:100%;">
+## Video
+<figure>
+    <video controls>
         <source src="/projects/affinesnakes/video.mp4" type="video/mp4">
     </video>
-    <figcaption style="text-align: center; font-style: italic;">
+    <figcaption>
         Here you see a real-time video of the Optimization and Curve evolution.
     </figcaption>
-</div>
+</figure>

@@ -68,6 +68,12 @@ social:
 #     icon_pack: ai
 #     link: uploads/resume.pdf
 
+logos:
+  - name: MPI
+    url: "https://mpi-inf.mpg.de/"
+    image: "/images/logos/mpi.svg"
+
+
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
 
@@ -75,18 +81,22 @@ email: ''
 highlight_name: true
 
 # highlights:
-#   - I am seeking PhD positions for fall 2025. I would also love to chat in general, perhaps we could work on a project together :) 
+#   - I am open to Collaborations, and Internships (from late 2027)!
 
 news:
-  - Full Paper accepted at Eurographics 2025. See you at London!
-  - "Attended EGSR 2024 in London! Was awesome meeting so many cool researchers and new friends !"
+  - Had a fantastic time meeting inspiring researchers at EGSR 2025 in Copenhagen!
+  - '<span class="paper-abbrev"><a href="https://chaotic-fractals.mpi-inf.mpg.de/">ChaoticFractals</a></span> accepted at <span class="venue-red"><em>Eurographics ''25 (CGF)</em></span>. See you in London!'
+  - Thrilled to have attended EGSR 2024 in London—wonderful to meet so many brilliant researchers!
+  - '<span class="paper-abbrev"><a href="https://scalespacegan.mpi-inf.mpg.de/">ScaleSpaceGAN</a></span> accepted at <span class="venue-red"><em>SIGGRAPH ''24 (ACM TOG)</em></span>!'
+  - '<span class="paper-abbrev"><a href="https://neural-fields-conv.mpi-inf.mpg.de/">NFC</a></span> accepted at <span class="venue-red"><em>SIGGRAPH Asia ''23 (ACM TOG)</em></span>!'
 
 
 # publications should just create a publications.yaml file in data and use it everywhere
 ---
 
-I am a researcher working with [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/). I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
+I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
 <!-- I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms. -->
 
-I currently work with the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, constructing a unifying library for usage within the group employing OpenGL, C++, CUDA, Python.
+I currently work with [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/) and the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics, constructing a unifying library for usage within the group employing OpenGL, C++, CUDA, Python.
 
+<!-- <span style="color:#ffd000;"><em>Always excited to collaborate on challenging projects, and open to internship opportunities starting late 2027!</em></span> -->

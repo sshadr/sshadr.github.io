@@ -19,6 +19,7 @@
                         <a href="{{ if .Params.projecturl }}{{ .Params.projecturl }}{{ else }}{{ .RelPermalink }}{{ end }}"
                             itemprop="url">
                             {{ .Params.title }}
+                        </a>
                     </h3>
 
                     <div class="stream-meta article-metadata">
@@ -34,13 +35,15 @@
                             {{ range $index, $author := $sortedAuthors }}
                             {{ if eq .name $.Site.Data.admin.author.name }}
                             <span>
-                                <a href="/"><strong>{{ $author.name }}</strong></a>{{ if ne .weight $maxWeight
+                                <a href="/" class="author-link"><strong>{{ $author.name }}</strong></a>{{ if ne .weight
+                                $maxWeight
                                 }},{{ end }}
                             </span>
                             {{ $index := $index | add 1 }}
                             {{ else }}
                             <span>
-                                <a href="{{ $author.url }}">{{ $author.name }}</a>{{ if ne .weight $maxWeight
+                                <a href="{{ $author.url }}" class="author-link">{{ $author.name }}</a>{{ if ne .weight
+                                $maxWeight
                                 }},{{ end }}
                             </span>
                             {{ end }}
@@ -51,7 +54,7 @@
                         <div class="">
                             {{ range $index, $paper := .Params.Paper }}
                             <strong>
-                                <a href="{{ $paper.url}}"> {{ $paper.venue }}</a>
+                                <a href="{{ $paper.url}}" class="venue-link"> {{ $paper.venue }}</a>
                             </strong>
                             {{ end }}
                         </div>

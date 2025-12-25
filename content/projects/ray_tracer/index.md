@@ -5,7 +5,7 @@
 title: Rays to Pixels - A Warm Night
 #change title to headline
 # menu: "main"
-draft: "false"
+draft: false
 author: Adarsh Djeacoumar
 
 weight: 2
@@ -17,10 +17,13 @@ authors:
   - name: Adarsh Djeacoumar
     url: "https://sshadr.github.io"
     # affiliation: 1
+    affiliation: 1
     weight: 10
   - name: Anh Tuan Tran
     # url: "https://people.mpi-inf.mpg.de/~hpseidel/"
     # affiliation: 1
+    url: "https://people.mpi-inf.mpg.de/~hpseidel/"
+    affiliation: 1
     weight: 20
 
 # institutions:
@@ -30,6 +33,13 @@ authors:
 #   2:
 #     name: "University College London"
 #     url: "https://www.ucl.ac.uk"
+institutions:
+  1:
+    name: "Max Planck Institute for Informatics"
+    url: "https://www.mpi-inf.mpg.de/home/"
+  2:
+    name: "University College London"
+    url: "https://www.ucl.ac.uk"
 
 Paper:
   - venue: Computer Graphics, Saarland University.
@@ -57,10 +67,6 @@ method:
   - fig: "teaser.png"
     content: Our scene - A Warm Night
     align: center
-abstract:
-  - name: ""
-    content: ""
-     ###Title:
 
 
 # video: "" #"video.mp4"
@@ -71,4 +77,3 @@ tags:
 ---
 
 We developed a Ray tracing engine with some cool features as a part of the Computer Graphics course. We won the Rendering competition for our scene "A Warm Night" ! We provided a comprehensive competition write-up that delves into the intricate details of our project. Feel free to access it via this [primary link](https://graphics.cg.uni-saarland.de/courses/cg1-2021/RC/group1/). If, for any reason, the primary link doesn't work, you can use this [backup link](/projects/ray_tracer/backup/index.html) instead.
-
