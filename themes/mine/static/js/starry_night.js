@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
     geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
-    // Use ShaderMaterial to draw a Gaussian function per point
+    // Use ShaderMaterial to draw points
     const material = new THREE.ShaderMaterial({
       uniforms: {},
       vertexShader: `
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
           vColor = color;
           vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
           gl_Position = projectionMatrix * mvPosition;
-          gl_PointSize = 200.0 / -mvPosition.z; // Size attenuation
+          gl_PointSize = 250.0 / -mvPosition.z; // Size attenuation
         }
       `,
       fragmentShader: `
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         void main() {
           vec2 coord = gl_PointCoord - vec2(0.5);
           float distSq = dot(coord, coord);
-          float alpha = exp(-distSq * 20.0); // Gaussian function
+          float alpha = exp(-distSq * 20.0);
           if (alpha < 0.01) discard;
           gl_FragColor = vec4(vColor, alpha);
         }
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animate particles
     if (particles) {
-      particles.rotation.y += delta * 0.0;
+      particles.rotation.y += delta * 0.01;
       particles.rotation.x += delta * 0.05;
     }
 

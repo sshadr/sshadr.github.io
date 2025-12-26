@@ -6,7 +6,7 @@ title: Adarsh Djeacoumar
 draft: "false"
 
 # Role/position/tagline
-description:
+description: Graphics Researcher
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -68,10 +68,15 @@ social:
 #     icon_pack: ai
 #     link: uploads/resume.pdf
 
-logos:
-  - name: MPI
-    url: "https://mpi-inf.mpg.de/"
-    image: "/images/logos/mpi.svg"
+organizations:
+  # current:
+  #   - name: Max Planck Institute for Informatics
+  #     url: "https://mpi-inf.mpg.de/"
+  #     image: "/images/logos/mpi.svg"
+  previous:
+    - name: Max Planck Institute for Informatics
+      url: "https://mpi-inf.mpg.de/"
+      image: "/images/logos/mpi.svg"
 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)

@@ -602,6 +602,28 @@ img {
     transform: scale(1.2);
 }
 
+.org-section-title {
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.previous-logos .logo-icon {
+    height: 35px;
+    opacity: 1;
+    /* filter: grayscale(100%); */
+}
+
+.previous-logos .logo-icon:hover {
+    opacity: 1;
+    /* filter: grayscale(0%) brightness(100%); */
+    transform: scale(1.2);
+}
+
 /* --- Badges --- */
 .badge-light {
     background: rgba(255, 255, 255, 0.1);

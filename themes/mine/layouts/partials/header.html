@@ -42,12 +42,54 @@
 
 </nav>
 
+<!-- Citation Modal -->
+<div id="modal-cite" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <pre></pre>
+        </div>
+    </div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Navbar Toggle
         const toggler = document.querySelector('.navbar-toggler');
         const collapse = document.querySelector('#navbar-content');
         if (toggler && collapse) {
             toggler.addEventListener('click', () => collapse.classList.toggle('show'));
         }
+
+        // Citation Modal Logic
+        const modal = document.getElementById("modal-cite");
+        const span = document.querySelector(".modal .close");
+        const citeButtons = document.querySelectorAll('.js-cite-modal');
+
+        if (modal && span) {
+            // Close modal on 'x' click
+            span.onclick = function () { modal.style.display = "none"; }
+
+            // Close modal on outside click
+            window.addEventListener('click', function (event) {
+                if (event.target == modal) { modal.style.display = "none"; }
+            });
+        }
+
+        citeButtons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const filename = this.getAttribute('data-filename');
+                if (!filename || !modal) return;
+
+                fetch(filename)
+                    .then(response => response.text())
+                    .then(data => {
+                        modal.querySelector('.modal-body pre').textContent = data;
+                        modal.style.display = "block";
+                    })
+                    .catch(err => console.error('Error loading citation:', err));
+            });
+        });
     });
 </script>
