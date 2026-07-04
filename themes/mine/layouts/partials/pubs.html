@@ -9,6 +9,7 @@
         <div class="col-12 col-lg-8">
             {{ with .Site.GetPage "/publication" }}
             {{ range sort .Pages ".Params.weight" "desc" }}
+            {{ $page := . }}
 
             <div class="media stream-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
 
@@ -56,6 +57,9 @@
                             <strong>
                                 <a href="{{ $paper.url}}" class="venue-link"> {{ $paper.venue }}</a>
                             </strong>
+                            {{ end }}
+                            {{ if $page.Params.award }}
+                            <span class="award-highlight award-badge-inline">{{ $page.Params.award }}</span>
                             {{ end }}
                         </div>
                     </div>

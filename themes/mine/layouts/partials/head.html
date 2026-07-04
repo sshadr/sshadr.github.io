@@ -1,6 +1,17 @@
 <html lang="{{ .Site.Data.languages.en.languageCode }}">
 
 <head>
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('site-theme');
+                var theme = (stored === 'light' || stored === 'dark')
+                    ? stored
+                    : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { /* ignore */ }
+        })();
+    </script>
     <meta charset=" utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,6 +67,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/WebGL.js"></script>
     <script src="/js/starry_night.js" defer></script>
+    <script src="/js/theme-toggle.js" defer></script>
 
     <link rel="stylesheet" href="/css/minimal.css">
 

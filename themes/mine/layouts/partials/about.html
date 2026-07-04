@@ -36,21 +36,6 @@
                 </ul>
 
                 <!-- Logos -->
-                {{ with .Params.organizations.current }}
-                <div class="org-section">
-                    <h3 class="org-section-title">Current</h3>
-                    <ul class="organization-logos">
-                        {{ range . }}
-                        <li>
-                            <a href="{{ .url }}" target="_blank" rel="noopener">
-                                <img src="{{ .image }}" alt="{{ .name }}" class="logo-icon">
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-                {{ end }}
-
                 {{ with .Params.organizations.previous }}
                 <div class="org-section">
                     <h3 class="org-section-title">Previous</h3>
@@ -58,7 +43,8 @@
                         {{ range . }}
                         <li>
                             <a href="{{ .url }}" target="_blank" rel="noopener">
-                                <img src="{{ .image }}" alt="{{ .name }}" class="logo-icon">
+                                <img src="{{ .image }}" alt="{{ .name }}"
+                                    class="logo-icon{{ if .invert_light }} invert-in-light{{ end }}">
                             </a>
                         </li>
                         {{ end }}

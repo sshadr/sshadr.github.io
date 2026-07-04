@@ -1,23 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
     <div class="container">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
-            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span>
-                <i class="fas fa-bars"></i>
-            </span>
-        </button>
+        <div class="navbar-row">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
 
-        <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+            <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
-            <ul class="navbar-nav d-md-inline-flex">
-                {{ range .Site.Data.menus.main }}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ .url }}" data-target="{{ .url }}">
-                        <span>{{ .name }}</span>
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
+                <ul class="navbar-nav d-md-inline-flex">
+                    {{ range .Site.Data.menus.main }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ .url }}" data-target="{{ .url }}">
+                            <span>{{ .name }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+                <i class="fas fa-sun"></i>
+            </button>
         </div>
 
         <!-- News scroll -->
