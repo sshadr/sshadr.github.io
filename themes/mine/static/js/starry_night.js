@@ -44,19 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
       alpha: true
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     // Particles
     const particleCount = 5000;
     const vertices = [];
     const colors = [];
-    const paletteIndices = [];
-    const palettes = {
-      dark: [0x00ffff, 0xff00ff, 0xffd000, 0xff0088], // Cyan, Magenta, Yellow, Pink
-      light: [0x007b83, 0x8b008b, 0xb8860b, 0xc2185b] // Darker teal/magenta/gold/pink for contrast on white
-    };
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    let activePalette = isLight ? palettes.light : palettes.dark;
+    const palette = [0x00ffff, 0xff00ff, 0xffd000, 0xff0088]; // Cyan, Magenta, Yellow, Pink
     const tempColor = new THREE.Color();
 
     for (let i = 0; i < particleCount; i++) {
@@ -66,26 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
       vertices.push(x, y, z);
 
       // Assign random color from palette
-      const paletteIndex = Math.floor(Math.random() * activePalette.length);
-      paletteIndices.push(paletteIndex);
-      tempColor.setHex(activePalette[paletteIndex]);
+      tempColor.setHex(palette[Math.floor(Math.random() * palette.length)]);
       colors.push(tempColor.r, tempColor.g, tempColor.b);
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
     geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-    // Allow the theme toggle to re-tint existing particles without a page reload
-    window.__setStarfieldTheme = function (useLight) {
-      activePalette = useLight ? palettes.light : palettes.dark;
-      const colorAttr = geometry.getAttribute('color');
-      for (let i = 0; i < particleCount; i++) {
-        tempColor.setHex(activePalette[paletteIndices[i]]);
-        colorAttr.setXYZ(i, tempColor.r, tempColor.g, tempColor.b);
-      }
-      colorAttr.needsUpdate = true;
-    };
 
     // Use ShaderMaterial to draw points
     const material = new THREE.ShaderMaterial({
@@ -121,14 +102,41 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', onWindowResize, false);
   }
 
+  // Respect the OS "reduce motion" setting: draw a single static frame instead of animating
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let frameId = null;
+
   function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    if (frameId === null) renderer.render(scene, camera);
   }
 
+  function start() {
+    if (frameId !== null || document.hidden || reduceMotion.matches) return;
+    clock.getDelta(); // Discard the time spent paused so the field doesn't jump
+    frameId = requestAnimationFrame(animate);
+  }
+
+  function stop() {
+    if (frameId !== null) cancelAnimationFrame(frameId);
+    frameId = null;
+  }
+
+  // Pause while the tab is in the background
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  reduceMotion.addEventListener('change', () => {
+    if (reduceMotion.matches) {
+      stop();
+      renderer.render(scene, camera);
+    } else {
+      start();
+    }
+  });
+
   function animate() {
-    requestAnimationFrame(animate);
+    frameId = requestAnimationFrame(animate);
 
     const delta = clock.getDelta();
 
@@ -142,5 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   init();
-  animate();
+  renderer.render(scene, camera);
+  start();
 });

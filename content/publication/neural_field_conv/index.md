@@ -64,9 +64,9 @@ buttons:
     url: "https://neural-fields-conv.mpi-inf.mpg.de"
     weight: 50
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 method: 
-  - fig: "method.png"
+  - fig: "method.webp"
     content: We introduce an algorithm to perform efficient continuous convolution of neural fields 𝑓 by piecewise polynomial kernels 𝑔. The key idea is to convolve the sparse repeated derivative of the kernel with the repeated antiderivative of the signal.
     align: justify
 abstract:

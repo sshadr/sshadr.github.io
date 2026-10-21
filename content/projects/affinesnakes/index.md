@@ -18,7 +18,7 @@ authors:
     weight: 10
 
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 abstract:
   - name: "Abstract"
     content: "Vector fields are used to develop many interesting algorithms. In this project, we 
@@ -32,13 +32,13 @@ tags:
 
 ## Computed Vector Fields
 <figure>
-    <img src="grads.png" alt="Computed Vector Fields">
+    <img src="grads.webp" alt="Computed Vector Fields">
     <figcaption><strong>Left:</strong> GVF (Gradient Vector Field) | <strong>Right:</strong> EPGVF (Edge-Preserving GVF)</figcaption>
 </figure>
 
 ## Algorithm Comparison
 <figure>
-    <img src="img1.png" alt="Algorithm Comparison">
+    <img src="img1.webp" alt="Algorithm Comparison">
     <figcaption>
         Fig. shows the difference between our algorithm working on two different vector fields 
         &mdash; <strong>GVF</strong> and <strong>EPGVF</strong>.
@@ -47,7 +47,7 @@ tags:
 
 ## Multiple Regions of Interest
 <figure>
-    <img src="img2.png" alt="Multiple Regions of Interest">
+    <img src="img2.webp" alt="Multiple Regions of Interest">
     <figcaption>
         Our algorithm working on multiple regions of interest.
     </figcaption>

@@ -1,15 +1,14 @@
 {{ define "main" }}
 
-<section id="about" class="home-section wg-about   ">
+<section id="about" class="home-section">
     <div class="container">
-        <div class="article-container pt-3">
+        <div>
             <h1 align="center">{{.Params.title | safeHTML}}</h1>
-            <div class="space-below"></div>
             <div class="text-center">
                 <ul class="list-inline">
                     {{/* {{ $institutions := .Params.institutions }} */}}
                     {{ range $author := .Params.authors }}
-                    <li class="list-inline-item"><a href="{{ .url }}" class="author-link">{{ .name }}</a>
+                    <li class="list-inline-item"><a href="{{ .url }}" class="author-link">{{ if eq .name $.Site.Data.admin.author.name }}<strong>{{ .name }}</strong>{{ else }}{{ .name }}{{ end }}</a>
                         <sup>{{ .affiliation }}</sup>
                     </li>
                     {{ end }}
@@ -27,30 +26,39 @@
                 <a href="{{ .url }}" class="venue-link"> {{ .venue }} </a>
                 {{ end }}
             </div>
-            <div class="space-below"></div>
 
-            <div class="btn-links mb-3">
+            <div class="mb-3">
                 {{ range .Params.buttons }}
-                <a class="btn btn-outline-primary my-1 mr-1 {{ if eq .name " Cite" }}js-cite-modal{{ end }}"
-                    href="{{ .url }}" {{ if ne .name "Cite" }}target="_blank" rel="noopener" {{ end }}>
+                {{ if eq .name "Cite" }}
+                <button type="button" class="btn my-1 mr-1 js-cite-modal"
+                    data-filename="{{ .url }}">
+                    {{ .name }}
+                </button>
+                {{ else }}
+                <a class="btn my-1 mr-1" href="{{ .url }}" target="_blank" rel="noopener">
                     {{ .name }}
                 </a>
+                {{ end }}
                 {{ end }}
             </div>
         </div>
         {{ range .Params.method }}
-        <div class="article-container featured-image-wrapper mt-4 mb-4">
-            <img loading="lazy" src="{{ .fig }}" alt="" class="featured-image">
-            <figcaption class="text-center text-muted mt-2"> {{ .content }} </figcaption>
+        <div class="mb-4">
+            {{ with $.Resources.Get .fig }}
+            <img loading="lazy" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
+                alt="{{ $.Title }}" class="featured-image">
+            {{ else }}
+            <img loading="lazy" src="{{ .fig }}" alt="{{ $.Title }}" class="featured-image">
+            {{ end }}
+            <figcaption class="text-center"> {{ .content }} </figcaption>
         </div>
         {{ end }}
 
-        <div class="article-container" style="text-align: justify;">
+        <div style="text-align: justify;">
             {{ range .Params.abstract }}
             <h3>{{ .name }}</h3>
-            <p class="pub-abstract">{{ .content | markdownify }}</p>
+            <p>{{ .content | markdownify }}</p>
             {{ end }}
-            <div class="space-below"></div>
 
             <div class="article-style">
                 {{.Content}}
@@ -64,9 +72,9 @@
             </div>
             {{ end }}
 
-            <div class="article-tags">
+            <div>
                 {{ range .Params.tags }}
-                <a class="badge badge-light" href="/tag/computer-graphics">{{ . }}</a>
+                <a class="badge badge-light" href="{{ printf "/tags/%s/" (urlize .) | relURL }}">{{ . }}</a>
                 {{ end }}
                 {{/* <a class="badge badge-light" href="/tag/computer-vision/">computer vision</a>
                 <a class="badge badge-light" href="/tag/computer-graphics/">computer graphics</a>
@@ -79,14 +87,4 @@
         </div>
     </div>
 </section>
-
-<!-- Simple Citation Modal -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-body">
-            <pre><code></code></pre>
-        </div>
-    </div>
-</div>
 {{ end }}

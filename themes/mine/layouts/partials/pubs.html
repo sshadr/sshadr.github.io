@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row ">
+    <div class="row">
 
         <div class="col-12 col-lg-4 section-heading">
             <h1>Publications</h1>
@@ -15,7 +15,7 @@
 
                 <div class="media-body">
 
-                    <h3 class="article-title mb-0 mt-0" itemprop="name">
+                    <h3 class="article-title" itemprop="name">
                         {{/* <a href="{{ .Params.projecturl }}" itemprop="url">{{ .Params.title }}</a> */}}
                         <a href="{{ if .Params.projecturl }}{{ .Params.projecturl }}{{ else }}{{ .RelPermalink }}{{ end }}"
                             itemprop="url">
@@ -23,9 +23,9 @@
                         </a>
                     </h3>
 
-                    <div class="stream-meta article-metadata">
+                    <div class="article-metadata">
 
-                        <div itemprop="author">
+                        <div class="authors" itemprop="author">
                             {{ $maxWeight := -1 }}
                             {{ range .Params.authors }}
                             {{ if gt .weight $maxWeight }}
@@ -52,27 +52,27 @@
                         </div>
 
 
-                        <div class="">
+                        <div>
                             {{ range $index, $paper := .Params.Paper }}
                             <strong>
                                 <a href="{{ $paper.url}}" class="venue-link"> {{ $paper.venue }}</a>
                             </strong>
                             {{ end }}
                             {{ if $page.Params.award }}
-                            <span class="award-highlight award-badge-inline">{{ $page.Params.award }}</span>
+                            <span class="tag-pill tag-pill-inline">{{ $page.Params.award }}</span>
                             {{ end }}
                         </div>
                     </div>
 
-                    <div class="btn-links">
+                    <div>
                         {{ range .Params.buttons }}
                         {{ if eq .name "Cite" }}
-                        <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+                        <button type="button" class="btn my-1 mr-1 btn-sm js-cite-modal"
                             data-filename="{{ .url }}">
                             {{ .name }}
                         </button>
                         {{ else }}
-                        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="{{ .url }}" target="_blank"
+                        <a class="btn my-1 mr-1 btn-sm" href="{{ .url }}" target="_blank"
                             rel="noopener">
                             {{ .name }}
                         </a>
@@ -83,8 +83,8 @@
 
                 </div>
                 <div class="ml-3">
-                    <a href="{{ .Params.projecturl }}">
-                        <img src="{{ .RelPermalink }}{{ .Params.teaser }}" itemprop="image">
+                    <a href="{{ if .Params.projecturl }}{{ .Params.projecturl }}{{ else }}{{ .RelPermalink }}{{ end }}">
+                        {{ partial "teaser.html" . }}
                     </a>
 
                 </div>

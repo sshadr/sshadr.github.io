@@ -86,9 +86,9 @@ buttons:
     url: "https://scalespacegan.mpi-inf.mpg.de"
     weight: 50
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 method: 
-  - fig: "method.png"
+  - fig: "method.webp"
     content: Given an unregistered collection of image patches depicting an environment at vastly different scales, our approach uses adversarial training to obtain continuous and coherent scale spaces. Here, we showcase the reconstructed scale space of a painting, captured in its entirety, from the overall structure (1x) to the cracks in the oil paint (256x). Users can freely explore the scale space at interactive rates.
     align: justify
 abstract:

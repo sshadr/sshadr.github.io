@@ -20,9 +20,9 @@ authors:
     weight: 30
 
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 method: 
-  - fig: "teaser.png"
+  - fig: "teaser.webp"
     content: Input [1 SPP] ----------------------------- GroundTruth [1024 SPP] ----------------------------- Filtered Result [From 1 SPP]
     align: center
 # video: "video.mp4"
@@ -32,7 +32,7 @@ tags:
   - computer-vision
   - rendering
 ---
-<!-- ![Teaser Image](/projects/wamnet/teaser.png "Input-----GroundTruth-----Filtered Result") -->
+<!-- ![Teaser Image](/projects/wamnet/teaser.webp "Input-----GroundTruth-----Filtered Result") -->
 
 ## The Idea
 This very cool idea was conceived by Aaron Beis and tackled as a team. We imposed severe constraints on the pipeline in the sense that we wanted maximum results while limiting model size so that we could fit it inside a fragment shader. Also FPS!
@@ -41,7 +41,7 @@ This very cool idea was conceived by Aaron Beis and tackled as a team. We impose
 We designed a pipeline that uses a denoising filter called WAMNet, short for 'Wait a Minute Network.' We coined this name because it took about a minute to learn the filter for a single scene. This filter denoises the input from inside an OpenGL fragment shader. We generated chunks of data with [RGB, normals] as input, and trained a Multi-Layer Perceptron (MLP) with sine activations. The inclusion of normals enforced geometric consistency within the scene and helped preserve high frequencies. After training, we used the model weights to generate the shader code and predict the output color. Here is the [report](/projects/wamnet/report.pdf) that offers more details. Overall, it was a very fun project to work on !
 
 <figure>
-    <img src="/projects/wamnet/video.gif" alt="Results">
+    <img src="/projects/wamnet/video.webp" alt="Results">
     <figcaption>Here you see a video of the shader denoising in real-time!</figcaption>
 </figure>
 

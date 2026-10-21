@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row ">
+    <div class="row">
 
         <div class="col-12 col-lg-4 section-heading">
             <h1>Projects</h1>
@@ -14,15 +14,15 @@
 
                 <div class="media-body">
 
-                    <h3 class="article-title mb-0 mt-0" itemprop="name">
+                    <h3 class="article-title" itemprop="name">
                         <a href="{{ .RelPermalink }}" itemprop="url">
                             {{ .Params.title }}
                         </a>
                     </h3>
 
-                    <div class="stream-meta article-metadata">
+                    <div class="article-metadata">
 
-                        <div itemprop="author">
+                        <div class="authors" itemprop="author">
                             {{ $maxWeight := -1 }}
                             {{ range .Params.authors }}
                             {{ if gt .weight $maxWeight }}
@@ -49,7 +49,7 @@
                         </div>
 
 
-                        <div class="">
+                        <div>
                             {{ range $index, $paper := .Params.Paper }}
                             <strong>
                                 <a href="{{ $paper.url}}" class="venue-link"> {{ $paper.venue }}</a>
@@ -58,19 +58,26 @@
                         </div>
                     </div>
 
-                    <div class="btn-links">
+                    <div>
                         {{ range .Params.buttons }}
-                        <a class="btn btn-outline-primary my-1 mr-1 btn-sm {{ if eq .name " Cite" }}js-cite-modal{{ end
-                            }}" href="{{ .url }}" {{ if ne .name "Cite" }}target="_blank" rel="noopener" {{ end }}>
+                        {{ if eq .name "Cite" }}
+                        <button type="button" class="btn my-1 mr-1 btn-sm js-cite-modal"
+                            data-filename="{{ .url }}">
+                            {{ .name }}
+                        </button>
+                        {{ else }}
+                        <a class="btn my-1 mr-1 btn-sm" href="{{ .url }}" target="_blank"
+                            rel="noopener">
                             {{ .name }}
                         </a>
+                        {{ end }}
                         {{ end }}
                     </div>
 
                 </div>
                 <div class="ml-3">
                     <a href="{{ .RelPermalink }}">
-                        <img src="{{ .RelPermalink }}{{ .Params.teaser }}" itemprop="image">
+                        {{ partial "teaser.html" . }}
                     </a>
                 </div>
             </div>

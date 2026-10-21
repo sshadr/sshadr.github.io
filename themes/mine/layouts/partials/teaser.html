@@ -1,0 +1,9 @@
+{{/* Teaser thumbnail for the homepage lists, served as-is from the page folder */}}
+{{ with .Params.teaser }}
+{{ with $.Resources.Get . }}
+<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Title }}" loading="lazy"
+    itemprop="image">
+{{ else }}
+<img src="{{ $.RelPermalink }}{{ . }}" alt="{{ $.Title }}" loading="lazy" itemprop="image">
+{{ end }}
+{{ end }}

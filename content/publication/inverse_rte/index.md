@@ -45,7 +45,7 @@ institutions:
 
 Paper:
   - venue: Computer Graphics Forum (EGSR 2026)
-    url: ""
+    url: "https://egsr2026.inria.fr/programme/"
 
 award: "Best Paper Award"
 
@@ -66,9 +66,9 @@ buttons:
     url: "https://neural-radiative-transfer.mpi-inf.mpg.de"
     weight: 50
 
-teaser: "radiative-transfer.png"
+teaser: "radiative-transfer.webp"
 method: 
-  - fig: "method.png"
+  - fig: "method.webp"
     content: We propose a formulation for volumetric inverse rendering under global illumination without explicit global-illumination rendering. By framing the problem as constrained optimization over neural fields, the approach enables physically consistent reconstruction, novel-view synthesis, and relighting. Here, we demonstrate relighting of the reconstructed volume with anisotropic optical properties using a combination of environment illumination and three colored local light sources.
     align: justify
 abstract:

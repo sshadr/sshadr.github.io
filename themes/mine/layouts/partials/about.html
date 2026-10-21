@@ -4,7 +4,7 @@
         <div class="col-12 col-lg-4">
             <div id="profile">
 
-                <img class="avatar avatar-circle" src="{{ .Site.Data.admin.author.picture }}" alt="Avatar">
+                <img class="avatar" src="{{ .Site.Data.admin.author.picture }}" alt="Avatar">
 
                 <div class="portrait-title">
                     <h2></h2>
@@ -44,7 +44,7 @@
                         <li>
                             <a href="{{ .url }}" target="_blank" rel="noopener">
                                 <img src="{{ .image }}" alt="{{ .name }}"
-                                    class="logo-icon{{ if .invert_light }} invert-in-light{{ end }}">
+                                    class="logo-icon">
                             </a>
                         </li>
                         {{ end }}
@@ -57,7 +57,7 @@
 
         <div class="col-12 col-lg-8" style="text-align: justify;">
 
-            <h1>{{.Params.title | safeHTML}}</h1>
+            <h1 class="name">{{.Params.title | safeHTML}}</h1>
             {{.Content | safeHTML}}
 
             <!-- News Section -->
@@ -75,17 +75,20 @@
             </div> */}}
 
             <!-- News Section -->
-            <div class="news-highlights">
-                <h2>News</h2>
-                <div class="news-scroll">
-                    <ul class="news-list">
-                        {{ range .Params.news }}
-                        <li class="news-item">
-                            {{ . | safeHTML }}
-                        </li>
-                        {{ end }}
-                    </ul>
+            <div class="news-section">
+                <div class="news-head">
+                    <h2>News</h2>
+                    {{ if gt (len .Params.news) 4 }}<span class="scroll-hint">scroll ↓</span>{{ end }}
                 </div>
+                <ol class="news-list" tabindex="0" aria-label="Recent news, scrollable">
+                    {{ range .Params.news }}
+                    <li{{ with .tag }} class="has-tag"{{ end }}>
+                        <span class="news-date">{{ .date }}</span>
+                        <span class="news-body">{{ .text | safeHTML }}</span>
+                        {{ with .tag }}<span class="tag-pill">{{ . }}</span>{{ end }}
+                    </li>
+                    {{ end }}
+                </ol>
             </div>
         </div>
     </div>

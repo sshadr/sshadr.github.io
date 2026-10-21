@@ -22,7 +22,7 @@ authors:
   - name: Anh Tuan Tran
     # url: "https://people.mpi-inf.mpg.de/~hpseidel/"
     # affiliation: 1
-    url: "https://people.mpi-inf.mpg.de/~hpseidel/"
+    url: ""
     affiliation: 1
     weight: 20
 
@@ -35,11 +35,8 @@ authors:
 #     url: "https://www.ucl.ac.uk"
 institutions:
   1:
-    name: "Max Planck Institute for Informatics"
-    url: "https://www.mpi-inf.mpg.de/home/"
-  2:
-    name: "University College London"
-    url: "https://www.ucl.ac.uk"
+    name: "Saarland University"
+    url: "https://www.uni-saarland.de"
 
 Paper:
   - venue: Computer Graphics, Saarland University.
@@ -62,9 +59,9 @@ Paper:
 #     url: "https://neural-fields-conv.mpi-inf.mpg.de"
 #     weight: 50
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 method: 
-  - fig: "teaser.png"
+  - fig: "render.webp"
     content: Our scene - A Warm Night
     align: center
 

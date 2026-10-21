@@ -18,21 +18,21 @@ authors:
   - name: Adarsh Djeacoumar
     # url: "https://www.mpi-inf.mpg.de/home"
     # affiliation: 1
-    url: "https://www.mpi-inf.mpg.de/home"
+    url: "/"
     weight: 10
   - name: Anh Tuan Tran
     # url: "https://people.mpi-inf.mpg.de/~hpseidel/"
     # affiliation: 1
-    url: "https://people.mpi-inf.mpg.de/~hpseidel/"
+    url: "/"
     weight: 20
 
 Paper:
   - venue: Realistic Image Synthesis, Saarland University.
     url: "https://graphics.cg.uni-saarland.de/courses/"
 
-teaser: "water.png"
+teaser: "water.webp"
 # method: 
-#   - fig: "water.png"
+#   - fig: "water.webp"
 #     content: Cornell Box (SDS path) - Progessive Photon Mapping
 #     align: center
 # abstract:
@@ -49,16 +49,16 @@ tags:
 As a part of the course, Realistic Image Synthesis, we explored different Global Illumination algorithms. Here I show the results of 2 algorithms that we implemented, Path Tracing and Progressive Photon Mapping, on a Cornell Box scene with slightly complex materials. 
 
 <figure>
-    <img src='/projects/gi/teaser.png' alt=''>
+    <img src='/projects/gi/teaser.webp' alt=''>
     <figcaption>Cornell Box (Glossy) - Path traced with Next Event Estimation</figcaption>
 </figure>
 
 <figure>
-    <img src='/projects/gi/water.png' alt=''>
+    <img src='/projects/gi/water.webp' alt=''>
     <figcaption>Cornell Box (S-D-S path) - Progessive Photon Mapping</figcaption>
 </figure>
 
 <figure>
-    <img src='/projects/gi/specular.png' alt=''>
+    <img src='/projects/gi/specular.webp' alt=''>
     <figcaption>Cornell Box (Glossy) - Progessive Photon Mapping</figcaption>
 </figure>

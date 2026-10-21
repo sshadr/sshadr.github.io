@@ -5,6 +5,8 @@
 
 /* --- Variables --- */
 :root {
+    color-scheme: dark;
+
     /* Colors */
     --bg-color: #181717;
     --text-main: #f0f0f0;
@@ -21,8 +23,9 @@
     --card-radius: 12px;
 
     /* Typography */
-    --font-main: 'Roboto', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: var(--font-main);
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
     /* Text-on-accent, glows, and glass-dock surfaces */
     --on-accent-text: #000;
@@ -39,10 +42,8 @@
     --code-bg: #333333;
 
     /* Author / venue / award / paper-title accents */
-    --author-color: #ffd000;
-    --author-glow: rgba(0, 191, 255, 0.4);
-    --author-hover: rgba(0, 191, 255, 0.8);
-    --author-hover-glow: rgba(0, 255, 255, 0.4);
+    --author-color: #c4cad3;
+    --author-self: #edeff3;
     --venue-link-color: rgba(253, 135, 188, 0.738);
     --venue-link-hover: rgba(255, 0, 115, 0.738);
     --venue-link-hover-glow: rgba(255, 0, 115, 0.386);
@@ -51,43 +52,6 @@
     --venue-color: #ffb454;
     --award-color: #4ade80;
     --award-glow: rgba(74, 222, 128, 0.5);
-}
-
-/* --- Light Theme --- */
-:root[data-theme="light"] {
-    --bg-color: #f4f3ef;
-    --text-main: #16181a;
-    --text-muted: #55585c;
-    --accent: #0e7490;
-    --accent-hover: #a06f00;
-
-    --glass-bg: rgba(255, 255, 255, 0.55);
-    --glass-border: rgba(0, 0, 0, 0.1);
-
-    --on-accent-text: #ffffff;
-    --link-hover-glow: rgba(0, 0, 0, 0);
-    --avatar-glow: rgba(14, 116, 144, 0.25);
-    --dock-bg: rgba(0, 0, 0, 0.03);
-    --dock-border: rgba(0, 0, 0, 0.08);
-    --ticker-bg: rgba(0, 0, 0, 0.06);
-
-    --modal-bg: #ffffff;
-    --modal-text: #16181a;
-    --modal-close: #666666;
-    --code-bg: #ececeb;
-
-    --author-color: #8a6d00;
-    --author-glow: rgba(0, 0, 0, 0);
-    --author-hover: #007b83;
-    --author-hover-glow: rgba(0, 0, 0, 0);
-    --venue-link-color: #b23368;
-    --venue-link-hover: #8f0047;
-    --venue-link-hover-glow: rgba(0, 0, 0, 0);
-    --paper-title: #6d28d9;
-    --paper-title-glow: rgba(0, 0, 0, 0);
-    --venue-color: #a85d00;
-    --award-color: #157a3d;
-    --award-glow: rgba(0, 0, 0, 0);
 }
 
 /* --- Base Reset --- */
@@ -100,7 +64,7 @@
 html {
     font-family: var(--font-main);
     font-size: 16.5px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     background: transparent !important;
@@ -110,8 +74,8 @@ body {
     margin: 0;
     color: var(--text-main);
     background: var(--bg-color);
-    font-family: sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-main);
+    line-height: 1.65;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -362,6 +326,7 @@ img {
 /* --- Buttons --- */
 .btn {
     display: inline-block;
+    font-family: inherit;
     font-weight: 500;
     text-align: center;
     vertical-align: middle;
@@ -370,7 +335,7 @@ img {
     border: 1px solid var(--accent);
     color: var(--accent);
     padding: .5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 14px;
     border-radius: 50px;
     /* Pill shape */
     transition: all 0.3s ease;
@@ -386,7 +351,7 @@ img {
 
 .btn-sm {
     padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
+    font-size: 12px;
 }
 
 /* --- Navbar (Glass) --- */
@@ -439,6 +404,7 @@ img {
     color: var(--text-muted);
     padding: 0.5rem 1rem;
     font-weight: 500;
+    font-size: 14.5px;
 }
 
 .nav-link:hover,
@@ -451,28 +417,6 @@ img {
     color: var(--text-main);
     font-size: 1.5rem;
     background: transparent;
-}
-
-.theme-toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin-left: 0.75rem;
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
-    background: var(--dock-bg);
-    color: var(--text-main);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.theme-toggle-btn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
 }
 
 /* Mobile Menu State */
@@ -539,8 +483,7 @@ img {
 
 /* --- Cards (Glass Panels) --- */
 .card,
-.media.stream-item,
-.news-highlights {
+.media.stream-item {
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -568,8 +511,9 @@ img {
 }
 
 .article-title {
-    font-size: 1.25rem;
+    font-size: 16.5px;
     margin-bottom: 0.5rem;
+    line-height: 1.35;
 }
 
 .article-title a {
@@ -577,9 +521,16 @@ img {
 }
 
 .article-metadata {
-    font-size: 0.85rem;
+    font-size: 12.5px;
     color: var(--text-muted);
     margin-bottom: 1rem;
+}
+
+/* Author line in the publication/project lists (13.5px at the 16.5px base size) */
+.authors {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin-bottom: 8px;
 }
 
 .article-style {
@@ -638,7 +589,7 @@ img {
 }
 
 .portrait-title h3 {
-    font-size: 1.1rem;
+    font-size: 17px;
     color: var(--text-muted);
     font-weight: 400;
 }
@@ -710,9 +661,9 @@ img {
 
 .org-section-title {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.12em;
     color: var(--text-muted);
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -730,18 +681,6 @@ img {
     transform: scale(1.2);
 }
 
-/* Dark theme brightens logos to pop on black; on light backgrounds that washes
-   them out, so keep their original hue but drop the brightness boost instead */
-:root[data-theme="light"] .previous-logos .logo-icon {
-    filter: grayscale(0%) brightness(70%);
-}
-
-/* Logos recolored light-gray specifically for dark backgrounds need inverting
-   on light backgrounds instead (higher specificity wins over the rule above) */
-:root[data-theme="light"] .previous-logos .logo-icon.invert-in-light {
-    filter: invert(1) brightness(0.9);
-}
-
 /* --- Badges --- */
 .badge-light {
     background: var(--dock-bg);
@@ -757,7 +696,7 @@ footer {
     padding: 2rem 0;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: 13px;
     position: relative;
     z-index: 2;
 }
@@ -877,14 +816,21 @@ footer {
 }
 
 /* --- Custom Link Colors --- */
+/* Co-authors in soft grey; your own name (wrapped in <strong>) bright and bold */
 .author-link {
     color: var(--author-color);
-    text-shadow: 0 0 8px var(--author-glow);
+    text-decoration: none;
 }
 
 .author-link:hover {
-    color: var(--author-hover);
-    text-shadow: 0 0 8px var(--author-hover-glow);
+    color: var(--author-self);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.author-link strong {
+    color: var(--author-self);
+    font-weight: 600;
 }
 
 .venue-link {
@@ -947,42 +893,156 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Static News List (About Section) --- */
+/* Name at the top of the About section */
+.name {
+    font-size: clamp(30px, 5vw, 40px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+
+/* Slightly smaller type on phones */
+@media (max-width: 720px) {
+    html {
+        font-size: 16px;
+    }
+
+    .article-title {
+        font-size: 16px;
+    }
+
+    .article-metadata {
+        font-size: 12px;
+    }
+}
+
+/* --- News List (About Section) --- */
+/* Dated rows in a scrollable glass panel: date | text | optional tag pill */
+.news-section {
+    margin-bottom: 2rem;
+}
+
+.news-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.scroll-hint {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
 .news-list {
     list-style: none;
-    padding: 0;
     margin: 0;
-    max-height: 250px;
+    padding: 4px 4px 4px 0;
+    max-height: 300px;
     overflow-y: auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--card-radius);
     scrollbar-width: thin;
-    scrollbar-color: var(--accent) transparent;
+    scrollbar-color: var(--glass-border) transparent;
+    outline: none;
+}
+
+.news-list:focus-visible {
+    border-color: var(--accent);
 }
 
 .news-list::-webkit-scrollbar {
-    width: 6px;
+    width: 9px;
 }
 
 .news-list::-webkit-scrollbar-thumb {
-    background-color: var(--accent);
-    border-radius: 10px;
+    background: var(--glass-border);
+    border-radius: 20px;
 }
 
-.news-list .news-item {
-    display: block;
-    /* Override inline-block from ticker */
+.news-list::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+.news-list li {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--glass-border);
+    text-align: left;
+}
+
+.news-list li.has-tag {
+    grid-template-columns: 90px 1fr auto;
+}
+
+.news-list li:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.news-body {
     color: var(--text-main);
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
+    font-size: 15px;
 }
 
-.news-list .news-item::before {
-    content: "•";
-    color: var(--accent);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
+/* Oval pill label, used for news tags and publication awards */
+.tag-pill {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    align-self: center;
+    white-space: nowrap;
+    color: var(--award-color);
+    border: 1px solid color-mix(in srgb, var(--award-color) 55%, transparent);
+    background: color-mix(in srgb, var(--award-color) 14%, transparent);
+}
+
+/* Phones: date above the text, tag pinned to the right of the date */
+@media (max-width: 720px) {
+    .news-list {
+        max-height: 340px;
+    }
+
+    .news-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 13px 16px;
+    }
+
+    .news-list li.has-tag {
+        grid-template-columns: 1fr auto;
+        column-gap: 10px;
+    }
+
+    .news-list li.has-tag .news-date {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .news-list li.has-tag .tag-pill {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .news-list li.has-tag .news-body {
+        grid-row: 2;
+        grid-column: 1 / -1;
+    }
 }
 
 /* Pause animation on hover */
@@ -1025,9 +1085,9 @@ footer {
     text-shadow: 0 0 8px var(--award-glow);
 }
 
-.award-badge-inline {
+/* Pill placed inline after the venue in the publication list */
+.tag-pill-inline {
+    display: inline-block;
     margin-left: 0.6rem;
-    padding-left: 0.7rem;
-    border-left: 1px solid var(--glass-border);
-    font-size: 0.9rem;
+    vertical-align: middle;
 }

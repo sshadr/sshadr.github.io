@@ -60,9 +60,9 @@ buttons:
     url: "https://drive.google.com/file/d/1vudMiDbJDaSTR6OpXoWwP6XMhQ25NqPt/view?usp=share_link"
     weight: 50
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 method: 
-  - fig: "method.png"
+  - fig: "method.webp"
     content: We introduce a novel method to recover a fractal description from an image containing a self-similar shape. This representation allows for infinite zoom-ins, continuously generating fine details at any chosen scale and capturing intricate structural patterns.
     align: justify
 abstract:

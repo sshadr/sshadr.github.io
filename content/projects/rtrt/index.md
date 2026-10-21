@@ -24,9 +24,9 @@ Paper:
   - venue: Computer Graphics, Saarland University.
     url: "https://graphics.cg.uni-saarland.de/courses/"
 
-teaser: "teaser.png"
+teaser: "teaser.webp"
 # method: 
-#   - fig: "water.png"
+#   - fig: "water.webp"
 #     content: Cornell Box (SDS path) - Progessive Photon Mapping
 #     align: center
 # abstract:
@@ -43,8 +43,8 @@ tags:
 ---
 <figure align='center'>
   <div style='display: flex; justify-content: center;'>
-    <img src='/projects/rtrt/2spp.png' alt=''>
-    <img src='/projects/rtrt/teaser.png' alt=''>
+    <img src='/projects/rtrt/2spp.webp' alt=''>
+    <img src='/projects/rtrt/teaser.webp' alt=''>
   </div>
   <figcaption>The result of the SVGF algorithm with 5 passes of Atrous Wavelet filtering from an initial image rendered at 2 SPP.</figcaption>
 </figure>
@@ -63,7 +63,7 @@ In a nutshell, this means that we had access to parallel processing speeds, impl
 
 <figure align='center'>
   <div style='display: flex; justify-content: center;'>
-    <img src='/projects/rtrt/algo.png' alt=''>
+    <img src='/projects/rtrt/algo.webp' alt=''>
   </div>
   <figcaption>The SVGF algorithm as described in the paper.</figcaption>
 </figure>
@@ -74,8 +74,8 @@ I dedicated approximately two months to this implementation, during which I succ
 
 <figure align='center'>
   <div style='display: flex; justify-content: center;'>
-    <img src='/projects/rtrt/2spp.png' alt=''>
-    <img src='/projects/rtrt/temporal.png' alt=''>
+    <img src='/projects/rtrt/2spp.webp' alt=''>
+    <img src='/projects/rtrt/temporal.webp' alt=''>
   </div>
   <figcaption>The (buggy) result of the SVGF algorithm with temporal accumulation and 5 passes of Atrous Wavelet filtering from an initial image rendered at 2 SPP. The variance estimation and subsequent filtering based on the estimate was skipped due to time constraints.</figcaption>
 </figure>
@@ -84,8 +84,8 @@ And because depth maps were cool to look at:
 
 <figure align='center'>
   <div style='display: flex; justify-content: center;'>
-    <img src='/projects/rtrt/depth.png' alt=''>
-    <img src='/projects/rtrt/depth_inverted.png' alt=''>
+    <img src='/projects/rtrt/depth.webp' alt=''>
+    <img src='/projects/rtrt/depth_inverted.webp' alt=''>
   </div>
   <figcaption>Depths are normalized between [0, 1]. (a) When camera is at max_depth==1 (b) Inverted</figcaption>
 </figure>
