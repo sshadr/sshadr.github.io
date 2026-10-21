@@ -1,11 +1,9 @@
 
 // Ensure the DOM is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("WebGL background script started");
   // Check for WebGL support
+  // The starfield is decoration: without WebGL, skip it quietly instead of showing an error box
   if (!THREE.WEBGL.isWebGLAvailable()) {
-    const warning = THREE.WEBGL.getWebGLErrorMessage();
-    document.body.appendChild(warning);
     return;
   }
 

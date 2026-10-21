@@ -1,0 +1,15 @@
+{{ with .Params.news }}
+<div class="section-head">
+    <h2 class="section-eyebrow">News</h2>
+    {{ if gt (len .) 4 }}<span class="scroll-hint">scroll ↓</span>{{ end }}
+</div>
+<ol class="news-list" tabindex="0" aria-label="Recent news, scrollable">
+    {{ range . }}
+    <li{{ with .tag }} class="has-tag"{{ end }}>
+        <span class="news-date">{{ .date }}</span>
+        <span class="news-body">{{ .text | safeHTML }}</span>
+        {{ with .tag }}<span class="tag-pill">{{ . }}</span>{{ end }}
+    </li>
+    {{ end }}
+</ol>
+{{ end }}

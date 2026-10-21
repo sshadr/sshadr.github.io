@@ -15,7 +15,7 @@ description: Volumetric inverse rendering seeks to recover the optical propertie
 # Paper authors and data:
 authors:
   - name: Ntumba Elie Nsampi
-    url: "https://people.mpi-inf.mpg.de/~nnsampi/"
+    url: "https://scholar.google.com/citations?user=s1YzWUEAAAAJ&hl=en"
     affiliation: 1
     weight: 10
   - name: Adarsh Djeacoumar
@@ -57,7 +57,7 @@ buttons:
     url: "/publication/inverse_rte/cite.bib"
     weight: 20
   - name: Code
-    url: "https://github.com/elientumba2019/"
+    url: "https://github.com/elientumba2019/Volumetric_Inverse_Rendering_via_Neural_Radiative_Transfer"
     weight: 30
   # - name: Dataset
   #   url: "https://www.ucl.ac.uk"

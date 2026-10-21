@@ -1,28 +1,31 @@
-<nav class="navbar navbar-expand-lg" id="navbar-main">
+<nav class="navbar" id="navbar-main">
     <div class="container">
         <div class="navbar-row">
-            <button type="button" class="navbar-toggler"
-                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span>
-                    <i class="fas fa-bars"></i>
-                </span>
+            <a class="nav-brand" href="/" aria-label="Home">
+                {{/* Short form of the CV headline: integral of the inner product of Graphics and Vision */}}
+                <span class="brand-mark eq" aria-hidden="true"><span class="int">∫</span>⟨<span class="eq-g">G</span>,&thinsp;<span class="eq-v">V</span>⟩</span>
+                <span class="brand-name">{{ .Site.Data.admin.author.name }}</span>
+            </a>
+
+            <button type="button" class="navbar-toggler" aria-controls="navbar-content" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
             </button>
 
             <div class="navbar-collapse" id="navbar-content">
-
                 <ul class="navbar-nav">
                     {{ range .Site.Data.menus.main }}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ .url }}">
-                            <span>{{ .name }}</span>
-                        </a>
+                        {{/* Root-relative so the links also lead home from publication and project pages */}}
+                        <a class="nav-link" href="/{{ .url }}">{{ .name }}</a>
                     </li>
                     {{ end }}
                 </ul>
             </div>
         </div>
 
-        <!-- News scroll -->
+        <!-- News scroll (turned on with show_ticker: true in content/_index.md) -->
+        {{ if .Site.Home.Params.show_ticker }}
         <div class="news-scroll-wrapper">
             <div class="news-label">NEWS</div>
             <div class="news-ticker">
@@ -39,6 +42,7 @@
                 </div>
             </div>
         </div>
+        {{ end }}
         <!-- End News scroll -->
     </div>
 
@@ -60,7 +64,25 @@
         const toggler = document.querySelector('.navbar-toggler');
         const collapse = document.querySelector('#navbar-content');
         if (toggler && collapse) {
-            toggler.addEventListener('click', () => collapse.classList.toggle('show'));
+            toggler.addEventListener('click', () => {
+                const open = collapse.classList.toggle('show');
+                toggler.setAttribute('aria-expanded', String(open));
+            });
+            // Close the phone menu after picking a link
+            collapse.addEventListener('click', (e) => {
+                if (e.target.closest('a')) {
+                    collapse.classList.remove('show');
+                    toggler.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // Show the bar's bottom border only once the page has scrolled
+        const navbar = document.getElementById('navbar-main');
+        if (navbar) {
+            const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 4);
+            onScroll();
+            window.addEventListener('scroll', onScroll, { passive: true });
         }
 
         // Citation Modal Logic

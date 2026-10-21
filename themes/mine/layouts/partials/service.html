@@ -1,0 +1,9 @@
+{{ with .Params.service }}
+<h2 class="section-eyebrow">{{ .title | default "Service" }}</h2>
+{{ with .intro }}<p class="service-intro">{{ . }}</p>{{ end }}
+<ul class="service-list">
+    {{ range .areas }}
+    <li><span class="svc-cat{{ if .award }} svc-award{{ end }}">{{ .name }}</span> <span>{{ delimit .venues " · " }}</span></li>
+    {{ end }}
+</ul>
+{{ end }}

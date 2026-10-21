@@ -9,12 +9,25 @@
 
     /* Colors */
     --bg-color: #181717;
+    --maxw: 880px;
     --text-main: #f0f0f0;
     --text-muted: #a0a0a0;
-    --accent: #00ffff;
-    /* Cyan - matches your particles */
-    --accent-hover: #ffd000;
-    /* Magenta */
+    --accent: #70e0d7;
+    /* Aqua: venues, active nav, avatar ring, button hover, ticker */
+    --link: #a6ece4;
+    /* Lighter aqua for links in text and paper names in news */
+    --link-hover: var(--eq-graphics);
+    /* Hover colour for links, titles, co-authors and nav: the CV's Graphics orange */
+    --marker: var(--eq-graphics);
+    /* Section labels, "Previously" label and card hover border: the CV's Graphics orange */
+    --award-color: #f5c451;
+    /* Equation colours from the CV: LaTeX's orange, and its purple (#800080)
+       lightened to stay readable on the dark page */
+    --eq-graphics: #ff8000;
+    --eq-vision: #cc55cc;
+    /* Gold award pills */
+    --btn-text: #c4cad3;
+    --btn-border: rgba(255, 255, 255, 0.16);
 
     /* Glass Effect */
     --glass-bg: rgba(20, 20, 20, 0.6);
@@ -29,10 +42,7 @@
 
     /* Text-on-accent, glows, and glass-dock surfaces */
     --on-accent-text: #000;
-    --link-hover-glow: rgba(255, 0, 255, 0.4);
-    --avatar-glow: rgba(0, 255, 255, 0.3);
     --dock-bg: rgba(255, 255, 255, 0.03);
-    --dock-border: rgba(255, 255, 255, 0.05);
     --ticker-bg: rgba(0, 0, 0, 0.2);
 
     /* Modal / code */
@@ -41,17 +51,9 @@
     --modal-close: #aaaaaa;
     --code-bg: #333333;
 
-    /* Author / venue / award / paper-title accents */
+    /* Author names */
     --author-color: #c4cad3;
     --author-self: #edeff3;
-    --venue-link-color: rgba(253, 135, 188, 0.738);
-    --venue-link-hover: rgba(255, 0, 115, 0.738);
-    --venue-link-hover-glow: rgba(255, 0, 115, 0.386);
-    --paper-title: #b98eff;
-    --paper-title-glow: rgba(185, 142, 255, 0.6);
-    --venue-color: #ffb454;
-    --award-color: #4ade80;
-    --award-glow: rgba(74, 222, 128, 0.5);
 }
 
 /* --- Base Reset --- */
@@ -76,6 +78,10 @@ body {
     background: var(--bg-color);
     font-family: var(--font-main);
     line-height: 1.65;
+    /* Thinner, crisper light-on-dark text on macOS, as on niladridutt.com */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -124,14 +130,13 @@ p {
 }
 
 a {
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--accent-hover);
-    text-shadow: 0 0 8px var(--link-hover-glow);
+    color: var(--link-hover);
 }
 
 img {
@@ -332,8 +337,8 @@ img {
     vertical-align: middle;
     cursor: pointer;
     background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    border: 1px solid var(--btn-border);
+    color: var(--btn-text);
     padding: .5rem 1rem;
     font-size: 14px;
     border-radius: 50px;
@@ -344,9 +349,8 @@ img {
 }
 
 .btn:hover {
-    background: var(--accent);
-    color: var(--on-accent-text);
-    box-shadow: 0 0 15px var(--accent);
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 .btn-sm {
@@ -354,32 +358,30 @@ img {
     font-size: 12px;
 }
 
-/* --- Navbar (Glass) --- */
+/* --- Navbar --- */
+/* As on Niladri's site: translucent blurred bar, name on the left, quiet links on the right,
+   and a bottom border that appears once the page scrolls (header.html toggles .scrolled). */
 .navbar {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    min-height: 70px;
-    height: auto;
-
-    /* Glass Effect */
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-bottom: 1px solid var(--glass-border);
+    padding: 13px 0;
+    background: color-mix(in srgb, var(--bg-color) 78%, transparent);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--text-main);
+.navbar.scrolled {
+    border-bottom-color: var(--glass-border);
+}
+
+.navbar .container {
+    max-width: var(--maxw);
+    padding: 0 24px;
 }
 
 .navbar-row {
@@ -387,73 +389,109 @@ img {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
     width: 100%;
+}
+
+.nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.nav-brand:hover {
+    color: var(--text-main);
+}
+
+/* Short equation as the logo: ∫⟨G, V⟩ */
+.brand-mark {
+    display: inline-block;
+    font-size: 19px;
+    line-height: 1;
+    white-space: nowrap;
+    transition: transform 0.22s cubic-bezier(.2, .7, .2, 1);
+}
+
+.nav-brand:hover .brand-mark {
+    transform: translateY(-2px) rotate(-2deg) scale(1.04);
+}
+
+.brand-name {
+    font-size: 15px;
+    letter-spacing: 0.2px;
 }
 
 .navbar-nav {
     display: flex;
+    align-items: center;
+    gap: 22px;
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
 }
 
 .nav-link {
     color: var(--text-muted);
-    padding: 0.5rem 1rem;
     font-weight: 500;
     font-size: 14.5px;
+    white-space: nowrap;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--accent);
+.nav-link:hover {
+    color: var(--link-hover);
 }
 
 .navbar-toggler {
+    display: none;
     border: none;
     color: var(--text-main);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     background: transparent;
+    cursor: pointer;
+    padding: 4px 6px;
 }
 
-/* Mobile Menu State */
-.navbar-collapse {
-    display: none;
-    width: 100%;
-    flex-basis: 100%;
-    margin-top: 1rem;
-}
-
-.navbar-collapse.show {
-    display: flex;
-}
-
-@media (min-width: 992px) {
-    .navbar-expand-lg {
-        flex-flow: row nowrap;
-        justify-content: flex-start;
+/* Phones and narrow tablets: links move into a menu behind the toggle button
+   (below 760px they no longer fit beside the name) */
+@media (max-width: 760px) {
+    .navbar {
+        padding: 12px 0;
     }
 
-    .navbar-collapse {
-        display: flex !important;
-        width: auto;
-        flex-basis: auto;
+    .brand-name {
+        font-size: 14px;
     }
 
     .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
         display: none;
+        flex-basis: 100%;
+    }
+
+    .navbar-collapse.show {
+        display: block;
     }
 
     .navbar-nav {
-        flex-direction: row;
-        width: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 6px 0 4px;
     }
 }
 
-/* --- Sections --- */
+@media (prefers-reduced-motion: reduce) {
+    .brand-mark {
+        transition: none;
+    }
+}
+
+/* --- Detail pages (publication / project) --- */
 .home-section {
     padding: 100px 0;
     position: relative;
@@ -462,223 +500,394 @@ img {
     z-index: 2;
 }
 
-/* Glowing Sine Wave Separator */
-.home-section::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
-    height: 15px;
-    background: radial-gradient(ellipse at center, var(--accent-hover) 0%, transparent 80%);
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10' stroke='white' stroke-width='4' fill='none'/%3E%3C/svg%3E") repeat-x 0 0;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10' stroke='white' stroke-width='4' fill='none'/%3E%3C/svg%3E") repeat-x 0 0;
-    -webkit-mask-size: 100px 100%;
-    mask-size: 100px 100%;
-    filter: drop-shadow(0 0 8px var(--accent-hover));
-    opacity: 0.8;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* --- Cards (Glass Panels) --- */
-.card,
-.media.stream-item {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
-    border-radius: var(--card-radius);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Remove separator from the last section */
-.home-section:last-of-type::after {
-    display: none;
-}
-
-.card:hover,
-.media.stream-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-color: var(--accent);
-}
-
-.card-body {
-    padding: 0;
-}
-
-.article-title {
-    font-size: 16.5px;
-    margin-bottom: 0.5rem;
-    line-height: 1.35;
-}
-
-.article-title a {
-    color: var(--text-main);
-}
-
-.article-metadata {
-    font-size: 12.5px;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-}
-
-/* Author line in the publication/project lists (13.5px at the 16.5px base size) */
-.authors {
-    font-size: 13.5px;
-    line-height: 1.55;
-    margin-bottom: 8px;
-}
-
 .article-style {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-/* --- List Items (Projects/Publications) --- */
-.media {
-    display: flex;
-    align-items: flex-start;
+/* --- Homepage layout --- */
+/* One centred column of sections divided by thin lines, after niladridutt.com.
+   The top padding clears the fixed navbar. */
+.page {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 56px 24px 0;
+    position: relative;
+    z-index: 2;
 }
 
-.media-body {
-    flex: 1;
+.page > section {
+    padding: 46px 0;
+    border-top: 1px solid var(--glass-border);
+    scroll-margin-top: 56px;
 }
 
-.media.stream-item img {
-    width: 200px;
-    /* Fixed width */
-    height: 200px;
-    /* Fixed height */
-    object-fit: contain;
-    /* Scale to fit without cropping; letterbox instead */
-    background: #000;
-    border-radius: 8px;
-    margin-left: 1.5rem;
-    /* Spacing from text */
-    margin-top: 0;
-    /* Reset margins */
-    margin-bottom: 0;
-    flex-shrink: 0;
-    /* Prevent shrinking */
+.page > section:first-child {
+    border-top: none;
 }
 
-/* --- Profile Widget --- */
-#profile {
-    text-align: center;
-    padding: 2rem 0;
+.page > section.hero {
+    padding-top: 58px;
+    padding-bottom: 40px;
 }
 
-.avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 20px var(--avatar-glow);
-    object-fit: cover;
-    margin: 0 auto 1rem auto;
-}
-
-.portrait-title h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+/* Small uppercase section label (News, Publications, Projects) */
+.section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--marker);
+    margin: 0 0 22px;
+    padding: 0;
     border: none;
 }
 
-.portrait-title h3 {
-    font-size: 17px;
-    color: var(--text-muted);
-    font-weight: 400;
-}
-
-/* Social Icons */
-.network-icon {
+.section-head {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
-.big-icon {
-    font-size: 1.8rem;
-    color: var(--text-muted);
-    transition: color 0.3s;
+.section-head .section-eyebrow {
+    margin-bottom: 18px;
 }
 
-.network-icon li:hover .big-icon {
-    color: var(--accent);
-    transform: scale(1.1);
+/* --- Intro: photo | name, bio, previously, link buttons --- */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
 }
 
-/* Organization Logos */
-.organization-logos {
+.hero-photo {
+    padding-top: 54px;
+}
+
+.avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    box-shadow: 0 0 0 4px rgba(5, 10, 15, 0.72), 0 18px 46px -22px rgba(0, 0, 0, 0.92), 0 0 34px -24px var(--accent);
+}
+
+/* Bio: a step smaller than niladridutt.com, with airier lines */
+.lede {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.lede p {
+    margin: 0 0 16px;
+}
+
+.lede p + p {
+    font-size: 15.5px;
+}
+
+/* Key topics in the bio stand out in white, a touch lighter than full bold */
+.lede strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* Links inside running text get a soft accent underline */
+.lede a,
+.news-body a {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.lede a:hover,
+.news-body a:hover {
+    text-decoration-color: var(--link-hover);
+}
+
+/* Quiet translucent panel, shared by the name block and "Previously" */
+.glass-panel {
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    margin: 0 0 22px;
+}
+
+/* Name and equation headline */
+/* Name and equation on one line, sharing a baseline; the equation wraps below on narrow screens */
+.name-panel {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem 0.85rem;
-    list-style: none;
-    padding: 0.6rem 1rem;
-    margin: 2rem auto;
-    width: fit-content;
-    max-width: 100%;
-
-    /* Glass Dock Look */
-    background: var(--dock-bg);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid var(--dock-border);
-    border-radius: 100px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 14px;
+    padding: 18px 20px;
 }
 
-.organization-logos li {
-    flex: 0 0 auto;
+.name-panel .name {
+    margin: 0;
+}
+
+.name-panel .tagline {
+    margin: 0;
+    font-size: 17px;
+}
+
+/* "Previously": institution logos. White silhouettes at rest so the three logos match;
+   each shows its own colours on hover. */
+.past-panel {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 12px 22px;
+    padding: 12px 18px;
 }
 
-.logo-icon {
-    height: 45px;
-    width: auto;
-    max-width: none;
-    object-fit: contain;
-    filter: grayscale(0%) brightness(200%);
-    opacity: 0.6;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.logo-icon:hover {
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-.org-section-title {
-    text-align: center;
-    font-size: 11px;
+.past-label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    color: var(--marker);
+}
+
+.past-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 26px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.past-logos a {
+    display: block;
+    line-height: 0;
+}
+
+.past-logos img {
+    height: 26px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.78;
+    transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.past-logos a:hover img,
+.past-logos a:focus-visible img {
+    filter: brightness(200%);
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .past-logos img {
+        transition: none;
+    }
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--btn-border);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.link-btn i {
     color: var(--text-muted);
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    transition: color 0.15s ease;
 }
 
-.previous-logos .logo-icon {
-    height: 30px;
-    opacity: 1;
-    /* filter: grayscale(100%); */
+.link-btn:hover {
+    color: var(--text-main);
+    border-color: var(--accent);
+    transform: translateY(-1px);
 }
 
-.previous-logos .logo-icon:hover {
-    opacity: 1;
-    /* filter: grayscale(0%) brightness(100%); */
-    transform: scale(1.2);
+.link-btn:hover i {
+    color: var(--accent);
+}
+
+/* --- Publication / project cards: thumbnail | venue, title, authors, links --- */
+.pub-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.pub {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+    padding: 16px;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    background: var(--glass-bg);
+    transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pub:hover {
+    border-color: var(--marker);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.9);
+}
+
+.pub-thumb {
+    display: block;
+    align-self: center;
+    border-radius: 9px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: #000;
+    line-height: 0;
+}
+
+.pub-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.pub-thumb:hover img {
+    transform: scale(1.05);
+}
+
+.pub-meta {
+    min-width: 0;
+}
+
+.venue-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    margin-bottom: 7px;
+}
+
+.pub-title {
+    font-size: 16.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 6px;
+}
+
+.pub-title a {
+    color: var(--text-main);
+}
+
+.pub-title a:hover {
+    color: var(--link-hover);
+}
+
+/* Author line: co-authors soft grey, your own name bright and bold */
+.authors {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--author-color);
+    margin: 0 0 10px;
+}
+
+.authors strong {
+    color: var(--author-self);
+    font-weight: 600;
+}
+
+.pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+}
+
+.pub-links a,
+.pub-links button {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--btn-text);
+    background: transparent;
+    border: 1px solid var(--btn-border);
+    border-radius: 7px;
+    padding: 3px 9px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.pub-links a:hover,
+.pub-links button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* --- Service: one glass row per area, label | venues --- */
+.service-intro {
+    font-size: 15.5px;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+}
+
+.service-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 9px;
+}
+
+.service-list li {
+    display: grid;
+    grid-template-columns: 168px minmax(0, 1fr);
+    gap: 16px;
+    align-items: baseline;
+    padding: 13px 18px;
+    border: 1px solid var(--glass-border);
+    border-radius: 11px;
+    background: var(--glass-bg);
+    font-size: 14.5px;
+}
+
+.svc-cat {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+}
+
+.svc-cat.svc-award {
+    color: var(--award-color);
+}
+
+@media (max-width: 640px) {
+    .service-list li {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
 }
 
 /* --- Badges --- */
@@ -692,37 +901,63 @@ img {
 }
 
 /* --- Footer --- */
-footer {
-    padding: 2rem 0;
-    text-align: center;
+.site-footer {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 30px 24px 50px;
+    border-top: 1px solid var(--glass-border);
     color: var(--text-muted);
     font-size: 13px;
+    text-align: center;
     position: relative;
     z-index: 2;
 }
 
-/* --- Helper Classes --- */
-.nav-icons {
-    display: flex;
-    list-style: none;
+.site-footer p {
+    margin: 0;
 }
 
-.nav-icons li {
-    margin-left: 1rem;
-}
+/* --- Phones --- */
+@media (max-width: 720px) {
+    .page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
-.section-heading {
-    text-align: right;
-    border-right: 3px solid var(--accent);
-    padding-right: 1rem;
-}
+    .page > section {
+        padding: 38px 0;
+    }
 
-@media (max-width: 768px) {
-    .section-heading {
-        text-align: left;
-        border-right: none;
-        border-left: 3px solid var(--accent);
-        padding-left: 1rem;
+    .page > section.hero {
+        padding-top: 40px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero-photo {
+        width: min(210px, 70vw);
+        justify-self: center;
+        padding-top: 0;
+    }
+
+    .lede {
+        font-size: 15.5px;
+    }
+
+    .pub {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .pub-thumb {
+        max-width: 320px;
+    }
+
+    .pub-title {
+        font-size: 16px;
     }
 }
 
@@ -823,7 +1058,7 @@ footer {
 }
 
 .author-link:hover {
-    color: var(--author-self);
+    color: var(--link-hover);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -833,13 +1068,20 @@ footer {
     font-weight: 600;
 }
 
+/* Venue line, as on Niladri's site: small uppercase monospace in the accent colour.
+   font-weight overrides the <strong> the templates wrap around it. */
 .venue-link {
-    color: var(--venue-link-color);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+    text-transform: uppercase;
 }
 
 .venue-link:hover {
-    color: var(--venue-link-hover);
-    text-shadow: 0 0 8px var(--venue-link-hover-glow);
+    color: var(--accent);
 }
 
 /* --- News Ticker --- */
@@ -858,7 +1100,7 @@ footer {
 }
 
 .news-label {
-    background: var(--accent-hover);
+    background: var(--accent);
     color: var(--on-accent-text);
     padding: 0 10px;
     height: 100%;
@@ -889,15 +1131,64 @@ footer {
 .news-item {
     display: inline-block;
     padding-right: 3rem;
-    color: var(--accent-hover);
+    color: var(--accent);
     font-size: 0.9rem;
 }
 
 /* Name at the top of the About section */
 .name {
-    font-size: clamp(30px, 5vw, 40px);
+    font-size: clamp(26px, 4.5vw, 34px);
     line-height: 1.05;
     letter-spacing: -0.01em;
+    margin-bottom: 10px;
+}
+
+/* Equation typesetting shared by the headline and the navbar logo, like the CV's LaTeX */
+.eq {
+    font-family: 'STIX Two Text', 'Cambria Math', 'Times New Roman', serif;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.eq .int {
+    font-size: 1.3em;
+    line-height: 0;
+    vertical-align: -0.12em;
+    margin-right: 0.06em;
+}
+
+.eq .eq-g {
+    color: var(--eq-graphics);
+}
+
+.eq .eq-v {
+    color: var(--eq-vision);
+}
+
+/* Equation-style headline under the name */
+.tagline {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 0 20px;
+}
+
+/* Text for screen readers only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 720px) {
+    .tagline {
+        font-size: 18px;
+    }
 }
 
 /* Slightly smaller type on phones */
@@ -906,27 +1197,13 @@ footer {
         font-size: 16px;
     }
 
-    .article-title {
-        font-size: 16px;
-    }
-
-    .article-metadata {
+    .venue-link {
         font-size: 12px;
     }
 }
 
 /* --- News List (About Section) --- */
 /* Dated rows in a scrollable glass panel: date | text | optional tag pill */
-.news-section {
-    margin-bottom: 2rem;
-}
-
-.news-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-}
-
 .scroll-hint {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -1062,32 +1339,22 @@ footer {
 
 /* --- News Item Colors --- */
 .venue-red {
-    color: var(--venue-color);
-    font-weight: bold;
+    color: var(--accent);
+    font-weight: 500;
 }
 
 .paper-abbrev a {
-    color: var(--paper-title);
-    font-weight: bold;
+    color: var(--link);
+    font-weight: 500;
     text-decoration: none;
 }
 
 .paper-abbrev a:hover {
-    color: var(--paper-title);
+    color: var(--link-hover);
     text-decoration: underline;
-    text-shadow: 0 0 8px var(--paper-title-glow);
 }
 
 .award-highlight {
     color: var(--award-color);
-    font-style: italic;
     font-weight: bold;
-    text-shadow: 0 0 8px var(--award-glow);
-}
-
-/* Pill placed inline after the venue in the publication list */
-.tag-pill-inline {
-    display: inline-block;
-    margin-left: 0.6rem;
-    vertical-align: middle;
 }

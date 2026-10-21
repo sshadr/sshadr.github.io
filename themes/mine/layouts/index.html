@@ -1,14 +1,22 @@
 {{ define "main" }}
-<section id="about" class="home-section">
-    {{ partial "about.html" . }}
-</section>
+{{/* One narrow column of sections separated by thin lines, after niladridutt.com */}}
+<main class="page">
+    <section class="hero" id="about">
+        {{ partial "about.html" . }}
+    </section>
 
-<section id="publications" class="home-section">
-    {{ partial "pubs.html" . }}
-</section>
+    <section id="news">
+        {{ partial "news.html" . }}
+    </section>
 
-<section id="projects" class="home-section">
-    {{ partial "projects.html" . }}
-</section>
+    <section id="publications">
+        {{ partial "pubs.html" . }}
+    </section>
 
+    {{ with .Params.service }}
+    <section id="service">
+        {{ partial "service.html" $ }}
+    </section>
+    {{ end }}
+</main>
 {{ end }}

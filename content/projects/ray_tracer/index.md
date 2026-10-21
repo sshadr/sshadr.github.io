@@ -73,4 +73,4 @@ tags:
   - rendering
 ---
 
-We developed a Ray tracing engine with some cool features as a part of the Computer Graphics course. We won the Rendering competition for our scene "A Warm Night" ! We provided a comprehensive competition write-up that delves into the intricate details of our project. Feel free to access it via this [primary link](https://graphics.cg.uni-saarland.de/courses/cg1-2021/RC/group1/). If, for any reason, the primary link doesn't work, you can use this [backup link](/projects/ray_tracer/backup/index.html) instead.
+We developed a Ray tracing engine with some cool features as a part of the Computer Graphics course. We won the Rendering competition for our scene "A Warm Night" ! We provided a comprehensive competition write-up that delves into the intricate details of our project. Feel free to access it via this [primary link](https://graphics.cg.uni-saarland.de/courses/cg1-2021/RC/group1/).

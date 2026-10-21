@@ -1,12 +1,19 @@
-# Navigation links. `url` is an anchor (#id) of a homepage section; `weight` sets the order.
+# Navigation links, relative to the site root: '#id' jumps to a homepage section, 'projects/' opens a page.
+# `weight` sets the order.
 
 main:
   - name: About
     url: '#about'
     weight: 10
+  - name: News
+    url: '#news'
+    weight: 15
   - name: Publications
     url: '#publications'
     weight: 20
   - name: Projects
-    url: '#projects'
+    url: 'projects/'
     weight: 30
+  - name: Honors & Service
+    url: '#service'
+    weight: 40

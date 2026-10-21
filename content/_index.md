@@ -8,6 +8,11 @@ draft: "false"
 # Role/position/tagline
 description: PhD Candidate
 
+# Headline under your name, from the CV (HTML allowed).
+# tagline_alt is what screen readers announce instead of the symbols.
+tagline: '<span class="int">∫</span>⟨<span class="eq-g">Graphics</span>(x), <span class="eq-v">Vision</span>(x)⟩&thinsp;δx'
+tagline_alt: The intersection of Computer Graphics and Computer Vision
+
 # Organizations/Affiliations to show in the About section
 organizations:
   current:
@@ -24,32 +29,40 @@ organizations:
       url: "https://iisc.ac.in/"
       image: "/images/logos/iisc.png"
 
-# Social links shown under the avatar. icon_pack picks the icon font:
+# Link buttons under your bio. label is the button text; icon_pack picks the icon font:
 #   fas / fab = Font Awesome (solid / brands), ai = Academicons
 social:
   - icon: google-scholar
+    label: Scholar
     icon_pack: ai
     link: https://scholar.google.com/citations?user=3oeUgGEAAAAJ&hl=en
   - icon: cv
+    label: CV
     icon_pack: ai
     link: https://drive.google.com/file/d/1cYLELAoEmechdOWLht1xlK_4kI3RtTX_/view?usp=sharing
   - icon: envelope
+    label: Email
     icon_pack: fas
     link: "mailto:adarshdjeacoumar98@gmail.com"
   - icon: github
+    label: GitHub
     icon_pack: fab
     link: https://github.com/sshadr
   - icon: linkedin
+    label: LinkedIn
     icon_pack: fab
     link: https://www.linkedin.com/in/adarsh-djeacoumar/
-  - icon: twitter
+  - icon: x-twitter
+    label: X
     icon_pack: fab
-    link: https://twitter.com/ssh_adr_
+    link: https://x.com/ssh_adr_
 
 # highlights:
 #   - I am open to Collaborations, and Internships (from late 2027)!
 
-# Custom field to override the news ticker. If set, this text is shown instead of the top news item.
+# Scrolling news ticker under the top bar. Set show_ticker to true to bring it back.
+# ticker_text overrides the default (the top news item).
+show_ticker: false
 ticker_text: "Open to collaborate on challenging projects!"
 
 # News list, newest first. Each item has:
@@ -58,8 +71,10 @@ ticker_text: "Open to collaborate on challenging projects!"
 #   tag:  optional pill on the right, e.g. "Best Paper"
 news:
   - date: "2026"
-    text: '<span class="paper-abbrev"><a href="https://neural-radiative-transfer.mpi-inf.mpg.de/">Volumetric Inverse Rendering via Neural Radiative Transfer</a></span> accepted at <span class="venue-red"><em>EGSR ''26 (CGF)</em></span> and won the <span class="award-highlight">Best Paper Award</span>!'
+    text: '🏆 Thrilled that <span class="paper-abbrev"><a href="https://neural-radiative-transfer.mpi-inf.mpg.de/">Volumetric Inverse Rendering via Neural Radiative Transfer</a></span> won the <span class="award-highlight">Best Paper Award</span> at <span class="venue-red"><em>EGSR ''26 (CGF)</em></span>!'
     tag: Best Paper
+  - date: "Apr 2026"
+    text: '🎓 Excited to start my PhD with Prof. <a href="https://justusthies.github.io">Justus Thies</a> at TU Darmstadt!'
   - date: "2025"
     text: Had a fantastic time meeting inspiring researchers at EGSR 2025 in Copenhagen!
   - date: "2025"
@@ -73,11 +88,26 @@ news:
 
 
 # publications should just create a publications.yaml file in data and use it everywhere
----
-I am a PhD candidate working with Prof. [Justus Thies](https://justusthies.github.io) on Virtual Avatars.
-I'm broadly interested in research problems at the intersection of Computer Graphics and Computer Vision, some of which are Rendering and Simulation, Physics-based systems, Inverse problems, Generative modelling.
-<!-- I am also interested in photo-realistic algorithms in Computer graphics and take inspiration from physics and nature to design advanced algorithms. -->
 
-I had the pleasure of working with Dr. [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/) and the [IsMaeL group](https://ismael.mpi-inf.mpg.de), at the Max Planck Institute For Informatics. And before my Masters, with Dr. Harish Kumar, and Prof. Chandra Sekhar Seelamantula at the Indian Institute of Science which opened me up to academia and the research world.
+# Service section. Each area gets a row; list its venues in order.
+# An optional intro: line above the rows adds a sentence before them; title: renames the section;
+# award: true colours a row's label gold.
+service:
+  title: Honors & Service
+  areas:
+    - name: Reviewer
+      venues:
+        - Eurographics
+        - Computer Graphics Forum (CGF)
+    - name: Award
+      award: true
+      venues:
+        - Best Paper Award
+        - EGSR 2026
+
+---
+I'm a PhD candidate at TU Darmstadt, advised by Prof. [Justus Thies](https://justusthies.github.io).
+
+Previously, I did my Master's at Saarland University and research at the [Max Planck Institute for Informatics](https://www.mpi-inf.mpg.de/home) with Dr. [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/) and the [IsMaeL group](https://ismael.mpi-inf.mpg.de).
 
 <!-- <span style="color:#ffd000;"><em>Always excited to collaborate on challenging projects, and open to internship opportunities starting late 2027!</em></span> -->

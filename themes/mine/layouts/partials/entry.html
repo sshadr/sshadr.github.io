@@ -1,0 +1,46 @@
+{{/* One publication or project card: thumbnail | venue, title, authors, links.
+     Context: the publication or project page. */}}
+{{ $url := .Params.projecturl | default .RelPermalink }}
+<li class="pub" itemscope itemtype="http://schema.org/{{ if eq .Section "publication" }}ScholarlyArticle{{ else }}CreativeWork{{ end }}">
+    <a class="pub-thumb" href="{{ $url }}" tabindex="-1" aria-hidden="true">
+        {{ partial "teaser.html" . }}
+    </a>
+
+    <div class="pub-meta">
+        {{ if or .Params.Paper .Params.award }}
+        <div class="venue-line">
+            {{ range .Params.Paper }}<a href="{{ .url }}" class="venue-link">{{ .venue }}</a>{{ end }}
+            {{ with .Params.award }}<span class="tag-pill">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+
+        <h3 class="pub-title" itemprop="name">
+            <a href="{{ $url }}" itemprop="url">{{ .Params.title }}</a>
+        </h3>
+
+        <p class="authors" itemprop="author">
+            {{- range $i, $a := sort .Params.authors "weight" "asc" -}}
+            {{- if $i }}, {{ end -}}
+            {{- if eq $a.name $.Site.Data.admin.author.name -}}
+            <strong>{{ $a.name }}</strong>
+            {{- else if and $a.url (ne $a.url "/") -}}
+            <a href="{{ $a.url }}" class="author-link">{{ $a.name }}</a>
+            {{- else -}}
+            {{ $a.name }}
+            {{- end -}}
+            {{- end -}}
+        </p>
+
+        {{ with .Params.buttons }}
+        <p class="pub-links">
+            {{ range . }}
+            {{ if eq .name "Cite" }}
+            <button type="button" class="js-cite-modal" data-filename="{{ .url }}">{{ .name }}</button>
+            {{ else }}
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            {{ end }}
+            {{ end }}
+        </p>
+        {{ end }}
+    </div>
+</li>

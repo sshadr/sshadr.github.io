@@ -15,7 +15,7 @@ description: Neural fields are evolving towards a general-purpose continuous rep
 # Paper authors and data:
 authors:
   - name: Ntumba Elie Nsampi
-    url: "https://people.mpi-inf.mpg.de/~nnsampi/"
+    url: "https://scholar.google.com/citations?user=s1YzWUEAAAAJ&hl=en"
     affiliation: 1
     weight: 10
   - name: Adarsh Djeacoumar

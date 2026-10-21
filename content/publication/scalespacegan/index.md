@@ -14,7 +14,7 @@ description: The real world exhibits rich structure and detail across many scale
 # Paper authors and data:
 authors:
   - name: Krzysztof Wolski
-    url: "http://people.mpi-inf.mpg.de/~kwolski/"
+    url: "https://scholar.google.com/citations?user=qNylEMoAAAAJ&hl=en"
     affiliation: 1
     weight: 10
   - name: Adarsh Djeacoumar
