@@ -106,8 +106,8 @@ service:
         - EGSR 2026
 
 ---
-I'm a PhD candidate at TU Darmstadt, advised by Prof. [Justus Thies](https://justusthies.github.io).
+Hi! I am a PhD student at TU Darmstadt, advised by Prof. [Justus Thies](https://justusthies.github.io).
 
-Previously, I did my Master's at Saarland University and research at the [Max Planck Institute for Informatics](https://www.mpi-inf.mpg.de/home) with Dr. [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/) and the [IsMaeL group](https://ismael.mpi-inf.mpg.de).
+Before that, I did my Master's at Saarland University and research at the [Max Planck Institute for Informatics](https://www.mpi-inf.mpg.de/home), advised by Dr. [Thomas Leimkühler](https://people.mpi-inf.mpg.de/~tleimkue/) in the [IsMaeL group](https://ismael.mpi-inf.mpg.de). I have also been fortunate to work with and be mentored by Prof. [Tobias Ritschel](https://www.homepages.ucl.ac.uk/~ucactri/), Prof. [Karol Myszkowski](https://people.mpi-inf.mpg.de/~karol/), and Prof. [Hans-Peter Seidel](https://people.mpi-inf.mpg.de/~hpseidel/). I am grateful for early mentorship from Prof. [Chandra Sekhar Seelamantula](https://spectrum.ee.iisc.ac.in/) and Dr. Harish Kumar at the Indian Institute of Science.
 
 <!-- <span style="color:#ffd000;"><em>Always excited to collaborate on challenging projects, and open to internship opportunities starting late 2027!</em></span> -->

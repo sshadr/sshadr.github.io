@@ -40,6 +40,8 @@ Paper:
   - venue: Computer Graphics Forum (Eurographics 2025)
     url: "https://eg25.cs.ucl.ac.uk/main/home.html"
 
+award: "Best Paper Candidate"
+
 buttons:
   - name: PDF
     url: "https://chaotic-fractals.mpi-inf.mpg.de/Chaotic_Fractals.pdf"
