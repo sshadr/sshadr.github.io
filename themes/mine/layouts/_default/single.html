@@ -1,14 +1,20 @@
 {{ define "main" }}
 
-<section id="about" class="home-section">
+<section class="home-section">
     <div class="container">
         <div>
-            <h1 align="center">{{.Params.title | safeHTML}}</h1>
+            <h1 class="text-center">{{.Params.title | safeHTML}}</h1>
             <div class="text-center">
                 <ul class="list-inline">
-                    {{/* {{ $institutions := .Params.institutions }} */}}
-                    {{ range $author := .Params.authors }}
-                    <li class="list-inline-item"><a href="{{ .url }}" class="author-link">{{ if eq .name $.Site.Data.admin.author.name }}<strong>{{ .name }}</strong>{{ else }}{{ .name }}{{ end }}</a>
+                    {{ range .Params.authors }}
+                    <li class="list-inline-item">
+                        {{- if eq .name $.Site.Data.admin.author.name -}}
+                        <a href="/" class="author-link"><strong>{{ .name }}</strong></a>
+                        {{- else if and .url (ne .url "/") -}}
+                        <a href="{{ .url }}" class="author-link">{{ .name }}</a>
+                        {{- else -}}
+                        {{ .name }}
+                        {{- end }}
                         <sup>{{ .affiliation }}</sup>
                     </li>
                     {{ end }}
@@ -54,7 +60,7 @@
         </div>
         {{ end }}
 
-        <div style="text-align: justify;">
+        <div class="detail-text">
             {{ range .Params.abstract }}
             <h3>{{ .name }}</h3>
             <p>{{ .content | markdownify }}</p>
@@ -71,19 +77,6 @@
                 </video>
             </div>
             {{ end }}
-
-            <div>
-                {{ range .Params.tags }}
-                <a class="badge badge-light" href="{{ printf "/tags/%s/" (urlize .) | relURL }}">{{ . }}</a>
-                {{ end }}
-                {{/* <a class="badge badge-light" href="/tag/computer-vision/">computer vision</a>
-                <a class="badge badge-light" href="/tag/computer-graphics/">computer graphics</a>
-                <a class="badge badge-light" href="/tag/machine-learning/">machine learning</a>
-                <a class="badge badge-light" href="/tag/rendering/">rendering</a>
-                <a class="badge badge-light" href="/tag/brdf/">brdf</a>
-                <a class="badge badge-light" href="/tag/texture/">texture</a>
-                <a class="badge badge-light" href="/tag/material/">material</a> */}}
-            </div>
         </div>
     </div>
 </section>

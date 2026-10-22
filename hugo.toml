@@ -1,7 +1,9 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://sshadr.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Adarsh Djeacoumar'
 theme = 'mine'
+# No tag or category pages and no RSS feed: nothing on the site links to them
+disableKinds = ['taxonomy', 'term', 'rss']
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

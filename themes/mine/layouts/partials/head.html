@@ -2,13 +2,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Hugo">
     <meta name="author" content="{{ .Site.Data.admin.author.name | safeHTML}}">
 
     <meta name="description" content="{{.Params.description | safeHTML}}">
-
-    <link rel="alternate" hreflang="{{ .Site.Data.languages.en.languageCode }}" href="{{ .Permalink }}" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -24,13 +21,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=STIX+Two+Text:ital@1&display=swap">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/WebGL.js" defer></script>
     <script src="/js/starry_night.js" defer></script>
 
     <link rel="stylesheet" href="/css/minimal.css">
-
-    <link rel="alternate" href="/index.xml" type="application/rss+xml"
-        title="{{.Site.Data.admin.author.name | safeHTML}}">
 
 
     <link rel="manifest" href="/index.webmanifest">
@@ -44,13 +37,14 @@
     <meta name="google-site-verification" content="DyHfWnOrRIPRgh0hLtL3IcU-mjgHSasX3f0vIR-uSNg" />
     <meta property="og:site_name" content="{{ .Site.Data.admin.author.name | safeHTML}}">
     <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:title" content="{{ .Params.title | safeHTML}} | {{ .Site.Data.admin.author.name | safeHTML}}">
+    {{/* Homepage: just the name; other pages: "Page | Name" */}}
+    {{ $title := cond .IsHome .Site.Data.admin.author.name (printf "%s | %s" .Title .Site.Data.admin.author.name) }}
+    <meta property="og:title" content="{{ $title }}">
     <meta property="og:description" content="{{ .Params.description | safeHTML}}">
     <meta property="og:locale" content="{{ .Site.Data.languages.en.languageCode }}">
 
-    <meta property="og:updated_time" content="2024-06-07T00:00:00&#43;00:00">
     {{ partial "structured_data.html" . }}
 
-    <title>{{ .Params.title | safeHTML }} | {{ .Site.Data.admin.author.name | safeHTML}}</title>
+    <title>{{ $title }}</title>
 
 </head>

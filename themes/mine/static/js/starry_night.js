@@ -1,8 +1,11 @@
 // Background: a particle yin-yang of Graphics (orange) and Vision (purple) over faint stars,
 // echoing the ∫⟨Graphics, Vision⟩ headline. Each half is outlined in its own colour.
 document.addEventListener('DOMContentLoaded', () => {
-  // The background is decoration: without WebGL, skip it quietly instead of showing an error box
-  if (!THREE.WEBGL.isWebGLAvailable()) {
+  // The background is decoration: without WebGL, skip it quietly
+  try {
+    const test = document.createElement('canvas');
+    if (!window.WebGLRenderingContext || !(test.getContext('webgl') || test.getContext('experimental-webgl'))) return;
+  } catch (e) {
     return;
   }
 
