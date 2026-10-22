@@ -25,9 +25,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=STIX+Two+Text:ital@1&display=swap">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="/js/starry_night.js" defer></script>
+    {{/* Build time as a version, so browsers fetch fresh copies after every deploy */}}
+    {{ $v := now.Unix }}
+    <script src="/js/starry_night.js?v={{ $v }}" defer></script>
 
-    <link rel="stylesheet" href="/css/minimal.css">
+    <link rel="stylesheet" href="/css/minimal.css?v={{ $v }}">
 
 
     <link rel="manifest" href="/index.webmanifest">
