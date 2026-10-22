@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       phases.push(Math.random());
     };
     // Filled halves
-    for (let i = 0; i < 12000 * density; i++) {
+    for (let i = 0; i < 7500 * density; i++) {
       const r = R * Math.sqrt(Math.random()) * 0.985, a = Math.random() * 2 * Math.PI;
       add(Math.cos(a) * r, Math.sin(a) * r, rand(0.7, 1.0), rand(8, 13));
     }
@@ -133,13 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
         add(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr, rand(0.85, 1.0), rand(11, 16));
       }
     };
-    edge(0, R / 2, R / 2, Math.PI / 2, 1.5 * Math.PI, 1300, 0); // S-curve, upper half: both sides
-    edge(0, -R / 2, R / 2, -Math.PI / 2, Math.PI / 2, 1300, 0); // S-curve, lower half: both sides
-    edge(0, R / 2, R / 8, 0, 2 * Math.PI, 450, -1); // rim of the Graphics dot
-    edge(0, -R / 2, R / 8, 0, 2 * Math.PI, 450, -1); // rim of the Vision dot
-    edge(0, 0, R, 0, 2 * Math.PI, 2200, -1); // outer rim
+    edge(0, R / 2, R / 2, Math.PI / 2, 1.5 * Math.PI, 900, 0); // S-curve, upper half: both sides
+    edge(0, -R / 2, R / 2, -Math.PI / 2, Math.PI / 2, 900, 0); // S-curve, lower half: both sides
+    edge(0, R / 2, R / 8, 0, 2 * Math.PI, 320, -1); // rim of the Graphics dot
+    edge(0, -R / 2, R / 8, 0, 2 * Math.PI, 320, -1); // rim of the Vision dot
+    edge(0, 0, R, 0, 2 * Math.PI, 1500, -1); // outer rim
     // Side wall below the rim, fading downward, so the disc reads as a solid platform
-    for (let i = 0; i < 3000 * density; i++) {
+    for (let i = 0; i < 1800 * density; i++) {
       const a = Math.random() * 2 * Math.PI, d = Math.pow(Math.random(), 1.6);
       const rr = R - 0.03 - Math.random() * 0.02;
       add(Math.cos(a) * rr, Math.sin(a) * rr, 0.85 * (1 - d) + 0.12, rand(9, 13), -d * WALL);
@@ -150,8 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- Scene ----------
   const canvas = document.getElementById('gl');
   if (!canvas) return;
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  // Kept light on purpose: no antialiasing (the soft sprites don't need it), the integrated GPU
+  // where a laptop has two, and a capped resolution, since a blurry glow loses nothing at 1.25x
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'low-power' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
   renderer.setSize(window.innerWidth, window.innerHeight);
   // Opaque canvas in the page's own background colour, so the additive glow blends correctly
   renderer.setClearColor(new THREE.Color(getComputedStyle(document.body).backgroundColor), 1);
@@ -159,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.z = 5;
-  const stars = backdropStars(Math.round(2500 * density));
+  const stars = backdropStars(Math.round(1400 * density));
   scene.add(stars);
 
   const yy = yinYangPoints();
@@ -175,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem('yinyang-gathered', '1');
   } catch (e) { /* storage unavailable: always gather */ }
 
-  const yyMaterial = pointsMaterial({ additive: true, twinkle: 0.3, opacity: 0.62, depthFade: 0.35 });
+  const yyMaterial = pointsMaterial({ additive: true, twinkle: 0.3, opacity: 0.7, depthFade: 0.35 });
   const yinYang = makePoints(Array.from(gathered ? targetPos : startPos), yy.cols, yy.sizes, yy.phases, yyMaterial);
   const group = new THREE.Group();
   group.add(yinYang);
@@ -236,12 +238,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function pose() {
     const { dock, start, navBottom } = layout;
     const scroll = window.scrollY;
-    if (!start) return dock ? { x: dock.x, y: dock.y, w: dock.w, tilt: TILT_DOCK, opacity: 0.62, q: 1 } : null;
+    if (!start) return dock ? { x: dock.x, y: dock.y, w: dock.w, tilt: TILT_DOCK, opacity: 0.7, q: 1 } : null;
     const y0 = start.y - scroll; // where it sits if it simply scrolls with the photo
     if (!dock) {
       // No margin: scroll with the page and fade out before reaching the top bar
       const gone = start.y - navBottom - start.h / 2 - EDGE;
-      return { x: start.x, y: y0, w: start.w, tilt: TILT, opacity: 0.62 * (1 - smoothstep(gone - 160, gone, scroll)), q: 0 };
+      return { x: start.x, y: y0, w: start.w, tilt: TILT, opacity: 0.7 * (1 - smoothstep(gone - 160, gone, scroll)), q: 0 };
     }
     // Scroll distance at which the scrolling spot reaches the docking height
     const reach = Math.max(1, start.y - dock.y);
@@ -253,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
       y: Math.max(y0, dock.y),
       w: mixN(start.w, dock.w, slide),
       tilt: mixN(TILT, TILT_DOCK, stand),
-      opacity: 0.62,
+      opacity: 0.7,
       q: stand,
     };
   }
@@ -288,12 +290,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('pointermove', (e) => {
     pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
     pointer.y = (e.clientY / window.innerHeight) * 2 - 1;
+    onInput();
   }, { passive: true });
 
   let elapsed = gathered ? GATHER : 0;
   let settled = gathered;
   let spin = 0;
   let last = performance.now();
+  let lastRender = 0;
+  let lastInput = performance.now();
   let frameId = null;
 
   // Scroll wobble: a damped spring kicked by scroll speed, so the disc rocks and settles
@@ -320,6 +325,12 @@ document.addEventListener('DOMContentLoaded', () => {
     yyMaterial.uniforms.uTime.value = t;
     stars.material.uniforms.uTime.value = t;
     place(dt);
+    // Hidden (phones, narrow windows): skip the unseen gathering and jump to the formed shape
+    if (!settled && !group.visible) {
+      positions.array.set(targetPos);
+      positions.needsUpdate = true;
+      settled = true;
+    }
     stepWobble(dt);
     if (current) {
       // Turntable spin while flat, quicker once it leans up in the margin
@@ -336,13 +347,25 @@ document.addEventListener('DOMContentLoaded', () => {
     camera.lookAt(0, 0, 0);
   }
 
+  // Frames per second: smooth while gathering or while the visitor scrolls or moves the pointer,
+  // slower when idle; the motion is slow enough that this is hard to see but easy on the battery
+  function targetFps(now) {
+    const idle = now - lastInput;
+    if (!settled || idle < 2000) return 30;
+    return idle < 60000 ? 20 : 10;
+  }
+
   function animate(now) {
     frameId = requestAnimationFrame(animate);
-    const dt = Math.max(0, Math.min(0.05, (now - last) / 1000));
+    if (now - lastRender < 1000 / targetFps(now) - 2) return;
+    lastRender = now;
+    const dt = Math.max(0, Math.min(0.12, (now - last) / 1000));
     elapsed += dt;
     last = now;
     update(elapsed, dt);
     renderer.render(scene, camera);
+    // Nothing worth animating while the yin-yang is hidden: hold this frame until input arrives
+    if (settled && !group.visible) stop();
   }
 
   // A single still frame with the shape fully formed
@@ -355,7 +378,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function start() {
     if (frameId !== null || document.hidden || reduceMotion.matches) return;
     last = performance.now(); // Skip the time spent paused so nothing jumps
+    lastRender = 0;
     frameId = requestAnimationFrame(animate);
+  }
+
+  // Scrolling or pointer movement speeds frames back up, and restarts a stopped loop
+  function onInput() {
+    lastInput = performance.now();
+    if (frameId === null) start();
   }
 
   function stop() {
@@ -369,9 +399,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     measure();
     if (frameId === null) still();
+    onInput();
   });
-  // Keep the still frame in step with scrolling when animation is off
-  window.addEventListener('scroll', () => { if (frameId === null) still(); }, { passive: true });
+  // Scrolling speeds the animation up; with reduced motion it only updates the still frame
+  window.addEventListener('scroll', () => {
+    if (reduceMotion.matches) still();
+    else onInput();
+  }, { passive: true });
   // Pause while the tab is in the background
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
   // Respect the OS "reduce motion" setting: show a still frame instead of animating
